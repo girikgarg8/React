@@ -1,0 +1,5 @@
+We have a package manager which takes care of our transitive dependencies (transitive dependecies means dependecies which can further have even more dependencies)
+
+"browsersList":[
+    "last 2 versions"]
+  } ensures that my app is compatiable with last 2 versions of all browsers avaialble on broswerslist.dev
