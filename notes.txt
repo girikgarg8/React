@@ -1,5 +1,85 @@
+<!--Anything we can generate on server like parcel-cache or node_modules should be in gitignore, but package-lock.json can't be put in gitignore-->
+        <!-- React is not fast only because of virtual DOM but because of bundlers (like parcel or vite or webpack)-->
+
+
 We have a package manager which takes care of our transitive dependencies (transitive dependecies means dependecies which can further have even more dependencies)
 
 "browsersList":[
     "last 2 versions"]
   } ensures that my app is compatiable with last 2 versions of all browsers avaialble on broswerslist.dev
+
+  bable is used for creating polyfill
+  polfyfill means replacing code with the code that browser understands
+  eg. if older version of JS doesn't understand map() function, bable may write own custom implementation of map() so that code is able to execute
+
+  tree shaking means that if I am importing a library,library may provide 10-20 functions, but I may be using only 1 or 2 of them. So parcel is smart enough and it removes the code of the unused libraries.
+
+  babel-plugin-transform-remove-console is used for removing the console.log statements from the production code.
+
+  .babelrc is a configuration for babel
+
+  Whenever there there is an array in createElement like const container=React.createElement(
+                "div",{
+                    id:"container",
+                }, [heading1,heading2]
+    ), I need to use key in my props.
+
+Updating something in DOM is called rendering
+
+Why do I need to use key as a prop? See from the docs https://reactjs.org/docs/reconciliation.html: I will explain briefly
+If I change my code from:
+<ul>
+  <li>first</li>
+  <li>second</li>
+</ul>
+
+to:
+<ul>
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+</ul>
+
+then React has to do a lot of work in rerendering, because React just knows that another li has been added. But if I add keys, React knows which new li tag has been added, so it doesn't have to spend that much time and performance of React improves.
+
+React.createElement gives us an object which is then converted to HTML code and placed on the DOM React.createElement=>Object=>HTML (DOM)
+
+JSX is used because for a complicated structure React.createElement code becomes lengthy and complicated when there are multiple children
+
+JSX is HTML-like syntax but not HTML inside Javascript.
+
+ID is a HTML concept but key is a concept from React
+
+Babel is a JavaScript library which internally uses React.createElement from JSX
+
+So the flow goes like:  JSX -> React.createElement -> Object-> HTML (mounted on DOM)
+
+babel is installed along with parcel
+there is second package-lock.json in node_modules which has details about versions of all transitve dependcies (babel is present in node_modules )
+
+Everything is a component in react
+
+Reaction based components:functional based components (new, will be taught) and class based components  is the old way of writing code
+
+Functional based component is nothing but a normal Javascript function which can either return JSX or a React element using React.createElement
+
+Component name starts with capital letter-- this is not mandatory but a convention
+
+When I use a function based component, the I use the syntax as root.render(<FunctionalComponent/>)
+
+Difference between React element and component: 
+const heading=(
+    <h1 id="heading3" key="abc"> Namaste React </h1>
+) this is a react element but 
+
+const heading=()=>{
+    return <h1 id="heading"> Namaste React</h1>
+} this is a React component (function based component)
+
+React element at the end of the day is an object and a React functional based component is a function.
+
+We can execute any JS code inside curly braces {console.log("Hello")} inside the React component
+
+If I have an API that has some malicious code inside it let's call it data, and if it is called inside the React component like {data}, then malicious code gets excuted, this is known as cross site scripting. But JSX does something called sanitisation, it makes sure that the code is secure
+
+Component compposition is nothing but placing a component inside another component
