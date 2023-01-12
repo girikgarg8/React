@@ -18,8 +18,8 @@ const container=React.createElement( //any tag of HTML is called an element in R
 const heading=(
     <h1> Namaste React </h1>
 )
-const Title=()=>( //omitting the return statement here, this is also valid syntax
-    <h1 id="title" key="h9"> Cool stuff here </h1>
+const Title=( //omitting the return statement here, this is also valid syntax
+    <h1 id="title" key="h9"> Food Villa </h1>
 );
 const heading3=(
     <div>
@@ -27,20 +27,58 @@ const heading3=(
     <h2> This is a h2 tag </h2>
     </div>
 )
+
+const appLayout=()=>{
+    return ({
+        /* 
+        Header
+            -Logo
+            -Nav Items (Right Side)
+            -Cart
+            Body
+            -Search bar
+            -Restaurant List
+        - Restaurant Card
+            - Image
+            - Name
+            - Rating
+            - Cuisines
+        Footer
+            -links
+            -copyright
+        */
+    })
+}
+
 const HeaderComponent=()=>{
-    // we can add React element like this in React component like {heading}
-    //Title() works because it is just calling the function
     return (
-    <div>
-    <Title/>
-    {1+2}
-    <h2> 
-    Introduction to functional component
-    </h2>
-    <h2> This is a h2 tag </h2>
-    </div>
+        <div className="header">
+        {Title}
+        <div className="nav-items">
+        <ul>
+        <li> Home </li>
+        <li> About </li>
+        <li> Contact </li>
+        <li> Cart </li>
+        </ul>
+        </div>
+        </div>
     );
 }
+// const HeaderComponent=()=>{
+//     // we can add React element like this in React component like {heading}
+//     //Title() works because it is just calling the function
+//     return (
+//     <div>
+//     {Title}
+//     {1+2}
+//     <h2> 
+//     Introduction to functional component
+//     </h2>
+//     <h2> This is a h2 tag </h2>
+//     </div>
+//     );
+// }
 const root=ReactDOM.createRoot(document.getElementById("root")) //getElementByID is used to get the div which has the ID root at line number 10
 root.render(<HeaderComponent/>) // passing a react element inside the root
 //dist folder stores the minified files 

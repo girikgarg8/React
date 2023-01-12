@@ -1,3 +1,12 @@
-#container{
-    background-color:red;
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin:10px; 
+}
+.nav-items > ul {
+    list-style-type: none;
+    display:flex;
+}
+.nav-items>ul>li{
+    padding:10px;
 }

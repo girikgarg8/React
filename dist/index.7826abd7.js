@@ -2929,16 +2929,15 @@ const heading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     lineNumber: 18,
     columnNumber: 17
 }, undefined);
-const Title = ()=>//omitting the return statement here, this is also valid syntax
-    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        id: "title",
-        children: " Cool stuff here "
-    }, "h9", false, {
-        fileName: "App.js",
-        lineNumber: 21,
-        columnNumber: 1
-    }, undefined);
-_c = Title;
+const Title = //omitting the return statement here, this is also valid syntax
+/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+    id: "title",
+    children: " Food Villa "
+}, "h9", false, {
+    fileName: "App.js",
+    lineNumber: 21,
+    columnNumber: 1
+}, undefined);
 const heading3 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
     children: [
         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -2963,43 +2962,84 @@ const heading3 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
     lineNumber: 22,
     columnNumber: 18
 }, undefined);
+const appLayout = ()=>{
+    return {
+    };
+};
 const HeaderComponent = ()=>{
-    // we can add React element like this in React component like {heading}
-    //Title() works because it is just calling the function
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 30,
-                columnNumber: 5
-            }, undefined),
-            3,
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Introduction to functional component"
+            Title,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: " Home "
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 52,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: " About "
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 53,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: " Contact "
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 54,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: " Cart "
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 55,
+                            columnNumber: 9
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "App.js",
+                    lineNumber: 51,
+                    columnNumber: 9
+                }, undefined)
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 32,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: " This is a h2 tag "
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 35,
-                columnNumber: 5
+                lineNumber: 50,
+                columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 29,
+        lineNumber: 48,
         columnNumber: 10
     }, undefined);
 };
-_c1 = HeaderComponent;
+_c = HeaderComponent;
+// const HeaderComponent=()=>{
+//     // we can add React element like this in React component like {heading}
+//     //Title() works because it is just calling the function
+//     return (
+//     <div>
+//     {Title}
+//     {1+2}
+//     <h2> 
+//     Introduction to functional component
+//     </h2>
+//     <h2> This is a h2 tag </h2>
+//     </div>
+//     );
+// }
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root")); //getElementByID is used to get the div which has the ID root at line number 10
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 39,
+    lineNumber: 75,
     columnNumber: 13
 }, undefined)); // passing a react element inside the root
 //dist folder stores the minified files 
@@ -3009,12 +3049,12 @@ const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: " Namaste React functional component"
         }, void 0, false, {
             fileName: "App.js",
-            lineNumber: 45,
+            lineNumber: 81,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "App.js",
-        lineNumber: 44,
+        lineNumber: 80,
         columnNumber: 32
     }, undefined); //this is alternative syntax without using return statement
  /* <div class="header">
@@ -3025,11 +3065,10 @@ const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 <li> Home </li>
             </ul>
         </div> --> <!-- I want to create this type of structure with React if I do this using React.createElement the code would be very lengthy and confusing*/ 
-_c2 = HeaderComponent2;
-var _c, _c1, _c2;
-$RefreshReg$(_c, "Title");
-$RefreshReg$(_c1, "HeaderComponent");
-$RefreshReg$(_c2, "HeaderComponent2");
+_c1 = HeaderComponent2;
+var _c, _c1;
+$RefreshReg$(_c, "HeaderComponent");
+$RefreshReg$(_c1, "HeaderComponent2");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {

@@ -83,3 +83,10 @@ We can execute any JS code inside curly braces {console.log("Hello")} inside the
 If I have an API that has some malicious code inside it let's call it data, and if it is called inside the React component like {data}, then malicious code gets excuted, this is known as cross site scripting. But JSX does something called sanitisation, it makes sure that the code is secure
 
 Component compposition is nothing but placing a component inside another component
+
+React function is also hoisted because it is also Jaavscript function at the end of the day 
+
+ES6 is not manadatory
+
+<Title/> is the most common syntax for using functional components, it is known as self closing tags
+
