@@ -19,7 +19,7 @@ const heading=(
     <h1> Namaste React </h1>
 )
 const Title=( //omitting the return statement here, this is also valid syntax
-    <h1 id="title" key="h9"> Food Villa </h1>
+    <img className="logo" src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj" alt="logo" /> 
 );
 const heading3=(
     <div>

@@ -2930,10 +2930,11 @@ const heading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     columnNumber: 17
 }, undefined);
 const Title = //omitting the return statement here, this is also valid syntax
-/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    id: "title",
-    children: " Food Villa "
-}, "h9", false, {
+/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+    className: "logo",
+    src: "https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj",
+    alt: "logo"
+}, void 0, false, {
     fileName: "App.js",
     lineNumber: 21,
     columnNumber: 1
