@@ -2899,7 +2899,22 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$c1db.prelude(module);
 
 try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/* Header
+            -Logo(Title)
+            -Nav Items (Right Side)
+            -Cart
+            Body
+            -Search bar
+            -Restaurant List
+            - Restaurant Card (many cards)
+            - Image
+            - Name
+            - Rating
+            - Cuisines
+        Footer
+            -links
+            -copyright
+        */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react"); //getting from node modules
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -2926,19 +2941,32 @@ const heading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     children: " Namaste React "
 }, void 0, false, {
     fileName: "App.js",
-    lineNumber: 18,
+    lineNumber: 34,
     columnNumber: 17
 }, undefined);
-const Title = //omitting the return statement here, this is also valid syntax
-/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-    className: "logo",
-    src: "https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj",
-    alt: "logo"
-}, void 0, false, {
-    fileName: "App.js",
-    lineNumber: 21,
-    columnNumber: 1
-}, undefined);
+const Title = ()=>{
+    //omitting the return statement here, this is also valid syntax
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+        href: "/",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "logo",
+                src: "https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj",
+                alt: "logo"
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 38,
+                columnNumber: 22
+            }, undefined),
+            "  "
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 38,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Title;
 const heading3 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
     children: [
         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -2946,7 +2974,7 @@ const heading3 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: " Namaste React "
         }, "abc", false, {
             fileName: "App.js",
-            lineNumber: 23,
+            lineNumber: 41,
             columnNumber: 5
         }, undefined),
         " /*This is known as JSX expression */",
@@ -2954,24 +2982,983 @@ const heading3 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: " This is a h2 tag "
         }, void 0, false, {
             fileName: "App.js",
-            lineNumber: 24,
+            lineNumber: 42,
             columnNumber: 5
         }, undefined)
     ]
 }, void 0, true, {
     fileName: "App.js",
-    lineNumber: 22,
+    lineNumber: 40,
     columnNumber: 18
 }, undefined);
-const appLayout = ()=>{
-    return {
-    };
+const restaurantList = [
+    {
+        name: "Burger King",
+        image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/w2tymj2fktik0n8bxs87",
+        cuisines: [
+            "Burger",
+            "American"
+        ],
+        rating: "4.2"
+    }
+];
+const restaurantListSwiggy = [
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "73011",
+            name: "KFC",
+            uuid: "27ff4155-fe46-418e-9862-ab98953bf953",
+            city: "22",
+            area: "Anand Vihar Colony",
+            totalRatingsString: "5000+ ratings",
+            cloudinaryImageId: "bdcd233971b7c81bf77e1fa4471280eb",
+            cuisines: [
+                "American",
+                "Snacks",
+                "Biryani"
+            ],
+            tags: [],
+            costForTwo: 30000,
+            costForTwoString: "₹300 FOR TWO",
+            deliveryTime: 31,
+            minDeliveryTime: 31,
+            maxDeliveryTime: 31,
+            slaString: "31 MINS",
+            lastMileTravel: 6.199999809265137,
+            slugs: {
+                restaurant: "kfc-chukkuwala-chukkuwala",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "KFC Restaurant, Khasra No 1281/1291, Opp Dr Manish Jain hospital, Chakrata road, Dehradun-248001",
+            locality: "Clock Tower",
+            parentId: 547,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            ribbon: [
+                {
+                    type: "PROMOTED"
+                }
+            ],
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "cid=5698075~p=1~eid=00000185-8b09-7c92-0e51-a04b00dc0124",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "6.1 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "73011",
+                deliveryTime: 31,
+                minDeliveryTime: 31,
+                maxDeliveryTime: 31,
+                lastMileTravel: 6.199999809265137,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: true,
+            avgRating: "4.0",
+            totalRatings: 5000,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "542132",
+            name: "Domnik Pizza",
+            uuid: "f2ee37f5-9ab0-4903-9420-6cae020b0a38",
+            city: "22",
+            area: "Majra    Bansal Home",
+            totalRatingsString: "50+ ratings",
+            cloudinaryImageId: "sboh9oor0cvp6ztsyhvj",
+            cuisines: [
+                "Pizzas",
+                "Italian",
+                "Fast Food",
+                "Snacks",
+                "Beverages"
+            ],
+            tags: [],
+            costForTwo: 30000,
+            costForTwoString: "₹300 FOR TWO",
+            deliveryTime: 33,
+            minDeliveryTime: 33,
+            maxDeliveryTime: 33,
+            slaString: "33 MINS",
+            lastMileTravel: 0.6000000238418579,
+            slugs: {
+                restaurant: "domnik-pizza-patel-nagar-patel-nagar-2",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "28/3 Sewala Chandravani Road, Arcedia Grant, Dehradun Rural, Dehradun, Uttarakhand",
+            locality: "Patel Nagar",
+            parentId: 22321,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "0.6 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "542132",
+                deliveryTime: 33,
+                minDeliveryTime: 33,
+                maxDeliveryTime: 33,
+                lastMileTravel: 0.6000000238418579,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: false,
+            avgRating: "3.8",
+            totalRatings: 50,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "321517",
+            name: "FOOD PLANET RESTAURANT",
+            uuid: "899d5dd4-200a-48b2-a321-391bb9486ec2",
+            city: "22",
+            area: "Majra",
+            totalRatingsString: "50+ ratings",
+            cloudinaryImageId: "ykboewqeoxnne8fgrnui",
+            cuisines: [
+                "Indian",
+                "Chinese",
+                "Tandoor",
+                "Thalis",
+                "Fast Food"
+            ],
+            tags: [],
+            costForTwo: 20000,
+            costForTwoString: "₹200 FOR TWO",
+            deliveryTime: 25,
+            minDeliveryTime: 25,
+            maxDeliveryTime: 25,
+            slaString: "25 MINS",
+            lastMileTravel: 0.699999988079071,
+            slugs: {
+                restaurant: "food-planet-restaurant-patel-nagar-patel-nagar",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "157/11, Chandra Parisar Chandra Bani Rd, Ekta Enclave, Doon Enclave, Majra, Dehradun, Uttarakhand 248171",
+            locality: "Patel Nagar",
+            parentId: 81850,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "0.6 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "321517",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                lastMileTravel: 0.699999988079071,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: false,
+            avgRating: "2.8",
+            totalRatings: 50,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "311806",
+            name: "Burger King",
+            uuid: "162a4dc4-50de-452a-82cf-751e18ac9952",
+            city: "22",
+            area: "Anand Vihar Colony",
+            totalRatingsString: "5000+ ratings",
+            cloudinaryImageId: "iqh7ew5ldfgvpd5dpz60",
+            cuisines: [
+                "Burgers",
+                "American"
+            ],
+            tags: [],
+            costForTwo: 35000,
+            costForTwoString: "₹350 FOR TWO",
+            deliveryTime: 39,
+            minDeliveryTime: 39,
+            maxDeliveryTime: 39,
+            slaString: "39 MINS",
+            lastMileTravel: 6.300000190734863,
+            slugs: {
+                restaurant: "burger-king-chakrata-road-ballupur",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "5/5,4/4 & 3/3, GROUND FLOOR, CHAKRATA ROAD, DEHRADUN, UTTRAKHAND",
+            locality: "CHAKRATA ROAD",
+            parentId: 166,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "60% off",
+                shortDescriptionList: [
+                    {
+                        meta: "60% off | Use STEALDEAL",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "60% off up to ₹120 | Use code STEALDEAL",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "60% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use STEALDEAL",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "60% off up to ₹120 | Use code STEALDEAL",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            ribbon: [
+                {
+                    type: "PROMOTED"
+                }
+            ],
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "cid=5700193~p=4~eid=00000185-8b09-7c92-0e51-a04c00dc0405",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "6.3 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "311806",
+                deliveryTime: 39,
+                minDeliveryTime: 39,
+                maxDeliveryTime: 39,
+                lastMileTravel: 6.300000190734863,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: true,
+            avgRating: "4.2",
+            totalRatings: 5000,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "132460",
+            name: "Annapurna Andhra Mess",
+            uuid: "c6460418-904b-4371-9e04-0ce8b1b46cae",
+            city: "22",
+            area: "Dehradun",
+            totalRatingsString: "1000+ ratings",
+            cloudinaryImageId: "zw4qx2szsy9kbszk9n3d",
+            cuisines: [
+                "South Indian",
+                "Biryani",
+                "North Indian"
+            ],
+            tags: [],
+            costForTwo: 20000,
+            costForTwoString: "₹200 FOR TWO",
+            deliveryTime: 25,
+            minDeliveryTime: 25,
+            maxDeliveryTime: 25,
+            slaString: "25 MINS",
+            lastMileTravel: 1.399999976158142,
+            slugs: {
+                restaurant: "annapurna-andhra-mess-subhash-nagar-subhash-nagar",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "keshav enclave sewla khurd chandrabani road behind uttranchal PG college",
+            locality: "Patel Nagar",
+            parentId: 33997,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "1.3 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "132460",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                lastMileTravel: 1.399999976158142,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: false,
+            avgRating: "4.0",
+            totalRatings: 1000,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "496677",
+            name: "Uncle Ji Restaurant",
+            uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+            city: "22",
+            area: "Patel Nagar",
+            totalRatingsString: "Too Few Ratings",
+            cloudinaryImageId: "kx2ghnwagcnqjtmd5jbc",
+            cuisines: [
+                "North Indian",
+                "Snacks",
+                "Beverages"
+            ],
+            tags: [],
+            costForTwo: 30000,
+            costForTwoString: "₹300 FOR TWO",
+            deliveryTime: 31,
+            minDeliveryTime: 31,
+            maxDeliveryTime: 31,
+            slaString: "31 MINS",
+            lastMileTravel: 0.800000011920929,
+            slugs: {
+                restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "348 santosh tower, majra road gram majra dehradun 248001",
+            locality: "Patel Nagar",
+            parentId: 298209,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "0.8 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "496677",
+                deliveryTime: 31,
+                minDeliveryTime: 31,
+                maxDeliveryTime: 31,
+                lastMileTravel: 0.800000011920929,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: false,
+            avgRating: "--",
+            totalRatings: 0,
+            new: false
+        },
+        subtype: "basic"
+    }
+];
+//config driven UI
+const config = [
+    {
+        type: "carousel",
+        cards: [
+            {
+                offerName: "50% off"
+            },
+            {
+                offerName: "No delivery Charge "
+            }
+        ]
+    },
+    {
+        type: "restaurant",
+        cards: [
+            {
+                name: "Burger King",
+                image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/w2tymj2fktik0n8bxs87",
+                cuisines: [
+                    "Burger",
+                    "American"
+                ],
+                rating: "4.2"
+            },
+            {
+                name: " KFC ",
+                image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/w2tymj2fktik0n8bxs87",
+                cuisines: [
+                    "Burger",
+                    "American"
+                ],
+                rating: "4.2"
+            }
+        ]
+    }
+];
+const RestaurantCard = ({ restaurant  })=>{
+    const { name , cuisines , cloudinaryImageId , lastMileTravelString  } = restaurant.data; //destructing restaurant.data
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 749,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: [
+                    " ",
+                    name,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 750,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    " ",
+                    cuisines.join(", "),
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 751,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    " ",
+                    lastMileTravelString,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 752,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 748,
+        columnNumber: 10
+    }, undefined);
 };
-const HeaderComponent = ()=>{
+_c1 = RestaurantCard;
+const Body = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "restaurant-list",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
+                restaurant: restaurantListSwiggy[0]
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 757,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
+                restaurant: restaurantListSwiggy[1]
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 758,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
+                restaurant: restaurantListSwiggy[2]
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 759,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
+                restaurant: restaurantListSwiggy[3]
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 760,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 756,
+        columnNumber: 10
+    }, undefined);
+};
+_c2 = Body;
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+        children: " Footer "
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 764,
+        columnNumber: 10
+    }, undefined);
+};
+_c3 = Footer;
+const styleObject = {
+    backgroundColor: "yellow"
+};
+const jsx = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    style: styleObject,
+    children: [
+        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: [
+                " Hi",
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    children: " Hello "
+                }, void 0, false, {
+                    fileName: "App.js",
+                    lineNumber: 769,
+                    columnNumber: 45
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "App.js",
+            lineNumber: 769,
+            columnNumber: 38
+        }, undefined),
+        " "
+    ]
+}, void 0, true, {
+    fileName: "App.js",
+    lineNumber: 769,
+    columnNumber: 13
+}, undefined);
+const AppLayout = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).Fragment, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 772,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 773,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 774,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 771,
+        columnNumber: 10
+    }, undefined);
+};
+_c4 = AppLayout;
+const Header = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header",
         children: [
-            Title,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 779,
+                columnNumber: 9
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "nav-items",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -2980,49 +3967,49 @@ const HeaderComponent = ()=>{
                             children: " Home "
                         }, void 0, false, {
                             fileName: "App.js",
-                            lineNumber: 52,
+                            lineNumber: 782,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: " About "
                         }, void 0, false, {
                             fileName: "App.js",
-                            lineNumber: 53,
+                            lineNumber: 783,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: " Contact "
                         }, void 0, false, {
                             fileName: "App.js",
-                            lineNumber: 54,
+                            lineNumber: 784,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: " Cart "
                         }, void 0, false, {
                             fileName: "App.js",
-                            lineNumber: 55,
+                            lineNumber: 785,
                             columnNumber: 9
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "App.js",
-                    lineNumber: 51,
+                    lineNumber: 781,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 50,
+                lineNumber: 780,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 48,
+        lineNumber: 778,
         columnNumber: 10
     }, undefined);
 };
-_c = HeaderComponent;
+_c5 = Header;
 // const HeaderComponent=()=>{
 //     // we can add React element like this in React component like {heading}
 //     //Title() works because it is just calling the function
@@ -3038,24 +4025,23 @@ _c = HeaderComponent;
 //     );
 // }
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root")); //getElementByID is used to get the div which has the ID root at line number 10
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 75,
+    lineNumber: 805,
     columnNumber: 13
 }, undefined)); // passing a react element inside the root
-//dist folder stores the minified files 
 //React Component
 const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
             children: " Namaste React functional component"
         }, void 0, false, {
             fileName: "App.js",
-            lineNumber: 81,
+            lineNumber: 810,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "App.js",
-        lineNumber: 80,
+        lineNumber: 809,
         columnNumber: 32
     }, undefined); //this is alternative syntax without using return statement
  /* <div class="header">
@@ -3066,10 +4052,15 @@ const HeaderComponent2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 <li> Home </li>
             </ul>
         </div> --> <!-- I want to create this type of structure with React if I do this using React.createElement the code would be very lengthy and confusing*/ 
-_c1 = HeaderComponent2;
-var _c, _c1;
-$RefreshReg$(_c, "HeaderComponent");
-$RefreshReg$(_c1, "HeaderComponent2");
+_c6 = HeaderComponent2;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6;
+$RefreshReg$(_c, "Title");
+$RefreshReg$(_c1, "RestaurantCard");
+$RefreshReg$(_c2, "Body");
+$RefreshReg$(_c3, "Footer");
+$RefreshReg$(_c4, "AppLayout");
+$RefreshReg$(_c5, "Header");
+$RefreshReg$(_c6, "HeaderComponent2");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {

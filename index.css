@@ -14,3 +14,16 @@
 .logo{
     width:100px;
 }
+.card{
+    width:200px;
+    border: 1px solid black;
+    padding:10px;
+    margin:10px;
+}
+.card>img{
+    width:100%; /* resize to size of card */
+}
+.restaurant-list{
+    display:flex;
+    flex-wrap: wrap;
+}

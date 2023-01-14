@@ -1,6 +1,6 @@
-<!--Anything we can generate on server like parcel-cache or node_modules should be in gitignore, but package-lock.json can't be put in gitignore-->
+d<!--Anything we can generate on server like parcel-cache or node_modules should be in gitignore, but package-lock.json can't be put in gitignore-->
         <!-- React is not fast only because of virtual DOM but because of bundlers (like parcel or vite or webpack)-->
-
+//dist folder stores the minified files 
 
 We have a package manager which takes care of our transitive dependencies (transitive dependecies means dependecies which can further have even more dependencies)
 
@@ -90,3 +90,31 @@ ES6 is not manadatory
 
 <Title/> is the most common syntax for using functional components, it is known as self closing tags
 
+Very important point: each JSX element must have only one parent element so const jsx=<h1> Hi<h2> Hello </h2></h1> is invalid syntax, it shoud be wrapped inside a div like const jsx=<div><h1> Hi<h2> Hello </h2></h1> </div>
+
+If I don't use React Fragment then the structure looks something like <div id="root"> <div> <h1> Hi </h1> <h2> Hello</h2></div></div>, the div inside div is ugly, so we use react fragement
+
+react fragment is a component that is exported from react, if used then the strcuture looks like 
+<div id="root">  <h1> Hi </h1> <h2> Hello</h2></div>, the extra div gets eliminated
+
+for multiple elements, I can use either div or react.fragment
+
+React.fragment is like an empty tag
+React.fragment is written in short form as <>
+
+<div style={styleObject}>
+Inline styling in react, we need to pass javascript object, another way it to give the div a class with className and define the style in style.css file
+
+Config driven UI: The frontend website is displayed using the data sent by API on backend. 
+example : swiggy in bengaluru might have 10% discount and in delhi may have 50% discount
+
+config driven UI is a huge plus point in interviews
+Carousel are those images like 50% off etc which appeaer on top
+
+Optional chaining?. TODO
+
+props (shorthand for properties): passing props meaning passing data/properties into a component
+
+React bundles all the passed parameters into a single object called props
+
+{restaurant} means destructuring the props
