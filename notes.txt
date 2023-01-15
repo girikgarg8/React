@@ -131,8 +131,55 @@ Virtual DOM is not the actual DOM, it is a representnation of DOM
 
 Diff algorithm finds out the difference between the DOM and virtual DOM (just like git diff)
 
-After React-16, React introduced a new reconciliation engine called React Fiber
+After Rect-16, React introduced a new reconciliation engine called React Fiber
 
 Never use index as a key in react
 
 No key (not acceptable) <<<<<index key (okay way,use only if you don't have anything) <<unique key (best practice)
+
+There are two ways to export in javascript: one of them is using export default
+export defualt is just used to export one function.
+
+exporting by default vs exporting by name: syntax for export by name is export const Title=()=>{
+  function body
+}
+while importing a js file exported by name, the syntax will be import {Title} from './components/Header.js' (this is called as named import)
+
+import {Title} from "./components/Header": This is not object destructuring, although it looks like object destructuring
+
+import * as obj from "./components/Header": for importing all functions and then use a particular function like obj.Title
+
+Using import from "./components/Header" or "./components/Header.js"
+
+Some developers even prefer to use Header.jsx instead of Header.js because it contains jsx code, even that works absolutely fine.
+
+The config file is used to put the hardcoded things of the project
+
+If I create a search button using 
+const txt="Girik"
+<input type="text" className="search-input" placeholder="Search" value="{txt}"></input>, it will not accept any data from the user, the reason being that React uses one way binding, meaning that data can only flow from the code to the user but not from the user to the code
+
+One way data binding is actually good in a sense that it makes our app predictable, because we might be using that variable at many places in the code, so the value can be changed by different values. But it creates a problem for us because we can't take input from the user. 
+so I need to use onChange attribute for this function, something like: TODO
+
+whenever I have changing variables in React, I need to use a kind of React variable called state variables (every component in React has a state)
+
+React hook is just a javascript function at the end of the day and these functions give us some functionalities.
+
+
+useState hook: const [searchText]=useState()
+useState hook return an array [variable name, function to update the variable]
+what is use of function useState? to create local state variables
+
+I can't directly set the variables in the react component, I need to use function provided by useState(), something like:
+const [searchText,setSearchText]=useState("KFC") and then use the function setSearchText 
+
+in the onChange function as a callback function in: onChange={(e)=>
+        {setSearchInput(e.target.value)} 
+       } 
+
+Interview question: why do we need state variables when I have local variables?
+if I use a local variable let var1=11, and if I update the variable var1 to some other value like 12, then React component would not come to know that the value of local variable has been updated
+
+So React says that at any time if we want the variables to be in sync with the UI, we need to use state variables
+

@@ -3850,7 +3850,7 @@ const Body = ()=>{
         children: restaurantListSwiggy.map((restaurant)=>{
             return /*#__PURE__*/ (0, _react.createElement)(RestaurantCard, {
                 ...restaurant.data,
-                key: restaurantListSwiggy.data.id,
+                key: restaurant.data.id,
                 __source: {
                     fileName: "App.js",
                     lineNumber: 755,
