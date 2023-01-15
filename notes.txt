@@ -118,3 +118,21 @@ props (shorthand for properties): passing props meaning passing data/properties 
 React bundles all the passed parameters into a single object called props
 
 {restaurant} means destructuring the props
+
+... is spread operator in javascript which spreadss the contents of the array
+
+Virtual DOM is not only used in React, it is a software engineering concept, virtual dom is a representnation of the DOM in our code
+
+React does something known as reconiciliation, reconciliation uses diff algorithm to find out differences between actual DOM and virtual DOM and rerenders that small part which is different in the real DOM and virtual DOM
+
+Whenever there are multiple tags of same type (all h1 or all div), then React doesn't know which new div has come, it will rerender all the div's because it can't distinguish between them, but by using a unique key with each div, React knows which div to re-render and so the performance of React app improves
+
+Virtual DOM is not the actual DOM, it is a representnation of DOM
+
+Diff algorithm finds out the difference between the DOM and virtual DOM (just like git diff)
+
+After React-16, React introduced a new reconciliation engine called React Fiber
+
+Never use index as a key in react
+
+No key (not acceptable) <<<<<index key (okay way,use only if you don't have anything) <<unique key (best practice)

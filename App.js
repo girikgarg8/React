@@ -829,12 +829,13 @@ const RestaurantCard = ({ name, cuisines, cloudinaryImageId, lastMileTravelStrin
 const Body=()=>{
     return (
         <div className="restaurant-list">
-        <RestaurantCard restaurant={...restaurantListSwiggy[0].data} />
-        <RestaurantCard restaurant={...restaurantListSwiggy[1].data} />
-        <RestaurantCard restaurant={...restaurantListSwiggy[2].data} />
-        <RestaurantCard restaurant={...restaurantListSwiggy[3].data} />
+          {
+            restaurantListSwiggy.map((restaurant)=>{
+              return <RestaurantCard {...restaurant.data} key={restaurantListSwiggy.data.id}/>
+            })
+          }
         </div>
-    )
+    ) 
 }
 const Footer=()=>{
     return (
