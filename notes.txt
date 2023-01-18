@@ -183,3 +183,49 @@ if I use a local variable let var1=11, and if I update the variable var1 to some
 
 So React says that at any time if we want the variables to be in sync with the UI, we need to use state variables
 
+Entire component is re-rendered, so if we print ('render'), it will get printed (from 6th chapter of React, exploring the world 1 1080pixel), 
+
+Whenever there is any change in the state, React quickly rerenders the entire component gets
+
+Important concept in industry: microservices
+Swiggy/uber is not made of single React app etc
+
+In earlier days: in same project, aws, ui (jsp pages) and code to send SMS was there
+for just one icon change, they had to deploy the whole project
+This is called monolith architecture
+
+The world  (newer companies are moving towards microservices architecture)
+
+Microservice App: Separate projects for UI, logs, SMS etc
+Let's say UI is running on port 1234 and API is working on port 1235
+advantage: 1) seperation of concern (important term): we don't need to worry about the other microservices, what they are doing or not
+
+The different microservices can be written in different languages like UI can be written in React, backend can be written in Java, etc
+
+What we are making in this project is the UI microservices
+
+So the different mictoservices can be hosted on different ports (or different URLs too):
+like swiggy.com (UI) on port 3000
+swiggy.com/api on port 4000
+swiggy.com/notifications on port 5000
+
+or it can be like github.com or api.github.com
+
+Exploring the world means communication between UI microservice and API microservice
+
+const Body = () => {
+  IMPORTANT: if I call fetch() here, it will rerender on each UI update
+  // const searchTxt="KFC"
+  //searchText is a local state variable
+  const [searchText,setSearchInput]=useState("") //to create state varibable
+  return (
+    <div> .....</div>
+  )
+
+There are two ways:
+1) the website request is made->make an API call (say, it takes about 300 ms)->render page in React (say it takes 200 ms ) in total takes about 500 ms
+
+2) the website request is made-> show some intial page (maybe even render the page)->make the API call-> update the UI (takes 300 ms in total let's say)
+
+second way is a better way due to enhancing user experience
+

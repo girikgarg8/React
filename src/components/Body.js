@@ -13,6 +13,7 @@ const Body = () => {
   //searchText is a local state variable
   const [searchText,setSearchInput]=useState("") //to create state varibable
   // const [searchClicked,setSearchClicked]=useState("false")
+  console.log("render()")
   const [restaurants,setRestaurants]=useState(restaurantListSwiggy)
   return (
     <>
