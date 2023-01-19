@@ -78,7 +78,12 @@ const heading=()=>{
 
 React element at the end of the day is an object and a React functional based component is a function.
 
-We can execute any JS code inside curly braces {console.log("Hello")} inside the React component
+We can execute any JS code (any JS aexpression not statement) inside curly braces {console.log("Hello")} inside the React component
+for example, the code {
+  let a=10;
+  console.log(a) will not work, because these are two js statements
+}
+but if we convert it into a js expression, something like ((a=10),console.log(a)) it will work
 
 If I have an API that has some malicious code inside it let's call it data, and if it is called inside the React component like {data}, then malicious code gets excuted, this is known as cross site scripting. But JSX does something called sanitisation, it makes sure that the code is secure
 
@@ -266,5 +271,7 @@ This is done to improve user experience so that the data does not appear all of 
 
 This is known as shimmer effect : https://blog.logrocket.com/implement-shimmer-effect-flutter/#:~:text=What%20is%20a%20shimmer%20effect,when%20the%20data%20is%20available. Read more about it here
 
-Conditional rerendering:
+Conditional rerendering: means if restaurant is empty, then load shimmer UI otherwise load actual UI
+
+Diff algorithm is defined in React not react-dom (diff algorithm is same in react-dom and react-native for mobile applications)
 
