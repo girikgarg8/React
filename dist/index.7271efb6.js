@@ -27451,11 +27451,17 @@ function filterData(searchText, restaurants) {
 }
 const Body = ()=>{
     _s();
-    // const searchTxt="KFC"
-    //searchText is a local state variable
     const [searchText, setSearchInput] = (0, _react.useState)(""); //to create state varibable
-    // const [searchClicked,setSearchClicked]=useState("false")
     const [restaurants, setRestaurants] = (0, _react.useState)((0, _configJs.restaurantListSwiggy));
+    (0, _react.useEffect)(()=>{
+        getRestaurants();
+    }, []);
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7335152&lng=76.7826359&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
+        const json = await data.json();
+        //optional chaining
+        setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27471,7 +27477,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 17,
+                        lineNumber: 22,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27485,24 +27491,24 @@ const Body = ()=>{
                         children: " Search "
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 20,
+                        lineNumber: 25,
                         columnNumber: 7
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 16,
+                lineNumber: 21,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "restaurant-list",
-                children: restaurants.map((restaurant)=>{
+                children: restaurants?.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardJs.RestaurantCard), {
                         ...restaurant.data,
                         key: restaurant.data.id,
                         __source: {
                             fileName: "src/components/Body.js",
-                            lineNumber: 29,
+                            lineNumber: 34,
                             columnNumber: 16
                         },
                         __self: undefined
@@ -27510,13 +27516,13 @@ const Body = ()=>{
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 27,
+                lineNumber: 32,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "HvCo2V6/LKz9u9aPI72BJBPcB18=");
+_s(Body, "n/l9IA6Lx0j4nYaNz5V73KQ6D48=");
 _c = Body;
 exports.default = Body;
 var _c;

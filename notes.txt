@@ -229,3 +229,32 @@ There are two ways:
 
 second way is a better way due to enhancing user experience
 
+useEffect is a hook for accomplishing the second way (rendering a page first, call and API and then updating in the UI)
+
+in useEffect() function, we pass a callback function so the syntax looks something like:
+
+useEffect(()=>{
+  callback function body
+})
+
+callbac function means that the function will not be called immediately, it will be called when useEffect wants to call it
+
+so using useEffect hook, the function for API call will be called after the code of UI has executed (the second case which we discussed above)
+
+useEffect is imported using named import from "react"
+
+When will component render? 2 ways: state changes or prop changes
+
+Now there's a catch: we don't want to call the callback function after every re-render, so we use a dependency array
+
+so overall syntax of useEffect looks like
+useEffect(()=>{
+  console.log("render")
+},[])
+
+use case: we want to cal useEffect only when searchText is changed
+
+If dependency array is empty then that component will not re-reneder for any update
+
+If empty dependency array, then console.log() will be called once after render
+if dependendcy array is [searchText], then it will be called once after intitial render and everytime after render (every time searchText changes)

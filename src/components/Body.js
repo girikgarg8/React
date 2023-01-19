@@ -1,6 +1,6 @@
  import { restaurantListSwiggy } from "../config.js";
 import { RestaurantCard } from "./RestaurantCard.js";
-import {useState} from "react";
+import {useState,useEffect} from "react";
 
 function filterData(searchText,restaurants){
     const filterData=restaurants.filter((restaurant)=>
@@ -9,12 +9,19 @@ function filterData(searchText,restaurants){
     return filterData
 }
 const Body = () => {
-  // const searchTxt="KFC"
-  //searchText is a local state variable
+
   const [searchText,setSearchInput]=useState("") //to create state varibable
-  // const [searchClicked,setSearchClicked]=useState("false")
-  console.log("render()")
   const [restaurants,setRestaurants]=useState(restaurantListSwiggy)
+  useEffect(() => {
+    getRestaurants();
+  }, []);
+
+  async function getRestaurants(){
+    const data = await fetch ("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7335152&lng=76.7826359&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING")
+    const json=await data.json();
+    //optional chaining
+    setRestaurants(json?.data?.cards[2]?.data?.data?.cards)
+  }
   return (
     <>
     <div className="search-container">
@@ -30,7 +37,7 @@ const Body = () => {
     </div>
     <div className="restaurant-list">
       {
-        restaurants.map((restaurant) => {
+        restaurants?.map((restaurant) => {
           return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
         })
       }
