@@ -2935,41 +2935,42 @@ const heading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     children: " Namaste React "
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 27,
-    columnNumber: 17
+    lineNumber: 29,
+    columnNumber: 3
 }, undefined);
 const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 30,
+                lineNumber: 35,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyJsDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 31,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 32,
+                lineNumber: 37,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 29,
-        columnNumber: 10
+        lineNumber: 34,
+        columnNumber: 5
     }, undefined);
 };
 _c = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 36,
+    lineNumber: 42,
     columnNumber: 13
-}, undefined)); // passing a react element inside the root
+}, undefined)) // passing a react element inside the root
+;
 var _c;
 $RefreshReg$(_c, "AppLayout");
 
@@ -27339,7 +27340,6 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Title", ()=>Title);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Title = ()=>{
-    //omitting the return statement here, this is also valid syntax
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
         href: "/",
         children: [
@@ -27349,15 +27349,15 @@ const Title = ()=>{
                 alt: "logo"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 3,
-                columnNumber: 22
+                lineNumber: 2,
+                columnNumber: 25
             }, undefined),
             "  "
         ]
     }, void 0, true, {
         fileName: "src/components/Header.js",
-        lineNumber: 3,
-        columnNumber: 10
+        lineNumber: 2,
+        columnNumber: 12
     }, undefined);
 };
 _c = Title;
@@ -27417,7 +27417,7 @@ const Header = ()=>{
     }, void 0, true, {
         fileName: "src/components/Header.js",
         lineNumber: 6,
-        columnNumber: 10
+        columnNumber: 9
     }, undefined);
 };
 _c1 = Header;
@@ -27451,13 +27451,16 @@ function filterData(searchText, restaurants) {
 }
 const Body = ()=>{
     _s();
-    const [searchText, setSearchInput] = (0, _react.useState)(""); //to create state varibable
-    const [restaurants, setRestaurants] = (0, _react.useState)((0, _configJs.restaurantListSwiggy));
+    const [searchText, setSearchInput] = (0, _react.useState)("") //to create state varibable
+    ;
+    const [restaurants, setRestaurants] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
         getRestaurants();
-    }, []);
+    }, [
+        searchText
+    ]);
     async function getRestaurants() {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7335152&lng=76.7826359&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7335152&lng=76.7826359&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
         //optional chaining
         setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
@@ -27477,7 +27480,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 22,
+                        lineNumber: 28,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27491,13 +27494,13 @@ const Body = ()=>{
                         children: " Search "
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 25,
+                        lineNumber: 31,
                         columnNumber: 7
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 21,
+                lineNumber: 27,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27508,21 +27511,21 @@ const Body = ()=>{
                         key: restaurant.data.id,
                         __source: {
                             fileName: "src/components/Body.js",
-                            lineNumber: 34,
-                            columnNumber: 16
+                            lineNumber: 41,
+                            columnNumber: 18
                         },
                         __self: undefined
                     });
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 32,
+                lineNumber: 38,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "n/l9IA6Lx0j4nYaNz5V73KQ6D48=");
+_s(Body, "yTQggncXST9vxf1btE6693+i0kw=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -28313,7 +28316,7 @@ const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelSt
                 src: (0, _configJs.IMG_CDN_URL) + cloudinaryImageId
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 9,
+                lineNumber: 5,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -28324,7 +28327,7 @@ const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelSt
                 ]
             }, void 0, true, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 10,
+                lineNumber: 6,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -28335,7 +28338,7 @@ const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelSt
                 ]
             }, void 0, true, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 11,
+                lineNumber: 7,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
@@ -28346,14 +28349,14 @@ const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelSt
                 ]
             }, void 0, true, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 12,
+                lineNumber: 8,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/RestaurantCard.js",
-        lineNumber: 8,
-        columnNumber: 10
+        lineNumber: 4,
+        columnNumber: 9
     }, undefined);
 };
 _c = RestaurantCard;
@@ -28380,8 +28383,8 @@ const Footer = ()=>{
         children: " Footer "
     }, void 0, false, {
         fileName: "src/components/Footer.js",
-        lineNumber: 2,
-        columnNumber: 10
+        lineNumber: 3,
+        columnNumber: 9
     }, undefined);
 };
 _c = Footer;

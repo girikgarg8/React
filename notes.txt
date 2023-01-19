@@ -258,3 +258,13 @@ If dependency array is empty then that component will not re-reneder for any upd
 
 If empty dependency array, then console.log() will be called once after render
 if dependendcy array is [searchText], then it will be called once after intitial render and everytime after render (every time searchText changes)
+
+The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called is undefined or null, it returns undefined instead of throwing an error.
+
+When we open swiggy.com, we see some empty boxes at the first and then the restaarant cards appear
+This is done to improve user experience so that the data does not appear all of a sudden on the page after the loading rotating in circular fashion
+
+This is known as shimmer effect : https://blog.logrocket.com/implement-shimmer-effect-flutter/#:~:text=What%20is%20a%20shimmer%20effect,when%20the%20data%20is%20available. Read more about it here
+
+Conditional rerendering:
+
