@@ -34,4 +34,11 @@
   display: flex;
 }
 
+.shimmer-card {
+  width: 200px;
+  height: 200px;
+  background: #d3d3d3;
+  margin: 20px;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

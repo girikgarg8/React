@@ -57,6 +57,10 @@ So the flow goes like:  JSX -> React.createElement -> Object-> HTML (mounted on 
 babel is installed along with parcel
 there is second package-lock.json in node_modules which has details about versions of all transitve dependcies (babel is present in node_modules )
 
+tilde (~) notation: It is used to match the most recent patch version. Tilde ~ notation freezes the major version and minor version. As we know patch updates are bug fixes that’s why we can say ~ notation allows us to automatically accept bug fixes.
+
+Caret (^) notation: It is used for automatically updating the minor updates along with patch updates. 
+
 Everything is a component in react
 
 Reaction based components:functional based components (new, will be taught) and class based components  is the old way of writing code
@@ -275,3 +279,33 @@ Conditional rerendering: means if restaurant is empty, then load shimmer UI othe
 
 Diff algorithm is defined in React not react-dom (diff algorithm is same in react-dom and react-native for mobile applications)
 
+If I don't specify any dependency in the useEffect hook, something like useEffect(function), it assumes dependency on each variable, so it will be called after every re-render but for empty array [], useEfffect will be called only during initial render
+
+It's not a good idea to define a component inside another component, for example, the following code is not good:
+
+const appLayout=()=>{
+  const func=(){
+
+  }
+}
+Reason: every time there is a change in appLayout, func will be rerendered too
+
+Never use a useState hook inside a for loop or if condition(because it leads to inconsistencies)
+Never use useState outside the functional component
+
+It is completely fine to use multiple useEffect inside a functional component, but perforemance of app will go down
+
+For using routing in React, there can be different types of routers (available in documentation) but most commonly we use createBrowserRouter 
+
+while specifying the routing, we use path and element, path specifies the path like '/about' and element specifies which component is to be used
+
+Just using createBrowserRouter from react-router-dom won't work because we need to provide thr router to the app, so we use, for this we use RouterProvider compoennt from react-router-dom
+
+
+useRouteError is a hook provided inside react-router-dom which returns an object containgin detailed information abput why rotuing failed
+
+Single Page applications(SPA's): in earlier days, there used to be different pages for different pages of the website lie website.com/about.html or website.com/contact.html: a network call had to be made for visiting different pages on the same website: but this is not the case with single page applications
+
+Two types of routing in React: client side routing and server based routing
+Server based routing: the new page will come from the server
+client side routing: we don't make a network call, 

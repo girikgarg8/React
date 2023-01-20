@@ -24,7 +24,9 @@ import Body from "./components/Body.js"
 import Footer from "./components/Footer";
 import { IMG_CDN_URL } from "./config.js";
 import { RestaurantCard } from "./components/RestaurantCard";
-
+import About from "./components/About"
+import Error from "./components/Error";
+import { createBrowserRouter,RouterProvider} from "react-router-dom";
 const heading = (
   <h1> Namaste React </h1>
 )
@@ -38,6 +40,18 @@ const AppLayout = () => {
     </React.Fragment>
   );
 }
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error/>
+  },
+  {
+     path: "/about",
+     element: <About/>
+  }
+])
 const root = ReactDOM.createRoot(document.getElementById("root")) 
-root.render(<AppLayout />) // passing a react element inside the root
+root.render(<RouterProvider router={appRouter} />) // passing a react element inside the root
 

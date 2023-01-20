@@ -2,6 +2,7 @@
 import { RestaurantCard } from "./RestaurantCard.js";
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer.js";
+import { createBrowserRouter } from "react-router-dom";
 
 function filterData(searchText,restaurants){
     const filterData=restaurants.filter((restaurant)=>
@@ -26,7 +27,7 @@ const Body = () => {
   }
   if (!allRestaurants) return null; //not render component, early return 
 
-  if (filteredRestaurants.length==0) return <h1> No restaurants match your filter!! </h1>
+  // if (filteredRestaurants.length==0) return <h1> No restaurants match your filter!! </h1>
   return (allRestaurants?.length===0)? <Shimmer/>:(
     <>
     <div className="search-container">
