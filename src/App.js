@@ -26,7 +26,9 @@ import { IMG_CDN_URL } from "./config.js";
 import { RestaurantCard } from "./components/RestaurantCard";
 import About from "./components/About"
 import Error from "./components/Error";
-import { createBrowserRouter,RouterProvider} from "react-router-dom";
+import Contact from "./components/Contact";
+import { createBrowserRouter,RouterProvider,Link,Outlet} from "react-router-dom";
+import RestaurantDetail from "./components/RestuarantDetail";
 const heading = (
   <h1> Namaste React </h1>
 )
@@ -35,7 +37,7 @@ const AppLayout = () => {
   return (
     <React.Fragment>
       <Header />
-      <Body />
+      <Outlet/>
       <Footer />
     </React.Fragment>
   );
@@ -45,11 +47,25 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <Error/>
-  },
-  {
-     path: "/about",
-     element: <About/>
+    errorElement: <Error/>,
+    children:[
+      {
+        path:"/",
+        element: <Body/>
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact/>
+      },
+      {
+        path:"/restaurant/:id",
+        element: <RestaurantDetail/>
+      }
+    ]
   }
 ])
 const root = ReactDOM.createRoot(document.getElementById("root")) 
