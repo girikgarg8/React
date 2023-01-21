@@ -1,5 +1,6 @@
 import { useEffect,useState} from "react";
 import {useParams} from "react-router-dom" 
+import { IMG_CDN_URL } from "../config.js";
 const RestaurantDetail=()=>{
     const params=useParams();
     const {id} =params; //how to read a dynamic URL params
@@ -17,6 +18,7 @@ const RestaurantDetail=()=>{
         <>
         <h1> Welcome to restaurant :{id} </h1>
         <h2> {restaurant.name} </h2>
+        <img src={IMG_CDN_URL+restaurant.cloudinaryImageId} />
         </>
     )
 }

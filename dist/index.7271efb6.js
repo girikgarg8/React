@@ -33670,6 +33670,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
+var _configJs = require("../config.js");
 var _s = $RefreshSig$();
 const RestaurantDetail = ()=>{
     _s();
@@ -33694,7 +33695,7 @@ const RestaurantDetail = ()=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/RestuarantDetail.js",
-                lineNumber: 18,
+                lineNumber: 19,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -33705,7 +33706,14 @@ const RestaurantDetail = ()=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/RestuarantDetail.js",
-                lineNumber: 19,
+                lineNumber: 20,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: (0, _configJs.IMG_CDN_URL) + restaurant.cloudinaryImageId
+            }, void 0, false, {
+                fileName: "src/components/RestuarantDetail.js",
+                lineNumber: 21,
                 columnNumber: 9
             }, undefined)
         ]
@@ -33726,6 +33734,6 @@ $RefreshReg$(_c, "RestaurantDetail");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","react":"21dqq"}]},["1xC6H","7Zeie","2kQhy"], "2kQhy", "parcelRequire164e")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","react":"21dqq","../config.js":"jtCLN"}]},["1xC6H","7Zeie","2kQhy"], "2kQhy", "parcelRequire164e")
 
 //# sourceMappingURL=index.7271efb6.js.map
