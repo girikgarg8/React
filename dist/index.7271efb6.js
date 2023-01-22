@@ -33676,12 +33676,12 @@ const RestaurantDetail = ()=>{
     _s();
     const params = (0, _reactRouterDom.useParams)();
     const { id  } = params; //how to read a dynamic URL params
-    const [restaurant, setRestaurant] = (0, _react.useState)({});
+    const [restaurant, setRestaurant] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
         getRestaurantsInfo();
     }, []);
     async function getRestaurantsInfo() {
-        const data = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=30.3355531&lng=76.3849589&menuId=89605");
+        const data = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=30.3355531&lng=76.3849589&menuId=101471");
         const json = await data.json();
         setRestaurant(json.data);
     }
@@ -33701,7 +33701,7 @@ const RestaurantDetail = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: [
                     " ",
-                    restaurant.name,
+                    restaurant?.name,
                     " "
                 ]
             }, void 0, true, {
@@ -33710,16 +33710,56 @@ const RestaurantDetail = ()=>{
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: (0, _configJs.IMG_CDN_URL) + restaurant.cloudinaryImageId
+                src: (0, _configJs.IMG_CDN_URL) + restaurant?.cloudinaryImageId
             }, void 0, false, {
                 fileName: "src/components/RestuarantDetail.js",
                 lineNumber: 21,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    " ",
+                    restaurant?.area,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestuarantDetail.js",
+                lineNumber: 22,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    " ",
+                    restaurant?.avgRating,
+                    " stars "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestuarantDetail.js",
+                lineNumber: 23,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    " ",
+                    restaurant?.costForTwoMsg,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestuarantDetail.js",
+                lineNumber: 24,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: console.log(restaurant?.menu?.items)
+            }, void 0, false, {
+                fileName: "src/components/RestuarantDetail.js",
+                lineNumber: 25,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(RestaurantDetail, "M2VaCK/9s5tLDV0FxehCQJBzJPo=", false, function() {
+_s(RestaurantDetail, "VgDKt4LJhS+q4WLHVYdRD7b9lck=", false, function() {
     return [
         (0, _reactRouterDom.useParams)
     ];
