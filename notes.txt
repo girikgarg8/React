@@ -332,3 +332,4 @@ I want to build a functionality where if I visit the route localhost:1234/restau
 
 For implementing this functionality I need to know the params which were passed, so there's a hook which is known as useParams which enables me to get the param "123" or "1234" etc
 
+Modularity makes the code understandable, testable, readable and maintainable
