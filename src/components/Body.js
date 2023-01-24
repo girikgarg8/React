@@ -3,13 +3,8 @@ import { RestaurantCard } from "./RestaurantCard.js";
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer.js";
 import { createBrowserRouter,Link} from "react-router-dom";
+import { filterData } from "../utils/helper.js";
 
-function filterData(searchText,restaurants){
-    const filterData=restaurants.filter((restaurant)=>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-    );
-    return filterData
-}
 const Body = () => {
   const [allRestaurants,setAllRestaurants]=useState([])
   const [searchText,setSearchInput]=useState("") //to create state varibable

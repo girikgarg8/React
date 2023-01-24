@@ -454,3 +454,12 @@ So I need to use clearInterval in the componentWillUnmount function, by doing so
 I can mimic something similar in the useEffect hook too, let me use a setInterval function in useEffect hook too (see the profile.js file), the "Girik Garg OP" will keep on getting printed even if I navigate to some other page like Contact Us.
 
 So in order to mimic the effect of unmounting, I can return a callback function from the useEffect
+
+
+===CH-9 OPTIMIZING OUR APP===
+We are going to create our own hook. Questions that might come in mind: when to create custom hook, why to create hook and how to create custom hook?
+
+Reasons to use custom hook: It helps to achieve reusability (we can use the same function again) and readabaility.
+
+Optimising the app structure: I am using utils folder for all the helper functions, where I can keep all the helper functions like filterRestaurants etc
+
