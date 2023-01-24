@@ -25,6 +25,7 @@ import Footer from "./components/Footer";
 import { IMG_CDN_URL } from "./config.js";
 import { RestaurantCard } from "./components/RestaurantCard";
 import About from "./components/About"
+import Profile from "./components/Profile";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import { createBrowserRouter,RouterProvider,Link,Outlet} from "react-router-dom";
@@ -50,12 +51,18 @@ const appRouter = createBrowserRouter([
     errorElement: <Error/>,
     children:[
       {
-        path:"/",
-        element: <Body/>
+      path: "/about",
+      element: <About />,
+      children: [
+        {
+          path: "profile",
+          element: <Profile />
+        }
+      ]
       },
       {
-        path: "/about",
-        element: <About />
+        path:"/",
+        element: <Body/>
       },
       {
         path: "/contact",
@@ -70,4 +77,3 @@ const appRouter = createBrowserRouter([
 ])
 const root = ReactDOM.createRoot(document.getElementById("root")) 
 root.render(<RouterProvider router={appRouter} />) // passing a react element inside the root
-

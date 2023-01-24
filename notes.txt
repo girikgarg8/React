@@ -333,3 +333,124 @@ I want to build a functionality where if I visit the route localhost:1234/restau
 For implementing this functionality I need to know the params which were passed, so there's a hook which is known as useParams which enables me to get the param "123" or "1234" etc
 
 Modularity makes the code understandable, testable, readable and maintainable
+
+===CLASS BASED COMPONENTS===
+React intially started with class based components, initially there was no concept of functional based components and hooks.
+Class based components makes the code somewhat messier, and it is not used in upcoming new projects, but maybe used in legacy codes.
+
+Class based components are highly asked in interviews 
+
+Class based components are javascript classes at the end of the day. 
+The syntax for using a class based component is something like:
+class Profile extends React.Component{ //I need to write extends React.component so that JS can understand it is different from a normal class (the class Profile is basically inheriting some properties from React.component)
+
+  render() { 
+      return <h1> Profile class component </h1> // return jsx
+  } //calling render is the most important aspect of any class based component
+  export default Profile;
+}
+
+In a class based functional component, the props are accessed as: {this.props.name} 
+React attached the props to the class
+
+For a class based functional component,for passing props, we have to define the state (similar to useState functional hook), inside the constructor of the class, and inside the class define this.state, and inside this.state define the variable like count, the sample code is given below:
+
+constructor(props){
+        super(props);
+        //create state
+        this.state={
+            count:0,
+        };
+    }
+
+If I have to create another state variable count2 in the code, it will be maintained in the same this.state object
+
+Even using multiple useState internally maintains a single big object 
+
+For using setCount in class based components, we use setState() method provided by JavaScript. WE CAN'T DIRECTLY MUTATE THE STATE VARIABLE, SYNTAX LIKE this.state.count=1 is INVALID
+
+reconciliation algorithm works the same way for both class based and functional based components
+
+So, in a class based component, we can change all the state variables with the help of a single setState() method
+
+Order of execution in a class based component:
+the constructor is called first, and then the class based functional component is called 
+
+Now in order to mimic the useEffect functional hook (first of all, in esssence what a useEffect hook does is that the component gets rendered first and then the useEffect is called), so in class based components we have componentDidMount() function which is called after the render of the component.
+
+The order of executionis : constructor first, then the component is rendered and then componentDidMount is called (this is known as lifecycle of React component)
+
+Order of lifecycle method caling when parent and two children are there: (confusing question):
+
+What I mean is something like 
+
+Whenevr react is ernedeirng anything, two phases: first phase is render phase and second one is commit phase
+
+
+First understand what exactly is meant by rendering of a component and mounting of a component.....https://www.quora.com/What-does-the-term-render-mean-in-ReactJS-Like-render-a-component In a nutshell, rendering is the process of transforming your react components into DOM (Document Object Model) nodes that your browser can understand and display on the screen.
+
+DOM manipulation is extremely slow. In contrast, manipulating React elements is much, much faster. React makes the most of this by creating a virtual representation of what the DOM should look like called the Virtual DOM[1].
+
+Whenever you make any changes to your running React application, such as entering text, removing an element, adding an element, etc, React will batch all of these changes together in its Virtual DOM, then compare this representation with the actual DOM, find what needs to be updated, and then make the smallest possible changes to the real DOM to keep them in sync while keeping the application performant.
+
+
+===Meaning of mounting a component===
+https://stackoverflow.com/questions/31556450/what-is-mounting-in-react-js
+
+React does so by "mounting" (adding nodes to the DOM), "unmounting" (removing them from the DOM), and "updating" (making changes to nodes already in the DOM).
+
+As making  changes in the actual DOM is a heavy operation, React tried to firstly render all the components (parent component, first component and second component), so the order of execution is like: parent component constructor, parent component render, first compomemt constructor, first component render, second component constuctor, second component render
+
+Now, when the time comes to make the changes in the actual DOM, first component will firstly make the changes, so first component Did Mount will be called first (Because of FIFO order), then second DidMount will be called and at last parent componentDidMount will be called (parent will be called at last, because it is the parent of both the components, so it won't see FIFO order )
+
+--IMPORTANT QUESTION ASKED IN SENIOR REACT interviews
+Why can you not pass an async function directly into a React useEffect call? i.e. why something like useEffect(async f) is not allowed?
+
+Answer taken from here: https://ultimatecourses.com/blog/using-async-await-inside-react-use-effect-hook#:~:text=Why%3F,function%20will%20never%20get%20called.
+
+This WORKS, but you should avoid it. Why? Because React’s useEffect hook expects a cleanup function returned from it which is called when the component unmounts. Using an async function here will cause a bug as the cleanup function will never get called. 
+
+So what excatly is a cleanup function? 
+
+React’s useEffect cleanup function saves applications from unwanted behaviors like memory leaks by cleaning up effects. In doing so, we can optimize our application’s performance. 
+
+Just like the name implies, the useEffect cleanup is a function in the useEffect Hook that allows us to tidy up our code before our component unmounts. When our code runs and reruns for every render, useEffect also cleans up after itself using the cleanup function.
+
+The useEffect Hook is built in a way that we can return a function inside it and this return function is where the cleanup happens. The cleanup function prevents memory leaks and removes some unnecessary and unwanted behaviors.
+
+ComponentDidUpdate() function is called when the component is already mounted on the DOM (the node for that component already exists in the DOM but there is some update like when we change the state using setState function)
+
+componentDidMount will be called during first render and componentDidUpdate will be called when DOM is getting updated (this is exactl similar to what we did in useEffect, but we don't have to make the componentDidMount and componentDidUpdate functions)
+
+there's a componentWillUnmount function too, it is called when the component is unmounted from the DOM (eg when I switch to some other page )
+
+ONE IMPORTANT NOTE: DON'T COMPARE LIFECYCLE METHODS WITH FUNCTIONAL BASED COMPONENTS, LIKE DON'T SAY useEffect is equivalent to componentDidMount method 
+
+If I had to mimic something like useEffect(,[count1,count2]) in class based functional components, it would be something like:
+
+componentDidUpdate(prevProps,prevState){
+  if (this.state.count1!===prevState.count1 || this.state.count2!===prevState.count2){
+    //code: so this way of writing code is a pain
+  }
+}
+
+
+===DISCUSSED IN LECTURE===
+What is the use case of componentWillUnmount?
+Our application has one page (single page application), when we aree clicking on Home,About, Contact etc then only the component is getting changed, the page is not getting changed
+
+
+changedsetInterval(()=>{
+            console.log("Namaste React OP")
+        },1000)
+        console.log("componentDidMount")
+}
+For answering why componentWillUnmount is needed (what type of cleanup is performed), consider the above code from ProfileClass.js file 
+
+There's a slight disdavantage with SPAs that let's say if I navigate from About to Contact page etc, then Namaste React OP will be getting printed, even though I left the About page
+
+So I need to use clearInterval in the componentWillUnmount function, by doing so the interval stops getting printed in the console when I am on some other component like Contact Us. (this is best way to explain usecase of componentWillUnmount to interviewer)
+
+I can mimic something similar in the useEffect hook too, let me use a setInterval function in useEffect hook too (see the profile.js file), the "Girik Garg OP" will keep on getting printed even if I navigate to some other page like Contact Us.
+
+So in order to mimic the effect of unmounting, I can return a callback function from the useEffect
