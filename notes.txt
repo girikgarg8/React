@@ -8,9 +8,9 @@ We have a package manager which takes care of our transitive dependencies (trans
     "last 2 versions"]
   } ensures that my app is compatiable with last 2 versions of all browsers avaialble on broswerslist.dev
 
-  bable is used for creating polyfill
+  babel is used for creating polyfill
   polfyfill means replacing code with the code that browser understands
-  eg. if older version of JS doesn't understand map() function, bable may write own custom implementation of map() so that code is able to execute
+  eg. if older version of JS doesn't understand map() function, babel may write own custom implementation of map() so that code is able to execute
 
   tree shaking means that if I am importing a library,library may provide 10-20 functions, but I may be using only 1 or 2 of them. So parcel is smart enough and it removes the code of the unused libraries.
 
@@ -462,4 +462,6 @@ We are going to create our own hook. Questions that might come in mind: when to 
 Reasons to use custom hook: It helps to achieve reusability (we can use the same function again) and readabaility.
 
 Optimising the app structure: I am using utils folder for all the helper functions, where I can keep all the helper functions like filterRestaurants etc
+
+Difference between a custom hook and a functional component: a functional component is a JS code that returns some JSX but a hook need not return any JSX, it performs some task (like maybe fetching data of restauarant from API)
 
