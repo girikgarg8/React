@@ -4,6 +4,7 @@ import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer.js";
 import { createBrowserRouter,Link} from "react-router-dom";
 import { filterData } from "../utils/helper.js";
+import useOnline from "../utils/useOnline.js"
 
 const Body = () => {
   const [allRestaurants,setAllRestaurants]=useState([])
@@ -19,6 +20,11 @@ const Body = () => {
     //optional chaining
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards)
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards) //for first time I need to fit my filteredRestaurants with all the data from API because otherwise it is empty
+  }
+
+  const isOnline=useOnline();
+  if (!isOnline){
+    return <h1> Offline,please check your internet connection!! </h1>
   }
   if (!allRestaurants) return null; //not render component, early return 
 

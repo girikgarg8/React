@@ -465,3 +465,6 @@ Optimising the app structure: I am using utils folder for all the helper functio
 
 Difference between a custom hook and a functional component: a functional component is a JS code that returns some JSX but a hook need not return any JSX, it performs some task (like maybe fetching data of restauarant from API)
 
+Window event online is defined in Javascript which can be used to see whether the user is online or not (to develop a functionality 'you've gone offline' when user has gone offline)
+
+Why we don't use a normal Javascript function for this functionality instead, I use a hook? Because the state is changing here,and normal function will not have a provision of changing the state, but a hook has functionality of changing of states  
