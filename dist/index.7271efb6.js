@@ -32535,11 +32535,8 @@ var _restaurantCardJs = require("./RestaurantCard.js");
 var _shimmerJs = require("./Shimmer.js");
 var _shimmerJsDefault = parcelHelpers.interopDefault(_shimmerJs);
 var _reactRouterDom = require("react-router-dom");
+var _helperJs = require("../utils/helper.js");
 var _s = $RefreshSig$();
-function filterData(searchText, restaurants) {
-    const filterData = restaurants.filter((restaurant)=>restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-    return filterData;
-}
 const Body = ()=>{
     _s();
     const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
@@ -32561,7 +32558,7 @@ const Body = ()=>{
     // if (filteredRestaurants.length==0) return <h1> No restaurants match your filter!! </h1>
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerJsDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 31,
+        lineNumber: 26,
         columnNumber: 40
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -32578,27 +32575,27 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 34,
+                        lineNumber: 29,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "search-btn",
                         onClick: ()=>{
                             //need to filter the data
-                            const data = filterData(searchText, allRestaurants);
+                            const data = (0, _helperJs.filterData)(searchText, allRestaurants);
                             //update the state-restaurants
                             setFilteredRestaurants(data);
                         },
                         children: " Search "
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 37,
+                        lineNumber: 32,
                         columnNumber: 7
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 33,
+                lineNumber: 28,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32613,7 +32610,7 @@ const Body = ()=>{
                                 key: restaurant.data.id,
                                 __source: {
                                     fileName: "src/components/Body.js",
-                                    lineNumber: 48,
+                                    lineNumber: 43,
                                     columnNumber: 89
                                 },
                                 __self: undefined
@@ -32622,13 +32619,13 @@ const Body = ()=>{
                         ]
                     }, restaurant.data.id, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 48,
+                        lineNumber: 43,
                         columnNumber: 18
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 44,
+                lineNumber: 39,
                 columnNumber: 5
             }, undefined)
         ]
@@ -32645,7 +32642,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../config.js":"jtCLN","./RestaurantCard.js":"bMboU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Shimmer.js":"g6ZGj","react-router-dom":"9xmpe"}],"jtCLN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../config.js":"jtCLN","./RestaurantCard.js":"bMboU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Shimmer.js":"g6ZGj","react-router-dom":"9xmpe","../utils/helper.js":"3GF3D"}],"jtCLN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "IMG_CDN_URL", ()=>IMG_CDN_URL);
@@ -33514,7 +33511,16 @@ $RefreshReg$(_c, "Shimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8pPOA":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterData", ()=>filterData);
+function filterData(searchText, restaurants) {
+    const filterData = restaurants.filter((restaurant)=>restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+    return filterData;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8pPOA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
