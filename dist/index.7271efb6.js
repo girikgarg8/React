@@ -33551,12 +33551,18 @@ const useOnline = ()=>{
     _s();
     const [isOnline, setIsOnline] = (0, _react.useState)(true);
     (0, _react.useEffect)(()=>{
-        window.addEventListener("online", ()=>{
+        const handleOnline = ()=>{
             setIsOnline(true);
-        });
-        window.addEventListener("offline", ()=>{
+        };
+        const handleOffline = ()=>{
             setIsOnline(false);
-        });
+        };
+        window.addEventListener("online", handleOnline);
+        window.addEventListener("offline", handleOffline);
+        return ()=>{
+            window.removeEventListener("online", handleOnline);
+            window.removeEventListener("offline", handleOffline);
+        };
     }, []);
     return isOnline;
 };

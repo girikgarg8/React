@@ -468,3 +468,19 @@ Difference between a custom hook and a functional component: a functional compon
 Window event online is defined in Javascript which can be used to see whether the user is online or not (to develop a functionality 'you've gone offline' when user has gone offline)
 
 Why we don't use a normal Javascript function for this functionality instead, I use a hook? Because the state is changing here,and normal function will not have a provision of changing the state, but a hook has functionality of changing of states  
+
+
+Why did we return a function from our effect? This is the optional cleanup mechanism for effects. Every effect may return a function that cleans up after it. This lets us keep the logic for adding and removing subscriptions close to each other. They’re part of the same effect!
+
+And
+
+When exactly does React clean up an effect? React performs the cleanup when the component unmounts. However, as we learned earlier, effects run for every render and not just once. This is why React also cleans up effects from the previous render before running the effects next time. We’ll discuss why this helps avoid bugs and how to opt out of this behavior in case it creates performance issues later below.
+
+===NEED FOR CONCEPT OF CHUNKING/CODE SPLITTING/LAZY LOADING (THEY ARE ALL ONE AND THE SAME THING) ====
+PARCEL (OR ANY OTHER BUNDLER LIKE VITE OR WEBPACK)  BUNDLES ALL OUR FILES INTO ONE COMPRESSES JAVASCRIPT FILE, BUT LET'S SAY A WEBSITE  LIKE MAKEMYTRIP.COM HAS GOT 100S OR 1000S OF COMPONENTS, SO IT DOESN'T MAKE SENSE TO BUNDLE ALL THE COMPONENTS INTO A SINGLE JS FILE
+
+IF A PERSON IS GOING TO MMT, THERE ARE HIGH CHANCES THAT THEY WILL GO TO BOOK A FLIGH, SO WE CAN LAZY LOAD OTHER COMPONENT LIKE BUS  (LAZY LOAD THE COMPONENT WHICH HAS CODE FOR THE BUS)
+
+
+SO BY CHUNKING/CODE SPLITTING/LAZY LOADING/ON DEAMDN LOADING/ DYNAMIC IMPORT , WE LOGICALLY SPLIT THE SINGLE MINIFIED FILE INTO MANY FILES
+CODE SPLITTING IS BENEFICIAL FOR SYSTEM DESIGN INTERVIEWS 
