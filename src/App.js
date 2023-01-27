@@ -14,13 +14,14 @@
             -links
             -copyright
         */
-import React from "react"; //getting from node modules
+import React,{lazy,Suspense} from "react"; //getting from node modules
 import ReactDOM from "react-dom/client";
 //Default Import
 // import Header from "./components/Header" 
 //Named import
 import Header from "./components/Header"
 import Body from "./components/Body.js"
+import Shimmer from "./components/Shimmer";
 import Footer from "./components/Footer";
 import { IMG_CDN_URL } from "./config.js";
 import { RestaurantCard } from "./components/RestaurantCard";
@@ -33,6 +34,10 @@ import RestaurantDetail from "./components/RestuarantDetail";
 const heading = (
   <h1> Namaste React </h1>
 )
+
+const Instamart=lazy(()=>
+  import ("./components/Instamart")
+);
 
 const AppLayout = () => {
   return (
@@ -59,6 +64,14 @@ const appRouter = createBrowserRouter([
           element: <Profile />
         }
       ]
+      },
+      {
+        path: "/instamart",
+        element: (
+            <Suspense fallback="Shimmer">
+            <Instamart/>
+            </Suspense>
+        )
       },
       {
         path:"/",

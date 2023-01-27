@@ -479,8 +479,23 @@ When exactly does React clean up an effect? React performs the cleanup when the 
 ===NEED FOR CONCEPT OF CHUNKING/CODE SPLITTING/LAZY LOADING (THEY ARE ALL ONE AND THE SAME THING) ====
 PARCEL (OR ANY OTHER BUNDLER LIKE VITE OR WEBPACK)  BUNDLES ALL OUR FILES INTO ONE COMPRESSES JAVASCRIPT FILE, BUT LET'S SAY A WEBSITE  LIKE MAKEMYTRIP.COM HAS GOT 100S OR 1000S OF COMPONENTS, SO IT DOESN'T MAKE SENSE TO BUNDLE ALL THE COMPONENTS INTO A SINGLE JS FILE
 
-IF A PERSON IS GOING TO MMT, THERE ARE HIGH CHANCES THAT THEY WILL GO TO BOOK A FLIGH, SO WE CAN LAZY LOAD OTHER COMPONENT LIKE BUS  (LAZY LOAD THE COMPONENT WHICH HAS CODE FOR THE BUS)
+IF A PERSON IS GOING TO MMT, THERE ARE HIGH CHANCES THAT THEY WILL GO TO BOOK A FLIGHT, SO WE CAN LAZY LOAD OTHER COMPONENT LIKE BUS  (LAZY LOAD THE COMPONENT WHICH HAS CODE FOR THE BUS)
 
 
-SO BY CHUNKING/CODE SPLITTING/LAZY LOADING/ON DEAMDN LOADING/ DYNAMIC IMPORT , WE LOGICALLY SPLIT THE SINGLE MINIFIED FILE INTO MANY FILES
+SO BY CHUNKING/CODE SPLITTING/LAZY LOADING/ON DEMAND LOADING/ DYNAMIC IMPORT , WE LOGICALLY SPLIT THE SINGLE MINIFIED FILE INTO MANY FILES
 CODE SPLITTING IS BENEFICIAL FOR SYSTEM DESIGN INTERVIEWS 
+
+Storing the images in CDN, caching the images: these are keywords that interviewer loks for in system design interviews
+
+In orderoyt do lazy loading, we use Lazy component from "React", as a named import.  
+
+The lazy function takes a callback function, and this callback function lazily imports the required component. 
+
+Whenever we are trying to load a component in-dermand, React tries to suspend it. (because code takes some time to fetch the code of the laxy component,let's say 20 ms, but React tries to render it even before 20 ms)
+
+In order to solve this issue, we React provides a library called "Suspense" from "React", if I wrap the element inside Suspense, React takes special care about the lazily loaded components. 
+
+fallback prop in Suspense can be used to load a component (like Shimmer) in the meantime the splitted code loads
+
+
+
