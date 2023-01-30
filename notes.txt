@@ -558,3 +558,31 @@ Some features about tailwind CSS framework:
 4) Flexible UI (Customizable, unlike material UI where buttons etc. will remain the way they are)
 
 
+Every style that we'll write will be a new className in Tailwind CSS.
+
+PostCSS is a tool for transforming styles written in CSS (Cascading Style Sheets) with JavaScript plugins. It allows you to use modern CSS syntax and features, and then transform them into a compatible form for older browsers that do not support the latest CSS features.
+
+PostCSS plugins can perform a wide range of tasks, including:
+
+Transpilation of modern CSS syntax (e.g. using CSS variables or grid layout) to a more compatible form
+Minification and optimization of the CSS code
+Adding vendor prefixes to CSS properties
+Linting the CSS code for syntax and style errors
+Automatic generation of fallback styles for older browsers
+PostCSS is typically used in combination with other build tools, such as Webpack or Gulp, to process and compile CSS code in a development environment, and then generate the optimized and compatible version for production use.
+
+
+In the context of a postcssrc file, the rc stands for "runtime configuration". The postcssrc file is used to specify the configuration options for the PostCSS tool during runtime. The file is named with the rc extension to indicate that it is a configuration file used to specify runtime options.
+
+postcssrc is used to tell the bundler (like vite or webpack or parcel) that we will be using tailwind CSS in our project, so please compile it into CSS while bundling up.
+
+Round bracket notation in Tailwind CSS, like w-[200px], helps give width of 200px (this is also knows as dynamic class )
+
+Media queries using tailwind CSS: I write CSS for three types of devices: small,medium,large (phone,tablet and laptop)
+
+Pros of using Tailwind CSS: (important for system design interviews):
+
+easy to use, easy to debug, nu duplicate CSS, bundle size is small, customizable
+
+Cons of using Tailwind CSS: 1) intial high learning curve (new developers will take time to figure out)
+2) too many classes, some class names are very ugly

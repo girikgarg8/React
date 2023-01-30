@@ -5,26 +5,26 @@ const loginUser = () => {
     return false; //harcoding for now
 }
 export const Title = () => { //omitting the return statement here, this is also valid syntax
-    return <a href="/" ><img className="logo" src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj" alt="logo" />  </a>
+    return <a href="/" ><img className="h-28 p-2" src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj" alt="logo" />  </a>
 }
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     return (
-        <div className="header">
+        <div className="flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50">
             <Title />
             <div className="nav-items">
-                <ul>
-                    <li>  Home </li>
-                    <li> <Link to="/about"> About </Link> </li>
-                    <li>  <Link to="/contact"> Contact </Link> </li>
-                    <li> Cart </li>
-                    <li> <Link to="/instamart"> Instamart </Link></li>
+                <ul className="flex py-10">
+                    <li className="px-28"> <Link to="/"> Home </Link>  </li>
+                    <li className="px-28"> <Link to="/about"> About </Link> </li>
+                    <li className="px-28">  <Link to="/contact"> Contact </Link> </li>
+                    <li className="px-28"> Cart </li>
+                    <li className="px-28"> <Link to="/instamart"> Instamart </Link></li>
                 </ul>
-            </div>
-            {
+            {/* {
                 (isLoggedIn) ? <button onClick={() => setIsLoggedIn(false)}> Logout </button> :
                     <button onClick={() => setIsLoggedIn(true)}> Login </button>
-            }
+            } */}
+            </div>
         </div>
     );
 }
