@@ -538,7 +538,7 @@ Another way: use inline css, inside the component pass style object.
 
 Inline CSS is not a good way because it is difficult to maintain, it is not reusable , and job of processing inline CSS is heavy for browser.
 
-Material UI is a library developed by Google (Some other libraries/frameworks are Base UI and Ant Design, Chakra UI, Styled components (styles components is many a times used in Node projects )) (there all are also called component libraries)
+Material UI is a library developed by Google (Some other libraries/frameworks are Base UI and Ant Design, Chakra UI, Styled components,Bootstrap (Styled components is many a times used in Node projects )) (there all are also called component libraries)
 
 Tailwind CSS framework
 
@@ -549,4 +549,12 @@ Pros of using libraries: 1) Saves time, makes more maintainable components
 
 Cons of using libraries: 1)Makes bundle size heavy
 2) We lose control over components
+3) Personal customisation becomes difficult
+
+Some features about tailwind CSS framework:
+1) CSS on the go (in the same file)
+2) reusability (the code can be reused at many different places)
+3) Less bundle size
+4) Flexible UI (Customizable, unlike material UI where buttons etc. will remain the way they are)
+
 
