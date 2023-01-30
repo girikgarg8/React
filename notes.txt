@@ -1,4 +1,35 @@
-d<!--Anything we can generate on server like parcel-cache or node_modules should be in gitignore, but package-lock.json can't be put in gitignore-->
+===Some chat with ChatGPT===
+What does ReactDOM.createRoot
+ReactDOM.createRoot is a method in the React library that creates a root container for a React tree. It's used to render a React app to a specific DOM node in the document.
+
+The method takes one argument: the DOM node that you want to render your React app into. For example:
+
+javascript
+Copy code
+const rootContainer = ReactDOM.createRoot(document.getElementById("root"));
+rootContainer.render(<App />);
+The createRoot method returns a root container object that has a render method that you can use to render your React components into the specified DOM node. You can call render multiple times to update the React tree and re-render the DOM.
+
+createRoot is part of the React DOM library and it's specifically designed for server-side rendering and hydration of React apps. It provides a way to create a root container outside of the main render tree, which can be useful for improving performance and isolating components that need to render independently.
+
+
+
+
+Girik Garg
+What does rootContainer.render(<App />);
+do
+The code rootContainer.render(<App />) is rendering a React component into the DOM using a root container created by ReactDOM.createRoot.
+
+rootContainer is an object returned from a previous call to ReactDOM.createRoot, and render is a method on that object. The argument to render is a React component represented by the <App /> syntax.
+
+The render method takes a React component and renders it into the DOM node that was specified when the root container was created. The result of the render method is a fully-mounted React component tree that updates dynamically as the components' state changes.
+
+In other words, the code rootContainer.render(<App />) is rendering the App component into the DOM node specified by the root container, and it's the starting point for a React app. Any updates to the component state will trigger a re-render of the DOM and keep the UI in sync with the underlying data.
+
+
+===MY SELF NOTES STARTS===
+
+<!--Anything we can generate on server like parcel-cache or node_modules should be in gitignore, but package-lock.json can't be put in gitignore-->
         <!-- React is not fast only because of virtual DOM but because of bundlers (like parcel or vite or webpack)-->
 //dist folder stores the minified files 
 
@@ -498,4 +529,24 @@ In order to solve this issue, we React provides a library called "Suspense" from
 fallback prop in Suspense can be used to load a component (like Shimmer) in the meantime the splitted code loads
 
 
+===Chapter 10====
+SCSS (Sassy CSS) and SASS (Syntactically Awesome Style Sheets) is modern way of writing CSS , which then gets compiled to CSS at the end of the day.
+
+One way of using CSS: using className with the component, and then specifying the CSS inside a style.css file
+
+Another way: use inline css, inside the component pass style object. 
+
+Inline CSS is not a good way because it is difficult to maintain, it is not reusable , and job of processing inline CSS is heavy for browser.
+
+Material UI is a library developed by Google (Some other libraries/frameworks are Base UI and Ant Design, Chakra UI, Styled components (styles components is many a times used in Node projects )) (there all are also called component libraries)
+
+Tailwind CSS framework
+
+In the older days, there used to be three different files for HTML,CSS and JS. But later on, with React, we started writing HTML like code in Javascript, so styled component was based on the philosophy of using CSS too in Javascript.
+
+Pros of using libraries: 1) Saves time, makes more maintainable components
+2) Consistent UI (all button in web app will look same )
+
+Cons of using libraries: 1)Makes bundle size heavy
+2) We lose control over components
 

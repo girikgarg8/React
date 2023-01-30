@@ -28,6 +28,10 @@ const Body = () => {
   }
   if (!allRestaurants) return null; //not render component, early return 
 
+
+  const searchBtnCSS={
+    backgroundColor:"red"
+  }
   // if (filteredRestaurants.length==0) return <h1> No restaurants match your filter!! </h1>
   return (allRestaurants?.length===0)? <Shimmer/>:(
     <>
@@ -35,7 +39,10 @@ const Body = () => {
       <input type="text" className="search-input" placeholder="Search" value={searchText} onChange={(e)=>
         {setSearchInput(e.target.value)} 
        } ></input>
-      <button className="search-btn" onClick={()=>{
+      <button style={{
+        backgroundColor:"red"
+      }}
+      className="search-btn" onClick={()=>{
         //need to filter the data
         const data=filterData(searchText,allRestaurants);
         //update the state-restaurants
