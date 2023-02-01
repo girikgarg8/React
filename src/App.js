@@ -80,10 +80,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/",
-        element: <Body user={{
-          name: "Girik Garg",
-        email: "girikgarg8@gmail.com"
-      }}/>
+        element: <Body/>
       },
       {
         path: "/contact",

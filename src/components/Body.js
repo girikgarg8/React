@@ -50,7 +50,7 @@ const Body = ({user}) => { //destructuring on the fly
       {
         /* Write logic for no restaurant found */
         filteredRestaurants?.map((restaurant) => {
-          return <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}> <RestaurantCard {...restaurant.data} user={user} key={restaurant.data.id} /> </Link>
+          return <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}> <RestaurantCard {...restaurant.data} key={restaurant.data.id} /> </Link>
         })
       }
     </div>

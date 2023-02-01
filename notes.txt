@@ -627,5 +627,8 @@ Hierarchy of passing the component: Applayout
  1) makes the code cluttered, if I need to pass data to 10th child then the Hierarchy is too big (passing props is okay upto 2-3 levels)
  2) due to a change in prop, the entire component re-renders, which leads to bad performance of the app
 
- 
+ One way to deal with prop drilling is using Redux, which we'll use in next lecture
+
+
+
 

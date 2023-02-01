@@ -3032,12 +3032,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
             },
             {
                 path: "/",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyJsDefault.default), {
-                    user: {
-                        name: "Girik Garg",
-                        email: "girikgarg8@gmail.com"
-                    }
-                }, void 0, false, {
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyJsDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
                     lineNumber: 83,
                     columnNumber: 18
@@ -3047,7 +3042,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 90,
+                    lineNumber: 87,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3055,7 +3050,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restuarantDetailDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 94,
+                    lineNumber: 91,
                     columnNumber: 18
                 }, undefined)
             }
@@ -3067,7 +3062,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 100,
+    lineNumber: 97,
     columnNumber: 13
 }, undefined)) // passing a react element inside the root
 ;
@@ -32668,7 +32663,6 @@ const Body = ({ user  })=>{
                             " ",
                             /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardJs.RestaurantCard), {
                                 ...restaurant.data,
-                                user: user,
                                 key: restaurant.data.id,
                                 __source: {
                                     fileName: "src/components/Body.js",
@@ -33482,7 +33476,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "RestaurantCard", ()=>RestaurantCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _configJs = require("../config.js");
-const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelString , user  })=>{
+const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelString  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "w-56 p-2 m-2 shadow-lg bg-pink-50",
         children: [
@@ -33525,17 +33519,6 @@ const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelSt
             }, void 0, true, {
                 fileName: "src/components/RestaurantCard.js",
                 lineNumber: 8,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    " ",
-                    user.name,
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestaurantCard.js",
-                lineNumber: 9,
                 columnNumber: 13
             }, undefined)
         ]
