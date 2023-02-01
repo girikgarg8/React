@@ -242,10 +242,6 @@ img, video {
   height: 7rem;
 }
 
-.w-\[200px\] {
-  width: 200px;
-}
-
 .w-56 {
   width: 14rem;
 }
@@ -256,10 +252,6 @@ img, video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.rounded-lg {
-  border-radius: .5rem;
 }
 
 .rounded-md {
@@ -276,12 +268,12 @@ img, video {
   background-color: rgb(88 28 135 / var(--tw-bg-opacity));
 }
 
-.p-2 {
-  padding: .5rem;
-}
-
 .p-5 {
   padding: 1.25rem;
+}
+
+.p-2 {
+  padding: .5rem;
 }
 
 .py-10 {
@@ -289,54 +281,9 @@ img, video {
   padding-bottom: 2.5rem;
 }
 
-.px-2 {
-  padding-left: .5rem;
-  padding-right: .5rem;
-}
-
-.px-1 {
-  padding-left: .25rem;
-  padding-right: .25rem;
-}
-
-.px-3 {
-  padding-left: .75rem;
-  padding-right: .75rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.px-14 {
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
-}
-
-.px-20 {
-  padding-left: 5rem;
-  padding-right: 5rem;
-}
-
-.px-24 {
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
-
 .px-28 {
   padding-left: 7rem;
   padding-right: 7rem;
-}
-
-.px-32 {
-  padding-left: 8rem;
-  padding-right: 8rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-xl {

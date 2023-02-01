@@ -6,7 +6,7 @@ import { createBrowserRouter,Link} from "react-router-dom";
 import { filterData } from "../utils/helper.js";
 import useOnline from "../utils/useOnline.js"
 
-const Body = () => {
+const Body = ({user}) => { //destructuring on the fly
   const [allRestaurants,setAllRestaurants]=useState([])
   const [searchText,setSearchInput]=useState("") //to create state varibable
   const [filteredRestaurants,setFilteredRestaurants]=useState([])
@@ -50,7 +50,7 @@ const Body = () => {
       {
         /* Write logic for no restaurant found */
         filteredRestaurants?.map((restaurant) => {
-          return <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}> <RestaurantCard {...restaurant.data} key={restaurant.data.id} /> </Link>
+          return <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}> <RestaurantCard {...restaurant.data} user={user} key={restaurant.data.id} /> </Link>
         })
       }
     </div>

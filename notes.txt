@@ -586,3 +586,46 @@ easy to use, easy to debug, nu duplicate CSS, bundle size is small, customizable
 
 Cons of using Tailwind CSS: 1) intial high learning curve (new developers will take time to figure out)
 2) too many classes, some class names are very ugly
+
+===Data is the new Oil: chapter 11===
+
+Handling data in any application like React app or Angular app is the most critical part of any application.
+
+Web application means an application which is made using a single page application using a library/framework like React/Angular etc, not a plain HTML page
+
+There are two layers in React: Data layer and UI layer 
+
+UI layer is specified using the JSX 
+
+Diff algorithm compares the previous virtual DOM and new virtual DOM, then this difference between the two virtual DOM's is synced with the UI.
+
+The whole UI layer is powered by data layer.
+
+The data is passed in the form of states and props to UI.
+
+Basic question: what is the difference between state and props? State is a local variable whose scope is just inside the component while  props is used to pass data from one component to another component.
+
+Hierarchy of passing the component: Applayout 
+-> (state=user)->
+ <Body user={user} 
+ -> <RestaurantCard user={user}/> 
+ -> <h4> User </h4>
+
+ This is known as prop drilling.
+
+
+ How to pass data from child to parent? Firstly, there would be very less use cases where data needs to flow from child to parent component. 
+
+ What are the ways to pass data from child to parent? 
+
+ Firstly, we can use local storage, but it's not a good option
+
+ Secondly, we could use custom hooks, but using too many custom hooks messes up the code
+
+ Disadvantage of using prop drilling in the code:
+
+ 1) makes the code cluttered, if I need to pass data to 10th child then the Hierarchy is too big (passing props is okay upto 2-3 levels)
+ 2) due to a change in prop, the entire component re-renders, which leads to bad performance of the app
+
+ 
+

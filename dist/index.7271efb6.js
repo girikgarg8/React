@@ -2944,11 +2944,15 @@ var _contactDefault = parcelHelpers.interopDefault(_contact);
 var _reactRouterDom = require("react-router-dom");
 var _restuarantDetail = require("./components/RestuarantDetail");
 var _restuarantDetailDefault = parcelHelpers.interopDefault(_restuarantDetail);
+// const [user,setUser]=useState({
+//   name: "Girik Garg",
+//   email: "girikgarg8@gmail.com"
+// })
 const heading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     children: " Namaste React "
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 35,
+    lineNumber: 40,
     columnNumber: 3
 }, undefined);
 const Instamart = /*#__PURE__*/ (0, _react.lazy)(()=>require("6b48a8d1357bae3e"));
@@ -2958,23 +2962,23 @@ const AppLayout = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 45,
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 46,
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 47,
+                lineNumber: 52,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 44,
+        lineNumber: 49,
         columnNumber: 5
     }, undefined);
 };
@@ -2984,12 +2988,12 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 55,
+            lineNumber: 60,
             columnNumber: 14
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 56,
+            lineNumber: 61,
             columnNumber: 19
         }, undefined),
         children: [
@@ -2997,7 +3001,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/about",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 60,
+                    lineNumber: 65,
                     columnNumber: 16
                 }, undefined),
                 children: [
@@ -3005,7 +3009,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                         path: "profile",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 64,
+                            lineNumber: 69,
                             columnNumber: 20
                         }, undefined)
                     }
@@ -3017,20 +3021,25 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     fallback: "Shimmer",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Instamart, {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 72,
+                        lineNumber: 77,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 71,
+                    lineNumber: 76,
                     columnNumber: 13
                 }, undefined)
             },
             {
                 path: "/",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyJsDefault.default), {}, void 0, false, {
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyJsDefault.default), {
+                    user: {
+                        name: "Girik Garg",
+                        email: "girikgarg8@gmail.com"
+                    }
+                }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 78,
+                    lineNumber: 83,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3038,7 +3047,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 82,
+                    lineNumber: 90,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3046,7 +3055,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restuarantDetailDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 86,
+                    lineNumber: 94,
                     columnNumber: 18
                 }, undefined)
             }
@@ -3058,7 +3067,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 92,
+    lineNumber: 100,
     columnNumber: 13
 }, undefined)) // passing a react element inside the root
 ;
@@ -32578,7 +32587,7 @@ var _helperJs = require("../utils/helper.js");
 var _useOnlineJs = require("../utils/useOnline.js");
 var _useOnlineJsDefault = parcelHelpers.interopDefault(_useOnlineJs);
 var _s = $RefreshSig$();
-const Body = ()=>{
+const Body = ({ user  })=>{
     _s();
     const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
     const [searchText, setSearchInput] = (0, _react.useState)("") //to create state varibable
@@ -32659,6 +32668,7 @@ const Body = ()=>{
                             " ",
                             /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardJs.RestaurantCard), {
                                 ...restaurant.data,
+                                user: user,
                                 key: restaurant.data.id,
                                 __source: {
                                     fileName: "src/components/Body.js",
@@ -33472,7 +33482,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "RestaurantCard", ()=>RestaurantCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _configJs = require("../config.js");
-const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelString  })=>{
+const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelString , user  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "w-56 p-2 m-2 shadow-lg bg-pink-50",
         children: [
@@ -33515,6 +33525,17 @@ const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelSt
             }, void 0, true, {
                 fileName: "src/components/RestaurantCard.js",
                 lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    " ",
+                    user.name,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 9,
                 columnNumber: 13
             }, undefined)
         ]
@@ -33610,7 +33631,10 @@ const useOnline = ()=>{
     return isOnline;
 };
 _s(useOnline, "mRBquyBAMh60D2Q5WI/A8/L/7j4=");
-exports.default = useOnline;
+exports.default = useOnline; // The lines return () => { window.removeEventListener("online", handleOnline) window.removeEventListener("offline", handleOffline) } in the code are used to clean up the event listeners when the component using the custom hook is unmounted.
+ // In React, when a component is unmounted, it's important to clean up any resources that were created when the component was mounted. In this case, the custom hook useOnline sets up two event listeners for the online and offline events on the window object. These listeners call the handleOnline and handleOffline functions respectively when the online status of the browser changes.
+ // The lines return () => { window.removeEventListener("online", handleOnline) window.removeEventListener("offline", handleOffline) } return a function that removes these event listeners when the component is unmounted.This ensures that the listeners are no longer active and do not continue to respond to events even though the component that set them up has been removed.
+ //     It's a best practice in React to clean up resources created in custom hooks when the component that uses the hook is unmounted. This helps to prevent memory leaks and other issues that can occur when resources are not properly managed.
 
   $parcel$ReactRefreshHelpers$03b2.postlude(module);
 } finally {

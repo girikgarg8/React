@@ -14,7 +14,7 @@
             -links
             -copyright
         */
-import React,{lazy,Suspense} from "react"; //getting from node modules
+import React,{lazy,Suspense,useState} from "react"; //getting from node modules
 import ReactDOM from "react-dom/client";
 //Default Import
 // import Header from "./components/Header" 
@@ -31,6 +31,11 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import { createBrowserRouter,RouterProvider,Link,Outlet} from "react-router-dom";
 import RestaurantDetail from "./components/RestuarantDetail";
+
+// const [user,setUser]=useState({
+//   name: "Girik Garg",
+//   email: "girikgarg8@gmail.com"
+// })
 const heading = (
   <h1> Namaste React </h1>
 )
@@ -75,7 +80,10 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/",
-        element: <Body/>
+        element: <Body user={{
+          name: "Girik Garg",
+        email: "girikgarg8@gmail.com"
+      }}/>
       },
       {
         path: "/contact",
