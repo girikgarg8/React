@@ -629,6 +629,9 @@ Hierarchy of passing the component: Applayout
 
  One way to deal with prop drilling is using Redux, which we'll use in next lecture
 
+We implemented a accordion in the Instamart page 
+
+For making a collapsable accordion, one component't can't directlty change the state of another component, so I use Lifting the state up in React
 
 
 
