@@ -631,7 +631,11 @@ Hierarchy of passing the component: Applayout
 
 We implemented a accordion in the Instamart page 
 
-For making a collapsable accordion, one component't can't directlty change the state of another component, so I use Lifting the state up in React
+For making a collapsable accordion, one component't can't directlty change the state of another component, so I use Lifting the state up in React, means the state is shared by the parent of the components
+
+So when to do the process of lifting the state up?. Many times, multiple components must reflect the same changing data. And if the data is not in sync between the "parent and children components" or "cousin components", it is recommended to lift the shared state up to the closest common ancestor.
+
+Let's say child wants to access function x from parent component, so child cannot directly call function x from parent, so parent will pass function x as a prop to the child, and the child can then call function x() as and when required. 
 
 
 
