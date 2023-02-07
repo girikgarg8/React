@@ -430,6 +430,12 @@ https://stackoverflow.com/questions/31556450/what-is-mounting-in-react-js
 
 React does so by "mounting" (adding nodes to the DOM), "unmounting" (removing them from the DOM), and "updating" (making changes to nodes already in the DOM).
 
+Mounting a component in React is done on the virtual DOM, which is an in-memory representation of the actual DOM. The virtual DOM is a lightweight, high-performance representation of the DOM that allows React to make updates to the DOM in an efficient and performant manner.
+
+When a component is mounted in React, it creates a virtual DOM node for the component and all its children. This virtual DOM node is then compared to the previous virtual DOM representation for the same component (if it exists), and React calculates the minimum number of changes needed to update the actual DOM to match the new virtual DOM representation. These changes are then made to the actual DOM, which updates the component's appearance on the screen.
+
+The use of the virtual DOM is one of the key features that makes React such a fast and efficient framework for building user interfaces. By doing the majority of DOM updates in memory, React can ensure that the actual DOM updates are minimized, which results in faster and smoother user experiences.
+
 As making  changes in the actual DOM is a heavy operation, React tried to firstly render all the components (parent component, first component and second component), so the order of execution is like: parent component constructor, parent component render, first compomemt constructor, first component render, second component constuctor, second component render
 
 Now, when the time comes to make the changes in the actual DOM, first component will firstly make the changes, so first component Did Mount will be called first (Because of FIFO order), then second DidMount will be called and at last parent componentDidMount will be called (parent will be called at last, because it is the parent of both the components, so it won't see FIFO order )
