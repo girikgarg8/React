@@ -10,7 +10,7 @@ export const Title = () => { //omitting the return statement here, this is also 
 }
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-    const {user}=useContext(userContext)
+    const {person}=useContext(userContext)
     return (
         <div className="flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50">
             <Title />
@@ -23,7 +23,7 @@ const Header = () => {
                     <li className="px-32"> <Link to="/instamart"> Instamart </Link></li>
                 </ul>
             {
-                    (isLoggedIn) ? <button onClick={() => setIsLoggedIn(false)} className="mx-60 px-56"> Logout {user.name}</button> :
+                    (isLoggedIn) ? <button onClick={() => setIsLoggedIn(false)} className="mx-60 px-56"> Logout {person.name}</button> :
                         <button className="mx-60 px-56" onClick={() => setIsLoggedIn(true)}> Login </button>
             }
             </div>

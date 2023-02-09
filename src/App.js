@@ -15,6 +15,7 @@
             -copyright
         */
 import React,{lazy,Suspense,useState} from "react"; //getting from node modules
+import userContext from "./utils/UserContext";
 import ReactDOM from "react-dom/client";
 //Default Import
 // import Header from "./components/Header" 
@@ -45,12 +46,19 @@ const Instamart=lazy(()=>
 );
 
 const AppLayout = () => {
+  const [person,setPerson]=useState({
+    name: "Akshay Sir rocks!!",
+    email: "akshaymarch7@gmail.com"
+  }) //overriding the default value defined in the UserContext.js file, for making dynamic user name, like for girik, girtik should be displayed and for nikhil "Weclome nikhil" should be displayed
   return (
-    <React.Fragment>
+    <userContext.Provider value={{ //UserContext.Provider is wrapping all three components Header,Outlet and Footer because I want the value from React Context to e available to all three compnents, if any one compnent is not inside userContext.provider, I will not be able to use the new value of userContext inside that component
+      person:person,
+      setPerson:setPerson
+    }}>
       <Header />
       <Outlet/>
       <Footer />
-    </React.Fragment>
+    </userContext.Provider>
   );
 }
 

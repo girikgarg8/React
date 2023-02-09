@@ -1,15 +1,18 @@
  import { restaurantListSwiggy } from "../config.js";
 import { RestaurantCard } from "./RestaurantCard.js";
-import {useState,useEffect} from "react";
+import {useState,useEffect,useContext} from "react";
 import Shimmer from "./Shimmer.js";
 import { createBrowserRouter,Link} from "react-router-dom";
 import { filterData } from "../utils/helper.js";
 import useOnline from "../utils/useOnline.js"
+import userContext from "../utils/UserContext.js";
+
 
 const Body = ({user}) => { //destructuring on the fly
   const [allRestaurants,setAllRestaurants]=useState([])
   const [searchText,setSearchInput]=useState("") //to create state varibable
   const [filteredRestaurants,setFilteredRestaurants]=useState([])
+  const { person,setPerson} = useContext(userContext)
   useEffect(() => {
     getRestaurants();
   }, []);
@@ -44,8 +47,14 @@ const Body = ({user}) => { //destructuring on the fly
         const data=filterData(searchText,allRestaurants);
         //update the state-restaurants
         setFilteredRestaurants(data)
-      }} > Search </button>
-    </div>
+        }} > Search </button>
+      </div>
+      <div className="search-container p-5 bg-pink-50 my-5"> <input value={person?.name} onChange={
+        e=>setPerson({
+          name:e.target.value,
+          email: e.target.value+"@gmail.com"
+        })
+      }/> </div>
     <div className="flex flex-wrap">
       {
         /* Write logic for no restaurant found */

@@ -35,7 +35,7 @@ class Profile extends React.Component{
             <h2> Location: {this.state.userInfo.location } </h2> */}
             Welcome to About Page as a class component
             <userContext.Consumer>
-                {({user})=><h4 className="font-bold text-xl p-10"> {user.name}- {user.email} </h4>}
+                {({person})=><h4 className="font-bold text-xl p-10"> {person.name}- {person.email} </h4>}
             </userContext.Consumer>
         </div>
         )

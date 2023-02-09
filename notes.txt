@@ -668,3 +668,7 @@ Context is like useState for the entire application
 How to use context API in case of class based components? I use ContextName.Consumer (like Usercontext.Consumer)
 
 Using UserContext.Provider I can override the default value
+
+React Router DOM is using context behind the scenes
+
+userContext.displayName="UserContext" //this name will now be displayed in the react developer tools componenets section, so it makes it easier to debug things
