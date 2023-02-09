@@ -17,9 +17,6 @@
 import React,{lazy,Suspense,useState} from "react"; //getting from node modules
 import userContext from "./utils/UserContext";
 import ReactDOM from "react-dom/client";
-//Default Import
-// import Header from "./components/Header" 
-//Named import
 import Header from "./components/Header"
 import Body from "./components/Body.js"
 import Shimmer from "./components/Shimmer";
@@ -32,6 +29,8 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import { createBrowserRouter,RouterProvider,Link,Outlet} from "react-router-dom";
 import RestaurantDetail from "./components/RestuarantDetail";
+import {Provider} from "react-redux";
+import store from "./utils/store";
 
 // const [user,setUser]=useState({
 //   name: "Girik Garg",
@@ -51,14 +50,16 @@ const AppLayout = () => {
     email: "akshaymarch7@gmail.com"
   }) //overriding the default value defined in the UserContext.js file, for making dynamic user name, like for girik, girtik should be displayed and for nikhil "Weclome nikhil" should be displayed
   return (
-    <userContext.Provider value={{ //UserContext.Provider is wrapping all three components Header,Outlet and Footer because I want the value from React Context to e available to all three compnents, if any one compnent is not inside userContext.provider, I will not be able to use the new value of userContext inside that component
-      person:person,
-      setPerson:setPerson
-    }}>
+    // <userContext.Provider value={{ //UserContext.Provider is wrapping all three components Header,Outlet and Footer because I want the value from React Context to e available to all three compnents, if any one compnent is not inside userContext.provider, I will not be able to use the new value of userContext inside that component
+    //   person:person,
+    //   setPerson:setPerson
+    // }}>
+
+      <Provider store={store}> {/* Passing props to the Provider componention */}
       <Header />
       <Outlet/>
       <Footer />
-    </userContext.Provider>
+      </Provider>
   );
 }
 
