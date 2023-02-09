@@ -29,5 +29,3 @@ export default useOnline;
 
 //     It's a best practice in React to clean up resources created in custom hooks when the component that uses the hook is unmounted. This helps to prevent memory leaks and other issues that can occur when resources are not properly managed.
 
-
-

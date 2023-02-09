@@ -229,6 +229,10 @@ img, video {
   margin: .5rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -312,6 +316,16 @@ img, video {
   background-color: rgb(88 28 135 / var(--tw-bg-opacity));
 }
 
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
+
+.bg-green-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 253 244 / var(--tw-bg-opacity));
+}
+
 .object-center {
   object-position: center;
 }
@@ -326,6 +340,10 @@ img, video {
 
 .p-10 {
   padding: 2.5rem;
+}
+
+.p-1 {
+  padding: .25rem;
 }
 
 .py-10 {

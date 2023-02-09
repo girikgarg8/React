@@ -3091,7 +3091,7 @@ $RefreshReg$(_c1, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body.js":"8yaV8","./components/Shimmer":"g6ZGj","./components/Footer":"8pPOA","./config.js":"jtCLN","./components/RestaurantCard":"bMboU","./components/About":"9R1Eu","./components/Profile":"h0rtF","./components/Error":"kvula","./components/Contact":"cgAOG","react-router-dom":"9xmpe","./components/RestuarantDetail":"d8JED","6b48a8d1357bae3e":"3IbrY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./utils/UserContext":"c5vgB","react-redux":"bdVon","./utils/store":"k2jPV"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./utils/UserContext":"c5vgB","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body.js":"8yaV8","./components/Shimmer":"g6ZGj","./components/Footer":"8pPOA","./config.js":"jtCLN","./components/RestaurantCard":"bMboU","./components/About":"9R1Eu","./components/Profile":"h0rtF","./components/Error":"kvula","./components/Contact":"cgAOG","react-router-dom":"9xmpe","./components/RestuarantDetail":"d8JED","react-redux":"bdVon","./utils/store":"k2jPV","6b48a8d1357bae3e":"3IbrY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("73d4136b7d76bcfc");
 
@@ -5796,7 +5796,196 @@ module.exports = require("e16091d91904e1c4");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"lOjBx":[function(require,module,exports) {
+},{}],"c5vgB":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4ca8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4ca8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const userContext = /*#__PURE__*/ (0, _react.createContext)({
+    person: {
+        name: "Girik Garg",
+        email: "girikgarg8@gmail.com"
+    }
+});
+userContext.displayName = "UserContext" //this name will now be displayed in the react developer tools componenets section, so it makes it easier to debug things
+;
+exports.default = userContext;
+
+  $parcel$ReactRefreshHelpers$4ca8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("c12914c87be9b62");
+function debounce(func, delay) {
+    var args;
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
+    }
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + " %exports% " + key);
+    }
+}
+
+},{"c12914c87be9b62":"786KC"}],"lOjBx":[function(require,module,exports) {
 "use strict";
 var m = require("ff0a718b87aee4cf");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -27289,6 +27478,7 @@ parcelHelpers.export(exports, "Title", ()=>Title);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
+var _reactRedux = require("react-redux"); //useSelector is acting as bridge between the store and the UI layer, so it's imported from it's imported from "react-redux"
 var _userContext = require("../utils/UserContext");
 var _userContextDefault = parcelHelpers.interopDefault(_userContext);
 var _s = $RefreshSig$();
@@ -27306,14 +27496,14 @@ const Title = ()=>{
                 alt: "logo"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 9,
+                lineNumber: 10,
                 columnNumber: 25
             }, undefined),
             "  "
         ]
     }, void 0, true, {
         fileName: "src/components/Header.js",
-        lineNumber: 9,
+        lineNumber: 10,
         columnNumber: 12
     }, undefined);
 };
@@ -27322,12 +27512,17 @@ const Header = ()=>{
     _s();
     const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(false);
     const { person  } = (0, _react.useContext)((0, _userContextDefault.default));
+    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    //     This is a hook in React that uses the useSelector hook from the react-redux library.
+    // The useSelector hook is a way to access data from a Redux store in a React component.The hook takes a selector function as an argument and returns the value returned by the selector.The selector is a function that takes the entire store state as an argument and returns a specific piece of state that the component needs.
+    // In this case, the selector function is store => store.cart.items, which retrieves the items property of the cart property from the store.The value returned by the selector is stored in the cartItems constant.
+    // The hook is used to keep the component updated with the latest state from the store.When the store state changes, the hook will call the selector function and re - render the component if the value
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 16,
+                lineNumber: 26,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27345,14 +27540,14 @@ const Header = ()=>{
                                         children: " Home "
                                     }, void 0, false, {
                                         fileName: "src/components/Header.js",
-                                        lineNumber: 19,
+                                        lineNumber: 29,
                                         columnNumber: 44
                                     }, undefined),
                                     "  "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Header.js",
-                                lineNumber: 19,
+                                lineNumber: 29,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -27364,14 +27559,14 @@ const Header = ()=>{
                                         children: " About "
                                     }, void 0, false, {
                                         fileName: "src/components/Header.js",
-                                        lineNumber: 20,
+                                        lineNumber: 30,
                                         columnNumber: 44
                                     }, undefined),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Header.js",
-                                lineNumber: 20,
+                                lineNumber: 30,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -27383,22 +27578,14 @@ const Header = ()=>{
                                         children: " Contact "
                                     }, void 0, false, {
                                         fileName: "src/components/Header.js",
-                                        lineNumber: 21,
+                                        lineNumber: 31,
                                         columnNumber: 45
                                     }, undefined),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Header.js",
-                                lineNumber: 21,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                className: "px-32",
-                                children: " Cart "
-                            }, void 0, false, {
-                                fileName: "src/components/Header.js",
-                                lineNumber: 22,
+                                lineNumber: 31,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -27410,19 +27597,31 @@ const Header = ()=>{
                                         children: " Instamart "
                                     }, void 0, false, {
                                         fileName: "src/components/Header.js",
-                                        lineNumber: 23,
+                                        lineNumber: 32,
                                         columnNumber: 44
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Header.js",
-                                lineNumber: 23,
+                                lineNumber: 32,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                className: "px-32",
+                                children: [
+                                    " Cart- ",
+                                    cartItems.length,
+                                    " "
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Header.js",
+                                lineNumber: 33,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Header.js",
-                        lineNumber: 18,
+                        lineNumber: 28,
                         columnNumber: 17
                     }, undefined),
                     isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27434,7 +27633,7 @@ const Header = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Header.js",
-                        lineNumber: 26,
+                        lineNumber: 36,
                         columnNumber: 36
                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "mx-60 px-56",
@@ -27442,23 +27641,27 @@ const Header = ()=>{
                         children: " Login "
                     }, void 0, false, {
                         fileName: "src/components/Header.js",
-                        lineNumber: 27,
+                        lineNumber: 37,
                         columnNumber: 25
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Header.js",
-                lineNumber: 17,
+                lineNumber: 27,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Header.js",
-        lineNumber: 15,
+        lineNumber: 25,
         columnNumber: 9
     }, undefined);
 };
-_s(Header, "Eu4+fIQs9LH/MlO+BssftaZFDn8=");
+_s(Header, "ysjZ8DILON4LKt7vwLqmLG28ocs=", false, function() {
+    return [
+        (0, _reactRedux.useSelector)
+    ];
+});
 _c1 = Header;
 exports.default = Header;
 var _c, _c1;
@@ -27470,7 +27673,7 @@ $RefreshReg$(_c1, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","react-redux":"bdVon","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.7.0
  *
@@ -32439,1887 +32642,7 @@ function getTargetMatch(matches, location) {
     return pathMatches[pathMatches.length - 1];
 } //#endregion
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"c5vgB":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$4ca8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$4ca8.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-const userContext = /*#__PURE__*/ (0, _react.createContext)({
-    person: {
-        name: "Girik Garg",
-        email: "girikgarg8@gmail.com"
-    }
-});
-userContext.displayName = "UserContext" //this name will now be displayed in the react developer tools componenets section, so it makes it easier to debug things
-;
-exports.default = userContext;
-
-  $parcel$ReactRefreshHelpers$4ca8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("c12914c87be9b62");
-function debounce(func, delay) {
-    var args;
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
-            }
-        };
-    }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + " %exports% " + key);
-    }
-}
-
-},{"c12914c87be9b62":"786KC"}],"8yaV8":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0606.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _configJs = require("../config.js");
-var _restaurantCardJs = require("./RestaurantCard.js");
-var _shimmerJs = require("./Shimmer.js");
-var _shimmerJsDefault = parcelHelpers.interopDefault(_shimmerJs);
-var _reactRouterDom = require("react-router-dom");
-var _helperJs = require("../utils/helper.js");
-var _useOnlineJs = require("../utils/useOnline.js");
-var _useOnlineJsDefault = parcelHelpers.interopDefault(_useOnlineJs);
-var _userContextJs = require("../utils/UserContext.js");
-var _userContextJsDefault = parcelHelpers.interopDefault(_userContextJs);
-var _s = $RefreshSig$();
-const Body = ({ user  })=>{
-    _s();
-    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
-    const [searchText, setSearchInput] = (0, _react.useState)("") //to create state varibable
-    ;
-    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
-    const { person , setPerson  } = (0, _react.useContext)((0, _userContextJsDefault.default));
-    (0, _react.useEffect)(()=>{
-        getRestaurants();
-    }, []);
-    async function getRestaurants() {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7335152&lng=76.7826359&page_type=DESKTOP_WEB_LISTING");
-        const json = await data.json();
-        //optional chaining
-        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-        setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards) //for first time I need to fit my filteredRestaurants with all the data from API because otherwise it is empty
-        ;
-    }
-    const isOnline = (0, _useOnlineJsDefault.default)();
-    if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: " Offline,please check your internet connection!! "
-    }, void 0, false, {
-        fileName: "src/components/Body.js",
-        lineNumber: 30,
-        columnNumber: 12
-    }, undefined);
-    if (!allRestaurants) return null; //not render component, early return 
-    const searchBtnCSS = {
-        backgroundColor: "red"
-    };
-    // if (filteredRestaurants.length==0) return <h1> No restaurants match your filter!! </h1>
-    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerJsDefault.default), {}, void 0, false, {
-        fileName: "src/components/Body.js",
-        lineNumber: 39,
-        columnNumber: 40
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search-container p-5 bg-pink-50 my-5",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        className: "search-input",
-                        placeholder: "Search",
-                        value: searchText,
-                        onChange: (e)=>{
-                            setSearchInput(e.target.value);
-                        }
-                    }, void 0, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 42,
-                        columnNumber: 7
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "p-2 m-2 bg-purple-900 text-white rounded-md hover:bg-sky-700",
-                        onClick: ()=>{
-                            //need to filter the data
-                            const data = (0, _helperJs.filterData)(searchText, allRestaurants);
-                            //update the state-restaurants
-                            setFilteredRestaurants(data);
-                        },
-                        children: " Search "
-                    }, void 0, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 45,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Body.js",
-                lineNumber: 41,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search-container p-5 bg-pink-50 my-5",
-                children: [
-                    " ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        value: person?.name,
-                        onChange: (e)=>setPerson({
-                                name: e.target.value,
-                                email: e.target.value + "@gmail.com"
-                            })
-                    }, void 0, false, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 52,
-                        columnNumber: 62
-                    }, undefined),
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Body.js",
-                lineNumber: 52,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-wrap",
-                children: /* Write logic for no restaurant found */ filteredRestaurants?.map((restaurant)=>{
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/restaurant/" + restaurant.data.id,
-                        children: [
-                            " ",
-                            /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardJs.RestaurantCard), {
-                                ...restaurant.data,
-                                key: restaurant.data.id,
-                                __source: {
-                                    fileName: "src/components/Body.js",
-                                    lineNumber: 62,
-                                    columnNumber: 89
-                                },
-                                __self: undefined
-                            }),
-                            " "
-                        ]
-                    }, restaurant.data.id, true, {
-                        fileName: "src/components/Body.js",
-                        lineNumber: 62,
-                        columnNumber: 18
-                    }, undefined);
-                })
-            }, void 0, false, {
-                fileName: "src/components/Body.js",
-                lineNumber: 58,
-                columnNumber: 5
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(Body, "0ljJKCAT0VJt7tTMVwrjpFGoK+4=", false, function() {
-    return [
-        (0, _useOnlineJsDefault.default)
-    ];
-});
-_c = Body;
-exports.default = Body;
-var _c;
-$RefreshReg$(_c, "Body");
-
-  $parcel$ReactRefreshHelpers$0606.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../config.js":"jtCLN","./RestaurantCard.js":"bMboU","./Shimmer.js":"g6ZGj","react-router-dom":"9xmpe","../utils/helper.js":"3GF3D","../utils/useOnline.js":"74Yls","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/UserContext.js":"c5vgB"}],"jtCLN":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "IMG_CDN_URL", ()=>IMG_CDN_URL);
-parcelHelpers.export(exports, "FETCH_MENU_URL", ()=>FETCH_MENU_URL);
-parcelHelpers.export(exports, "restaurantListSwiggy", ()=>restaurantListSwiggy);
-const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
-const FETCH_MENU_URL = "https://www.swiggy.com/dapi/menu/v4/full?lat=30.3355531&lng=76.3849589&menuId=";
-const restaurantListSwiggy = [
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "73011",
-            name: "KFC",
-            uuid: "27ff4155-fe46-418e-9862-ab98953bf953",
-            city: "22",
-            area: "Anand Vihar Colony",
-            totalRatingsString: "5000+ ratings",
-            cloudinaryImageId: "bdcd233971b7c81bf77e1fa4471280eb",
-            cuisines: [
-                "American",
-                "Snacks",
-                "Biryani"
-            ],
-            tags: [],
-            costForTwo: 30000,
-            costForTwoString: "₹300 FOR TWO",
-            deliveryTime: 31,
-            minDeliveryTime: 31,
-            maxDeliveryTime: 31,
-            slaString: "31 MINS",
-            lastMileTravel: 6.199999809265137,
-            slugs: {
-                restaurant: "kfc-chukkuwala-chukkuwala",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "KFC Restaurant, Khasra No 1281/1291, Opp Dr Manish Jain hospital, Chakrata road, Dehradun-248001",
-            locality: "Clock Tower",
-            parentId: 547,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "50% off",
-                shortDescriptionList: [
-                    {
-                        meta: "50% off | Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "50% OFF",
-                shortDescriptionList: [
-                    {
-                        meta: "Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            ribbon: [
-                {
-                    type: "PROMOTED"
-                }
-            ],
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "cid=5698075~p=1~eid=00000185-8b09-7c92-0e51-a04b00dc0124",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "6.1 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "73011",
-                deliveryTime: 31,
-                minDeliveryTime: 31,
-                maxDeliveryTime: 31,
-                lastMileTravel: 6.199999809265137,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: true,
-            avgRating: "4.0",
-            totalRatings: 5000,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "542132",
-            name: "Domnik Pizza",
-            uuid: "f2ee37f5-9ab0-4903-9420-6cae020b0a38",
-            city: "22",
-            area: "Majra    Bansal Home",
-            totalRatingsString: "50+ ratings",
-            cloudinaryImageId: "sboh9oor0cvp6ztsyhvj",
-            cuisines: [
-                "Pizzas",
-                "Italian",
-                "Fast Food",
-                "Snacks",
-                "Beverages"
-            ],
-            tags: [],
-            costForTwo: 30000,
-            costForTwoString: "₹300 FOR TWO",
-            deliveryTime: 33,
-            minDeliveryTime: 33,
-            maxDeliveryTime: 33,
-            slaString: "33 MINS",
-            lastMileTravel: 0.6000000238418579,
-            slugs: {
-                restaurant: "domnik-pizza-patel-nagar-patel-nagar-2",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "28/3 Sewala Chandravani Road, Arcedia Grant, Dehradun Rural, Dehradun, Uttarakhand",
-            locality: "Patel Nagar",
-            parentId: 22321,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "50% off",
-                shortDescriptionList: [
-                    {
-                        meta: "50% off | Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "50% OFF",
-                shortDescriptionList: [
-                    {
-                        meta: "Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "0.6 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "542132",
-                deliveryTime: 33,
-                minDeliveryTime: 33,
-                maxDeliveryTime: 33,
-                lastMileTravel: 0.6000000238418579,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: false,
-            avgRating: "3.8",
-            totalRatings: 50,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "321517",
-            name: "FOOD PLANET RESTAURANT",
-            uuid: "899d5dd4-200a-48b2-a321-391bb9486ec2",
-            city: "22",
-            area: "Majra",
-            totalRatingsString: "50+ ratings",
-            cloudinaryImageId: "ykboewqeoxnne8fgrnui",
-            cuisines: [
-                "Indian",
-                "Chinese",
-                "Tandoor",
-                "Thalis",
-                "Fast Food"
-            ],
-            tags: [],
-            costForTwo: 20000,
-            costForTwoString: "₹200 FOR TWO",
-            deliveryTime: 25,
-            minDeliveryTime: 25,
-            maxDeliveryTime: 25,
-            slaString: "25 MINS",
-            lastMileTravel: 0.699999988079071,
-            slugs: {
-                restaurant: "food-planet-restaurant-patel-nagar-patel-nagar",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "157/11, Chandra Parisar Chandra Bani Rd, Ekta Enclave, Doon Enclave, Majra, Dehradun, Uttarakhand 248171",
-            locality: "Patel Nagar",
-            parentId: 81850,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "50% off",
-                shortDescriptionList: [
-                    {
-                        meta: "50% off | Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "50% OFF",
-                shortDescriptionList: [
-                    {
-                        meta: "Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "0.6 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "321517",
-                deliveryTime: 25,
-                minDeliveryTime: 25,
-                maxDeliveryTime: 25,
-                lastMileTravel: 0.699999988079071,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: false,
-            avgRating: "2.8",
-            totalRatings: 50,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "311806",
-            name: "Burger King",
-            uuid: "162a4dc4-50de-452a-82cf-751e18ac9952",
-            city: "22",
-            area: "Anand Vihar Colony",
-            totalRatingsString: "5000+ ratings",
-            cloudinaryImageId: "iqh7ew5ldfgvpd5dpz60",
-            cuisines: [
-                "Burgers",
-                "American"
-            ],
-            tags: [],
-            costForTwo: 35000,
-            costForTwoString: "₹350 FOR TWO",
-            deliveryTime: 39,
-            minDeliveryTime: 39,
-            maxDeliveryTime: 39,
-            slaString: "39 MINS",
-            lastMileTravel: 6.300000190734863,
-            slugs: {
-                restaurant: "burger-king-chakrata-road-ballupur",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "5/5,4/4 & 3/3, GROUND FLOOR, CHAKRATA ROAD, DEHRADUN, UTTRAKHAND",
-            locality: "CHAKRATA ROAD",
-            parentId: 166,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "60% off",
-                shortDescriptionList: [
-                    {
-                        meta: "60% off | Use STEALDEAL",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "60% off up to ₹120 | Use code STEALDEAL",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "60% OFF",
-                shortDescriptionList: [
-                    {
-                        meta: "Use STEALDEAL",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "60% off up to ₹120 | Use code STEALDEAL",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            ribbon: [
-                {
-                    type: "PROMOTED"
-                }
-            ],
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "cid=5700193~p=4~eid=00000185-8b09-7c92-0e51-a04c00dc0405",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "6.3 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "311806",
-                deliveryTime: 39,
-                minDeliveryTime: 39,
-                maxDeliveryTime: 39,
-                lastMileTravel: 6.300000190734863,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: true,
-            avgRating: "4.2",
-            totalRatings: 5000,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "132460",
-            name: "Annapurna Andhra Mess",
-            uuid: "c6460418-904b-4371-9e04-0ce8b1b46cae",
-            city: "22",
-            area: "Dehradun",
-            totalRatingsString: "1000+ ratings",
-            cloudinaryImageId: "zw4qx2szsy9kbszk9n3d",
-            cuisines: [
-                "South Indian",
-                "Biryani",
-                "North Indian"
-            ],
-            tags: [],
-            costForTwo: 20000,
-            costForTwoString: "₹200 FOR TWO",
-            deliveryTime: 25,
-            minDeliveryTime: 25,
-            maxDeliveryTime: 25,
-            slaString: "25 MINS",
-            lastMileTravel: 1.399999976158142,
-            slugs: {
-                restaurant: "annapurna-andhra-mess-subhash-nagar-subhash-nagar",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "keshav enclave sewla khurd chandrabani road behind uttranchal PG college",
-            locality: "Patel Nagar",
-            parentId: 33997,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "50% off",
-                shortDescriptionList: [
-                    {
-                        meta: "50% off | Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "50% OFF",
-                shortDescriptionList: [
-                    {
-                        meta: "Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "1.3 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "132460",
-                deliveryTime: 25,
-                minDeliveryTime: 25,
-                maxDeliveryTime: 25,
-                lastMileTravel: 1.399999976158142,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: false,
-            avgRating: "4.0",
-            totalRatings: 1000,
-            new: false
-        },
-        subtype: "basic"
-    },
-    {
-        type: "restaurant",
-        data: {
-            type: "F",
-            id: "496677",
-            name: "Uncle Ji Restaurant",
-            uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
-            city: "22",
-            area: "Patel Nagar",
-            totalRatingsString: "Too Few Ratings",
-            cloudinaryImageId: "kx2ghnwagcnqjtmd5jbc",
-            cuisines: [
-                "North Indian",
-                "Snacks",
-                "Beverages"
-            ],
-            tags: [],
-            costForTwo: 30000,
-            costForTwoString: "₹300 FOR TWO",
-            deliveryTime: 31,
-            minDeliveryTime: 31,
-            maxDeliveryTime: 31,
-            slaString: "31 MINS",
-            lastMileTravel: 0.800000011920929,
-            slugs: {
-                restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
-                city: "dehradun"
-            },
-            cityState: "22",
-            address: "348 santosh tower, majra road gram majra dehradun 248001",
-            locality: "Patel Nagar",
-            parentId: 298209,
-            unserviceable: false,
-            veg: false,
-            select: false,
-            favorite: false,
-            tradeCampaignHeaders: [],
-            aggregatedDiscountInfo: {
-                header: "50% off",
-                shortDescriptionList: [
-                    {
-                        meta: "50% off | Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            aggregatedDiscountInfoV2: {
-                header: "50% OFF",
-                shortDescriptionList: [
-                    {
-                        meta: "Use WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                descriptionList: [
-                    {
-                        meta: "50% off up to ₹100 | Use code WELCOME50",
-                        discountType: "Percentage",
-                        operationType: "RESTAURANT"
-                    }
-                ],
-                subHeader: "",
-                headerType: 0,
-                superFreedel: ""
-            },
-            chain: [],
-            feeDetails: {
-                fees: [],
-                totalFees: 0,
-                message: "",
-                title: "",
-                amount: "",
-                icon: ""
-            },
-            availability: {
-                opened: true,
-                nextOpenMessage: "",
-                nextCloseMessage: ""
-            },
-            longDistanceEnabled: 0,
-            rainMode: "NONE",
-            thirdPartyAddress: false,
-            thirdPartyVendor: "",
-            adTrackingID: "",
-            badges: {
-                imageBased: [],
-                textBased: [],
-                textExtendedBadges: []
-            },
-            lastMileTravelString: "0.8 kms",
-            hasSurge: false,
-            sla: {
-                restaurantId: "496677",
-                deliveryTime: 31,
-                minDeliveryTime: 31,
-                maxDeliveryTime: 31,
-                lastMileTravel: 0.800000011920929,
-                lastMileDistance: 0,
-                serviceability: "SERVICEABLE",
-                rainMode: "NONE",
-                longDistance: "NOT_LONG_DISTANCE",
-                preferentialService: false,
-                iconType: "EMPTY"
-            },
-            promoted: false,
-            avgRating: "--",
-            totalRatings: 0,
-            new: false
-        },
-        subtype: "basic"
-    }
-];
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bMboU":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ffb1.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "RestaurantCard", ()=>RestaurantCard);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _userContextJs = require("../utils/UserContext.js");
-var _userContextJsDefault = parcelHelpers.interopDefault(_userContextJs);
-var _configJs = require("../config.js");
-var _s = $RefreshSig$();
-const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelString  })=>{
-    _s();
-    const { person  } = (0, _react.useContext)((0, _userContextJsDefault.default));
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "w-56 p-2 m-2 shadow-lg bg-pink-50",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: (0, _configJs.IMG_CDN_URL) + cloudinaryImageId
-            }, void 0, false, {
-                fileName: "src/components/RestaurantCard.js",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                className: "font-bold text-xl",
-                children: [
-                    " ",
-                    name,
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestaurantCard.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    " ",
-                    cuisines.join(", "),
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestaurantCard.js",
-                lineNumber: 10,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    " ",
-                    lastMileTravelString,
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestaurantCard.js",
-                lineNumber: 11,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/RestaurantCard.js",
-        lineNumber: 7,
-        columnNumber: 9
-    }, undefined);
-};
-_s(RestaurantCard, "ua7IKRASVImLI0kEb0v64yUjVNs=");
-_c = RestaurantCard;
-var _c;
-$RefreshReg$(_c, "RestaurantCard");
-
-  $parcel$ReactRefreshHelpers$ffb1.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext.js":"c5vgB","../config.js":"jtCLN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g6ZGj":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0b04.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Shimmer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "restaurant-list",
-        children: Array(10).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card",
-                children: " "
-            }, index, false, {
-                fileName: "src/components/Shimmer.js",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/components/Shimmer.js",
-        lineNumber: 3,
-        columnNumber: 9
-    }, undefined);
-};
-_c = Shimmer;
-exports.default = Shimmer;
-var _c;
-$RefreshReg$(_c, "Shimmer");
-
-  $parcel$ReactRefreshHelpers$0b04.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "filterData", ()=>filterData);
-function filterData(searchText, restaurants) {
-    const filterData = restaurants.filter((restaurant)=>restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-    return filterData;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"74Yls":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$03b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$03b2.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _s = $RefreshSig$();
-const useOnline = ()=>{
-    _s();
-    const [isOnline, setIsOnline] = (0, _react.useState)(true);
-    (0, _react.useEffect)(()=>{
-        const handleOnline = ()=>{
-            setIsOnline(true);
-        };
-        const handleOffline = ()=>{
-            setIsOnline(false);
-        };
-        window.addEventListener("online", handleOnline);
-        window.addEventListener("offline", handleOffline);
-        return ()=>{
-            window.removeEventListener("online", handleOnline);
-            window.removeEventListener("offline", handleOffline);
-        };
-    }, []);
-    return isOnline;
-};
-_s(useOnline, "mRBquyBAMh60D2Q5WI/A8/L/7j4=");
-exports.default = useOnline; // The lines return () => { window.removeEventListener("online", handleOnline) window.removeEventListener("offline", handleOffline) } in the code are used to clean up the event listeners when the component using the custom hook is unmounted.
- // In React, when a component is unmounted, it's important to clean up any resources that were created when the component was mounted. In this case, the custom hook useOnline sets up two event listeners for the online and offline events on the window object. These listeners call the handleOnline and handleOffline functions respectively when the online status of the browser changes.
- // The lines return () => { window.removeEventListener("online", handleOnline) window.removeEventListener("offline", handleOffline) } return a function that removes these event listeners when the component is unmounted.This ensures that the listeners are no longer active and do not continue to respond to events even though the component that set them up has been removed.
- //     It's a best practice in React to clean up resources created in custom hooks when the component that uses the hook is unmounted. This helps to prevent memory leaks and other issues that can occur when resources are not properly managed.
-
-  $parcel$ReactRefreshHelpers$03b2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8pPOA":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bc7c.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Footer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-        children: " Footer "
-    }, void 0, false, {
-        fileName: "src/components/Footer.js",
-        lineNumber: 3,
-        columnNumber: 9
-    }, undefined);
-};
-_c = Footer;
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
-
-  $parcel$ReactRefreshHelpers$bc7c.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9R1Eu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5b98.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _profileClass = require("./ProfileClass");
-var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
-var _profile = require("./Profile");
-var _profileDefault = parcelHelpers.interopDefault(_profile);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: " About Us Page "
-            }, void 0, false, {
-                fileName: "src/components/About.js",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: " This is the Namaste React Live course chapter-7 "
-            }, void 0, false, {
-                fileName: "src/components/About.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
-                name: "Girik class"
-            }, void 0, false, {
-                fileName: "src/components/About.js",
-                lineNumber: 10,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
-                name: "GirikClass"
-            }, void 0, false, {
-                fileName: "src/components/About.js",
-                lineNumber: 11,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/About.js",
-        lineNumber: 7,
-        columnNumber: 9
-    }, undefined);
-};
-_c = About;
-exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
-
-  $parcel$ReactRefreshHelpers$5b98.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./ProfileClass":"aeEz8","./Profile":"h0rtF","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aeEz8":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1beb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1beb.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _userContext = require("../utils/UserContext");
-var _userContextDefault = parcelHelpers.interopDefault(_userContext);
-class Profile extends (0, _reactDefault.default).Component {
-    constructor(props){
-        super(props);
-        console.log("Constructor called");
-        //create state
-        this.state = {
-            userInfo: {
-                name: "Dummy Name",
-                location: "Dummy Location "
-            }
-        };
-    }
-    componentWillUnmount() {
-        clearInterval(this.timer);
-        console.log("Component unmounted");
-    }
-    componentDidMount() {
-        this.timer = setInterval(()=>{
-            console.log("Namaste React OP");
-        }, 1000);
-        // const data = await fetch("https://api.github.com/users/girikgarg8")
-        // const json=await data.json()
-        // this.setState({
-        //     userInfo:json
-        // })
-        console.log("componentDidMount");
-    }
-    render() {
-        console.log("render");
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: [
-                "Welcome to About Page as a class component",
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Consumer, {
-                    children: ({ person  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                            className: "font-bold text-xl p-10",
-                            children: [
-                                " ",
-                                person.name,
-                                "- ",
-                                person.email,
-                                " "
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/ProfileClass.js",
-                            lineNumber: 38,
-                            columnNumber: 30
-                        }, this)
-                }, void 0, false, {
-                    fileName: "src/components/ProfileClass.js",
-                    lineNumber: 37,
-                    columnNumber: 13
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/ProfileClass.js",
-            lineNumber: 32,
-            columnNumber: 17
-        }, this);
-    }
-}
-exports.default = Profile;
-
-  $parcel$ReactRefreshHelpers$1beb.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"h0rtF":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b52a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b52a.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _s = $RefreshSig$();
-const Profile = (props)=>{
-    _s();
-    console.log(" useEffect ");
-    (0, _react.useEffect)(()=>{
-        const timer = setInterval(()=>{
-            console.log("Girik Garg OP!!!");
-        }, 1000);
-        return ()=>{
-            clearInterval(timer);
-            console.log(" useEffect return ");
-        };
-    }, []);
-    const [count, setCount] = (0, _react.useState)(0);
-    console.log("Render");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: " This is Profile component "
-            }, void 0, false, {
-                fileName: "src/components/Profile.js",
-                lineNumber: 18,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: [
-                    " Name : ",
-                    props.name,
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Profile.js",
-                lineNumber: 19,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    " Count: ",
-                    count,
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Profile.js",
-                lineNumber: 20,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>setCount(1),
-                children: " Change count "
-            }, void 0, false, {
-                fileName: "src/components/Profile.js",
-                lineNumber: 21,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Profile.js",
-        lineNumber: 17,
-        columnNumber: 13
-    }, undefined);
-};
-_s(Profile, "fRlyxwYjzQ4yeTYLZO6L81+bOm4=");
-_c = Profile;
-exports.default = Profile;
-var _c;
-$RefreshReg$(_c, "Profile");
-
-  $parcel$ReactRefreshHelpers$b52a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0ba4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0ba4.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const Error = ()=>{
-    _s();
-    const error = (0, _reactRouterDom.useRouteError)();
-    console.log(error);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: " Oops!! "
-            }, void 0, false, {
-                fileName: "src/components/Error.js",
-                lineNumber: 7,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: " Something went wrong!! "
-            }, void 0, false, {
-                fileName: "src/components/Error.js",
-                lineNumber: 8,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: [
-                    " ",
-                    error.status + " : " + error.statusText,
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Error.js",
-                lineNumber: 9,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Error.js",
-        lineNumber: 6,
-        columnNumber: 9
-    }, undefined);
-};
-_s(Error, "oAgjgbJzsRXlB89+MoVumxMQqKM=", false, function() {
-    return [
-        (0, _reactRouterDom.useRouteError)
-    ];
-});
-_c = Error;
-exports.default = Error;
-var _c;
-$RefreshReg$(_c, "Error");
-
-  $parcel$ReactRefreshHelpers$0ba4.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cgAOG":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ee46.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: " Contact Us Page "
-    }, void 0, false, {
-        fileName: "src/components/Contact.js",
-        lineNumber: 2,
-        columnNumber: 12
-    }, undefined);
-};
-_c = Contact;
-exports.default = Contact;
-var _c;
-$RefreshReg$(_c, "Contact");
-
-  $parcel$ReactRefreshHelpers$ee46.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d8JED":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$2202 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$2202.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactRouterDom = require("react-router-dom");
-var _configJs = require("../config.js");
-var _useRestaurantJs = require("../utils/useRestaurant.js");
-var _useRestaurantJsDefault = parcelHelpers.interopDefault(_useRestaurantJs);
-var _shimmerJs = require("./Shimmer.js");
-var _shimmerJsDefault = parcelHelpers.interopDefault(_shimmerJs);
-var _s = $RefreshSig$();
-const RestaurantDetail = ()=>{
-    _s();
-    const params = (0, _reactRouterDom.useParams)();
-    const { id  } = params; //how to read a dynamic URL params
-    const restaurant = (0, _useRestaurantJsDefault.default)(id);
-    return !restaurant ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerJsDefault.default), {}, void 0, false, {
-        fileName: "src/components/RestuarantDetail.js",
-        lineNumber: 13,
-        columnNumber: 27
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "ml-2 font-bold text-3xl",
-                children: [
-                    " Welcome to restaurant :",
-                    id,
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestuarantDetail.js",
-                lineNumber: 15,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                className: "ml-2 text-2xl",
-                children: [
-                    " ",
-                    restaurant?.name,
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestuarantDetail.js",
-                lineNumber: 16,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "object-center",
-                src: (0, _configJs.IMG_CDN_URL) + restaurant?.cloudinaryImageId
-            }, void 0, false, {
-                fileName: "src/components/RestuarantDetail.js",
-                lineNumber: 17,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "menu",
-                children: [
-                    console.log(restaurant?.menu?.items),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        className: "ml-3 max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400",
-                        children: Object.values(restaurant?.menu?.items).map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: [
-                                    " ",
-                                    item?.name,
-                                    " "
-                                ]
-                            }, item?.id, true, {
-                                fileName: "src/components/RestuarantDetail.js",
-                                lineNumber: 25,
-                                columnNumber: 21
-                            }, undefined))
-                    }, void 0, false, {
-                        fileName: "src/components/RestuarantDetail.js",
-                        lineNumber: 23,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestuarantDetail.js",
-                lineNumber: 21,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(RestaurantDetail, "q/LNOAFU3P670pTIeB3UmIVUdgM=", false, function() {
-    return [
-        (0, _reactRouterDom.useParams),
-        (0, _useRestaurantJsDefault.default)
-    ];
-});
-_c = RestaurantDetail;
-exports.default = RestaurantDetail;
-var _c;
-$RefreshReg$(_c, "RestaurantDetail");
-
-  $parcel$ReactRefreshHelpers$2202.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../config.js":"jtCLN","../utils/useRestaurant.js":"ewgpj","./Shimmer.js":"g6ZGj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ewgpj":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5009 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5009.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _config = require("../config");
-var _s = $RefreshSig$();
-const useRestaurant = (resId)=>{
-    _s();
-    const [restaurant, setRestaurant] = (0, _react.useState)(null);
-    //get data from API
-    (0, _react.useEffect)(()=>{
-        getRestaurantsInfo();
-    }, []);
-    async function getRestaurantsInfo() {
-        const data = await fetch((0, _config.FETCH_MENU_URL) + resId);
-        const json = await data.json();
-        setRestaurant(json.data);
-    }
-    //return restauarant data
-    return restaurant;
-};
-_s(useRestaurant, "JyVTGF+bSzTRfNx+8BWJ2DczOus=");
-exports.default = useRestaurant;
-
-  $parcel$ReactRefreshHelpers$5009.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","../config":"jtCLN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3IbrY":[function(require,module,exports) {
-module.exports = require("d830c83a6498429a")(require("c5953b6b1e149271").getBundleURL("aXMci") + "Instamart.0762395e.js" + "?" + Date.now()).catch((err)=>{
-    delete module.bundle.cache[module.id];
-    throw err;
-}).then(()=>module.bundle.root("gB4Fs"));
-
-},{"d830c83a6498429a":"61B45","c5953b6b1e149271":"lgJ39"}],"61B45":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("ad1dfcc82add4c35");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same script twice (e.g. if it was already in the HTML)
-        var existingScripts = document.getElementsByTagName("script");
-        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
-            return script.src === bundle;
-        })) {
-            resolve();
-            return;
-        }
-        var preloadLink = document.createElement("link");
-        preloadLink.href = bundle;
-        preloadLink.rel = "preload";
-        preloadLink.as = "script";
-        document.head.appendChild(preloadLink);
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = bundle;
-        script.onerror = function(e) {
-            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
-            script.onerror = script.onload = null;
-            script.remove();
-            reject(error);
-        };
-        script.onload = function() {
-            script.onerror = script.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-    });
-});
-
-},{"ad1dfcc82add4c35":"j49pS"}],"j49pS":[function(require,module,exports) {
-"use strict";
-var cachedBundles = {};
-var cachedPreloads = {};
-var cachedPrefetches = {};
-function getCache(type) {
-    switch(type){
-        case "preload":
-            return cachedPreloads;
-        case "prefetch":
-            return cachedPrefetches;
-        default:
-            return cachedBundles;
-    }
-}
-module.exports = function(loader, type) {
-    return function(bundle) {
-        var cache = getCache(type);
-        if (cache[bundle]) return cache[bundle];
-        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
-            delete cache[bundle];
-            throw e;
-        });
-    };
-};
-
-},{}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"bdVon":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bdVon":[function(require,module,exports) {
 // The primary entry point assumes we're working with standard ReactDOM/RN, but
 // older versions that do not include `useSyncExternalStore` (React 16.9 - 17.x).
 // Because of that, the useSyncExternalStore compat shim is needed.
@@ -36085,12 +34408,1660 @@ const useStore = /*#__PURE__*/ createStoreHook();
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k2jPV":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8yaV8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0606.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _toolkit = require("@reduxjs/toolkit"); //this file is related to the Redux store
-const store = (0, _toolkit.configureStore)({});
-exports.default = store;
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _configJs = require("../config.js");
+var _restaurantCardJs = require("./RestaurantCard.js");
+var _shimmerJs = require("./Shimmer.js");
+var _shimmerJsDefault = parcelHelpers.interopDefault(_shimmerJs);
+var _reactRouterDom = require("react-router-dom");
+var _helperJs = require("../utils/helper.js");
+var _useOnlineJs = require("../utils/useOnline.js");
+var _useOnlineJsDefault = parcelHelpers.interopDefault(_useOnlineJs);
+var _userContextJs = require("../utils/UserContext.js");
+var _userContextJsDefault = parcelHelpers.interopDefault(_userContextJs);
+var _s = $RefreshSig$();
+const Body = ({ user  })=>{
+    _s();
+    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
+    const [searchText, setSearchInput] = (0, _react.useState)("") //to create state varibable
+    ;
+    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
+    const { person , setPerson  } = (0, _react.useContext)((0, _userContextJsDefault.default));
+    (0, _react.useEffect)(()=>{
+        getRestaurants();
+    }, []);
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7335152&lng=76.7826359&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        //optional chaining
+        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+        setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards) //for first time I need to fit my filteredRestaurants with all the data from API because otherwise it is empty
+        ;
+    }
+    const isOnline = (0, _useOnlineJsDefault.default)();
+    if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: " Offline,please check your internet connection!! "
+    }, void 0, false, {
+        fileName: "src/components/Body.js",
+        lineNumber: 30,
+        columnNumber: 12
+    }, undefined);
+    if (!allRestaurants) return null; //not render component, early return 
+    const searchBtnCSS = {
+        backgroundColor: "red"
+    };
+    // if (filteredRestaurants.length==0) return <h1> No restaurants match your filter!! </h1>
+    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerJsDefault.default), {}, void 0, false, {
+        fileName: "src/components/Body.js",
+        lineNumber: 39,
+        columnNumber: 40
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container p-5 bg-pink-50 my-5",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        className: "search-input",
+                        placeholder: "Search",
+                        value: searchText,
+                        onChange: (e)=>{
+                            setSearchInput(e.target.value);
+                        }
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 42,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "p-2 m-2 bg-purple-900 text-white rounded-md hover:bg-sky-700",
+                        onClick: ()=>{
+                            //need to filter the data
+                            const data = (0, _helperJs.filterData)(searchText, allRestaurants);
+                            //update the state-restaurants
+                            setFilteredRestaurants(data);
+                        },
+                        children: " Search "
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 45,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Body.js",
+                lineNumber: 41,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container p-5 bg-pink-50 my-5",
+                children: [
+                    " ",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        value: person?.name,
+                        onChange: (e)=>setPerson({
+                                name: e.target.value,
+                                email: e.target.value + "@gmail.com"
+                            })
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 52,
+                        columnNumber: 62
+                    }, undefined),
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Body.js",
+                lineNumber: 52,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex flex-wrap",
+                children: /* Write logic for no restaurant found */ filteredRestaurants?.map((restaurant)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/restaurant/" + restaurant.data.id,
+                        children: [
+                            " ",
+                            /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardJs.RestaurantCard), {
+                                ...restaurant.data,
+                                key: restaurant.data.id,
+                                __source: {
+                                    fileName: "src/components/Body.js",
+                                    lineNumber: 62,
+                                    columnNumber: 89
+                                },
+                                __self: undefined
+                            }),
+                            " "
+                        ]
+                    }, restaurant.data.id, true, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 62,
+                        columnNumber: 18
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 58,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(Body, "0ljJKCAT0VJt7tTMVwrjpFGoK+4=", false, function() {
+    return [
+        (0, _useOnlineJsDefault.default)
+    ];
+});
+_c = Body;
+exports.default = Body;
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$0606.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../config.js":"jtCLN","./RestaurantCard.js":"bMboU","./Shimmer.js":"g6ZGj","react-router-dom":"9xmpe","../utils/helper.js":"3GF3D","../utils/useOnline.js":"74Yls","../utils/UserContext.js":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jtCLN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "IMG_CDN_URL", ()=>IMG_CDN_URL);
+parcelHelpers.export(exports, "FETCH_MENU_URL", ()=>FETCH_MENU_URL);
+parcelHelpers.export(exports, "restaurantListSwiggy", ()=>restaurantListSwiggy);
+const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+const FETCH_MENU_URL = "https://www.swiggy.com/dapi/menu/v4/full?lat=30.3355531&lng=76.3849589&menuId=";
+const restaurantListSwiggy = [
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "73011",
+            name: "KFC",
+            uuid: "27ff4155-fe46-418e-9862-ab98953bf953",
+            city: "22",
+            area: "Anand Vihar Colony",
+            totalRatingsString: "5000+ ratings",
+            cloudinaryImageId: "bdcd233971b7c81bf77e1fa4471280eb",
+            cuisines: [
+                "American",
+                "Snacks",
+                "Biryani"
+            ],
+            tags: [],
+            costForTwo: 30000,
+            costForTwoString: "₹300 FOR TWO",
+            deliveryTime: 31,
+            minDeliveryTime: 31,
+            maxDeliveryTime: 31,
+            slaString: "31 MINS",
+            lastMileTravel: 6.199999809265137,
+            slugs: {
+                restaurant: "kfc-chukkuwala-chukkuwala",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "KFC Restaurant, Khasra No 1281/1291, Opp Dr Manish Jain hospital, Chakrata road, Dehradun-248001",
+            locality: "Clock Tower",
+            parentId: 547,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            ribbon: [
+                {
+                    type: "PROMOTED"
+                }
+            ],
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "cid=5698075~p=1~eid=00000185-8b09-7c92-0e51-a04b00dc0124",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "6.1 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "73011",
+                deliveryTime: 31,
+                minDeliveryTime: 31,
+                maxDeliveryTime: 31,
+                lastMileTravel: 6.199999809265137,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: true,
+            avgRating: "4.0",
+            totalRatings: 5000,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "542132",
+            name: "Domnik Pizza",
+            uuid: "f2ee37f5-9ab0-4903-9420-6cae020b0a38",
+            city: "22",
+            area: "Majra    Bansal Home",
+            totalRatingsString: "50+ ratings",
+            cloudinaryImageId: "sboh9oor0cvp6ztsyhvj",
+            cuisines: [
+                "Pizzas",
+                "Italian",
+                "Fast Food",
+                "Snacks",
+                "Beverages"
+            ],
+            tags: [],
+            costForTwo: 30000,
+            costForTwoString: "₹300 FOR TWO",
+            deliveryTime: 33,
+            minDeliveryTime: 33,
+            maxDeliveryTime: 33,
+            slaString: "33 MINS",
+            lastMileTravel: 0.6000000238418579,
+            slugs: {
+                restaurant: "domnik-pizza-patel-nagar-patel-nagar-2",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "28/3 Sewala Chandravani Road, Arcedia Grant, Dehradun Rural, Dehradun, Uttarakhand",
+            locality: "Patel Nagar",
+            parentId: 22321,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "0.6 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "542132",
+                deliveryTime: 33,
+                minDeliveryTime: 33,
+                maxDeliveryTime: 33,
+                lastMileTravel: 0.6000000238418579,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: false,
+            avgRating: "3.8",
+            totalRatings: 50,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "321517",
+            name: "FOOD PLANET RESTAURANT",
+            uuid: "899d5dd4-200a-48b2-a321-391bb9486ec2",
+            city: "22",
+            area: "Majra",
+            totalRatingsString: "50+ ratings",
+            cloudinaryImageId: "ykboewqeoxnne8fgrnui",
+            cuisines: [
+                "Indian",
+                "Chinese",
+                "Tandoor",
+                "Thalis",
+                "Fast Food"
+            ],
+            tags: [],
+            costForTwo: 20000,
+            costForTwoString: "₹200 FOR TWO",
+            deliveryTime: 25,
+            minDeliveryTime: 25,
+            maxDeliveryTime: 25,
+            slaString: "25 MINS",
+            lastMileTravel: 0.699999988079071,
+            slugs: {
+                restaurant: "food-planet-restaurant-patel-nagar-patel-nagar",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "157/11, Chandra Parisar Chandra Bani Rd, Ekta Enclave, Doon Enclave, Majra, Dehradun, Uttarakhand 248171",
+            locality: "Patel Nagar",
+            parentId: 81850,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "0.6 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "321517",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                lastMileTravel: 0.699999988079071,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: false,
+            avgRating: "2.8",
+            totalRatings: 50,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "311806",
+            name: "Burger King",
+            uuid: "162a4dc4-50de-452a-82cf-751e18ac9952",
+            city: "22",
+            area: "Anand Vihar Colony",
+            totalRatingsString: "5000+ ratings",
+            cloudinaryImageId: "iqh7ew5ldfgvpd5dpz60",
+            cuisines: [
+                "Burgers",
+                "American"
+            ],
+            tags: [],
+            costForTwo: 35000,
+            costForTwoString: "₹350 FOR TWO",
+            deliveryTime: 39,
+            minDeliveryTime: 39,
+            maxDeliveryTime: 39,
+            slaString: "39 MINS",
+            lastMileTravel: 6.300000190734863,
+            slugs: {
+                restaurant: "burger-king-chakrata-road-ballupur",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "5/5,4/4 & 3/3, GROUND FLOOR, CHAKRATA ROAD, DEHRADUN, UTTRAKHAND",
+            locality: "CHAKRATA ROAD",
+            parentId: 166,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "60% off",
+                shortDescriptionList: [
+                    {
+                        meta: "60% off | Use STEALDEAL",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "60% off up to ₹120 | Use code STEALDEAL",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "60% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use STEALDEAL",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "60% off up to ₹120 | Use code STEALDEAL",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            ribbon: [
+                {
+                    type: "PROMOTED"
+                }
+            ],
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "cid=5700193~p=4~eid=00000185-8b09-7c92-0e51-a04c00dc0405",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "6.3 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "311806",
+                deliveryTime: 39,
+                minDeliveryTime: 39,
+                maxDeliveryTime: 39,
+                lastMileTravel: 6.300000190734863,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: true,
+            avgRating: "4.2",
+            totalRatings: 5000,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "132460",
+            name: "Annapurna Andhra Mess",
+            uuid: "c6460418-904b-4371-9e04-0ce8b1b46cae",
+            city: "22",
+            area: "Dehradun",
+            totalRatingsString: "1000+ ratings",
+            cloudinaryImageId: "zw4qx2szsy9kbszk9n3d",
+            cuisines: [
+                "South Indian",
+                "Biryani",
+                "North Indian"
+            ],
+            tags: [],
+            costForTwo: 20000,
+            costForTwoString: "₹200 FOR TWO",
+            deliveryTime: 25,
+            minDeliveryTime: 25,
+            maxDeliveryTime: 25,
+            slaString: "25 MINS",
+            lastMileTravel: 1.399999976158142,
+            slugs: {
+                restaurant: "annapurna-andhra-mess-subhash-nagar-subhash-nagar",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "keshav enclave sewla khurd chandrabani road behind uttranchal PG college",
+            locality: "Patel Nagar",
+            parentId: 33997,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "1.3 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "132460",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                lastMileTravel: 1.399999976158142,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: false,
+            avgRating: "4.0",
+            totalRatings: 1000,
+            new: false
+        },
+        subtype: "basic"
+    },
+    {
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "496677",
+            name: "Uncle Ji Restaurant",
+            uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+            city: "22",
+            area: "Patel Nagar",
+            totalRatingsString: "Too Few Ratings",
+            cloudinaryImageId: "kx2ghnwagcnqjtmd5jbc",
+            cuisines: [
+                "North Indian",
+                "Snacks",
+                "Beverages"
+            ],
+            tags: [],
+            costForTwo: 30000,
+            costForTwoString: "₹300 FOR TWO",
+            deliveryTime: 31,
+            minDeliveryTime: 31,
+            maxDeliveryTime: 31,
+            slaString: "31 MINS",
+            lastMileTravel: 0.800000011920929,
+            slugs: {
+                restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+                city: "dehradun"
+            },
+            cityState: "22",
+            address: "348 santosh tower, majra road gram majra dehradun 248001",
+            locality: "Patel Nagar",
+            parentId: 298209,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            aggregatedDiscountInfo: {
+                header: "50% off",
+                shortDescriptionList: [
+                    {
+                        meta: "50% off | Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            aggregatedDiscountInfoV2: {
+                header: "50% OFF",
+                shortDescriptionList: [
+                    {
+                        meta: "Use WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                descriptionList: [
+                    {
+                        meta: "50% off up to ₹100 | Use code WELCOME50",
+                        discountType: "Percentage",
+                        operationType: "RESTAURANT"
+                    }
+                ],
+                subHeader: "",
+                headerType: 0,
+                superFreedel: ""
+            },
+            chain: [],
+            feeDetails: {
+                fees: [],
+                totalFees: 0,
+                message: "",
+                title: "",
+                amount: "",
+                icon: ""
+            },
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
+            },
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
+            },
+            lastMileTravelString: "0.8 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "496677",
+                deliveryTime: 31,
+                minDeliveryTime: 31,
+                maxDeliveryTime: 31,
+                lastMileTravel: 0.800000011920929,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
+            },
+            promoted: false,
+            avgRating: "--",
+            totalRatings: 0,
+            new: false
+        },
+        subtype: "basic"
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bMboU":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ffb1.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "RestaurantCard", ()=>RestaurantCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _userContextJs = require("../utils/UserContext.js");
+var _userContextJsDefault = parcelHelpers.interopDefault(_userContextJs);
+var _configJs = require("../config.js");
+var _s = $RefreshSig$();
+const RestaurantCard = ({ name , cuisines , cloudinaryImageId , lastMileTravelString  })=>{
+    _s();
+    const { person  } = (0, _react.useContext)((0, _userContextJsDefault.default));
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "w-56 p-2 m-2 shadow-lg bg-pink-50",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: (0, _configJs.IMG_CDN_URL) + cloudinaryImageId
+            }, void 0, false, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "font-bold text-xl",
+                children: [
+                    " ",
+                    name,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 9,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    " ",
+                    cuisines.join(", "),
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    " ",
+                    lastMileTravelString,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/RestaurantCard.js",
+        lineNumber: 7,
+        columnNumber: 9
+    }, undefined);
+};
+_s(RestaurantCard, "ua7IKRASVImLI0kEb0v64yUjVNs=");
+_c = RestaurantCard;
+var _c;
+$RefreshReg$(_c, "RestaurantCard");
+
+  $parcel$ReactRefreshHelpers$ffb1.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext.js":"c5vgB","../config.js":"jtCLN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g6ZGj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0b04.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Shimmer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "restaurant-list",
+        children: Array(10).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card",
+                children: " "
+            }, index, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/components/Shimmer.js",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+_c = Shimmer;
+exports.default = Shimmer;
+var _c;
+$RefreshReg$(_c, "Shimmer");
+
+  $parcel$ReactRefreshHelpers$0b04.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterData", ()=>filterData);
+function filterData(searchText, restaurants) {
+    const filterData = restaurants.filter((restaurant)=>restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+    return filterData;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"74Yls":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$03b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$03b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useOnline = ()=>{
+    _s();
+    const [isOnline, setIsOnline] = (0, _react.useState)(true);
+    (0, _react.useEffect)(()=>{
+        const handleOnline = ()=>{
+            setIsOnline(true);
+        };
+        const handleOffline = ()=>{
+            setIsOnline(false);
+        };
+        window.addEventListener("online", handleOnline);
+        window.addEventListener("offline", handleOffline);
+        return ()=>{
+            window.removeEventListener("online", handleOnline);
+            window.removeEventListener("offline", handleOffline);
+        };
+    }, []);
+    return isOnline;
+};
+_s(useOnline, "mRBquyBAMh60D2Q5WI/A8/L/7j4=");
+exports.default = useOnline; // The lines return () => { window.removeEventListener("online", handleOnline) window.removeEventListener("offline", handleOffline) } in the code are used to clean up the event listeners when the component using the custom hook is unmounted.
+ // In React, when a component is unmounted, it's important to clean up any resources that were created when the component was mounted. In this case, the custom hook useOnline sets up two event listeners for the online and offline events on the window object. These listeners call the handleOnline and handleOffline functions respectively when the online status of the browser changes.
+ // The lines return () => { window.removeEventListener("online", handleOnline) window.removeEventListener("offline", handleOffline) } return a function that removes these event listeners when the component is unmounted.This ensures that the listeners are no longer active and do not continue to respond to events even though the component that set them up has been removed.
+ //     It's a best practice in React to clean up resources created in custom hooks when the component that uses the hook is unmounted. This helps to prevent memory leaks and other issues that can occur when resources are not properly managed.
+
+  $parcel$ReactRefreshHelpers$03b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8pPOA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bc7c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$bc7c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+        children: " Footer "
+    }, void 0, false, {
+        fileName: "src/components/Footer.js",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$bc7c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9R1Eu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5b98.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _profileClass = require("./ProfileClass");
+var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
+var _profile = require("./Profile");
+var _profileDefault = parcelHelpers.interopDefault(_profile);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const About = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: " About Us Page "
+            }, void 0, false, {
+                fileName: "src/components/About.js",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: " This is the Namaste React Live course chapter-7 "
+            }, void 0, false, {
+                fileName: "src/components/About.js",
+                lineNumber: 9,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
+                name: "Girik class"
+            }, void 0, false, {
+                fileName: "src/components/About.js",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
+                name: "GirikClass"
+            }, void 0, false, {
+                fileName: "src/components/About.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/About.js",
+        lineNumber: 7,
+        columnNumber: 9
+    }, undefined);
+};
+_c = About;
+exports.default = About;
+var _c;
+$RefreshReg$(_c, "About");
+
+  $parcel$ReactRefreshHelpers$5b98.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./ProfileClass":"aeEz8","./Profile":"h0rtF","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aeEz8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1beb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1beb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _userContext = require("../utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+class Profile extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+        console.log("Constructor called");
+        //create state
+        this.state = {
+            userInfo: {
+                name: "Dummy Name",
+                location: "Dummy Location "
+            }
+        };
+    }
+    componentWillUnmount() {
+        clearInterval(this.timer);
+        console.log("Component unmounted");
+    }
+    componentDidMount() {
+        this.timer = setInterval(()=>{
+            console.log("Namaste React OP");
+        }, 1000);
+        // const data = await fetch("https://api.github.com/users/girikgarg8")
+        // const json=await data.json()
+        // this.setState({
+        //     userInfo:json
+        // })
+        console.log("componentDidMount");
+    }
+    render() {
+        console.log("render");
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                "Welcome to About Page as a class component",
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Consumer, {
+                    children: ({ person  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                            className: "font-bold text-xl p-10",
+                            children: [
+                                " ",
+                                person.name,
+                                "- ",
+                                person.email,
+                                " "
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/ProfileClass.js",
+                            lineNumber: 38,
+                            columnNumber: 30
+                        }, this)
+                }, void 0, false, {
+                    fileName: "src/components/ProfileClass.js",
+                    lineNumber: 37,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/ProfileClass.js",
+            lineNumber: 32,
+            columnNumber: 17
+        }, this);
+    }
+}
+exports.default = Profile;
+
+  $parcel$ReactRefreshHelpers$1beb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"h0rtF":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b52a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b52a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+const Profile = (props)=>{
+    _s();
+    console.log(" useEffect ");
+    (0, _react.useEffect)(()=>{
+        const timer = setInterval(()=>{
+            console.log("Girik Garg OP!!!");
+        }, 1000);
+        return ()=>{
+            clearInterval(timer);
+            console.log(" useEffect return ");
+        };
+    }, []);
+    const [count, setCount] = (0, _react.useState)(0);
+    console.log("Render");
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: " This is Profile component "
+            }, void 0, false, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 18,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: [
+                    " Name : ",
+                    props.name,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 19,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    " Count: ",
+                    count,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 20,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setCount(1),
+                children: " Change count "
+            }, void 0, false, {
+                fileName: "src/components/Profile.js",
+                lineNumber: 21,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Profile.js",
+        lineNumber: 17,
+        columnNumber: 13
+    }, undefined);
+};
+_s(Profile, "fRlyxwYjzQ4yeTYLZO6L81+bOm4=");
+_c = Profile;
+exports.default = Profile;
+var _c;
+$RefreshReg$(_c, "Profile");
+
+  $parcel$ReactRefreshHelpers$b52a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvula":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0ba4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0ba4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const Error = ()=>{
+    _s();
+    const error = (0, _reactRouterDom.useRouteError)();
+    console.log(error);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: " Oops!! "
+            }, void 0, false, {
+                fileName: "src/components/Error.js",
+                lineNumber: 7,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: " Something went wrong!! "
+            }, void 0, false, {
+                fileName: "src/components/Error.js",
+                lineNumber: 8,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: [
+                    " ",
+                    error.status + " : " + error.statusText,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Error.js",
+                lineNumber: 9,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Error.js",
+        lineNumber: 6,
+        columnNumber: 9
+    }, undefined);
+};
+_s(Error, "oAgjgbJzsRXlB89+MoVumxMQqKM=", false, function() {
+    return [
+        (0, _reactRouterDom.useRouteError)
+    ];
+});
+_c = Error;
+exports.default = Error;
+var _c;
+$RefreshReg$(_c, "Error");
+
+  $parcel$ReactRefreshHelpers$0ba4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cgAOG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ee46.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: " Contact Us Page "
+    }, void 0, false, {
+        fileName: "src/components/Contact.js",
+        lineNumber: 2,
+        columnNumber: 12
+    }, undefined);
+};
+_c = Contact;
+exports.default = Contact;
+var _c;
+$RefreshReg$(_c, "Contact");
+
+  $parcel$ReactRefreshHelpers$ee46.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d8JED":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2202 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2202.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _configJs = require("../config.js");
+var _useRestaurantJs = require("../utils/useRestaurant.js");
+var _useRestaurantJsDefault = parcelHelpers.interopDefault(_useRestaurantJs);
+var _shimmerJs = require("./Shimmer.js");
+var _shimmerJsDefault = parcelHelpers.interopDefault(_shimmerJs);
+var _cartSliceJs = require("../utils/cartSlice.js");
+var _reactRedux = require("react-redux"); //useDispatch is a hook in React that is used to dispatch actions to a Redux store. It is provided by the react-redux library.
+var _s = $RefreshSig$();
+const RestaurantDetail = ()=>{
+    _s();
+    const params = (0, _reactRouterDom.useParams)();
+    const { id  } = params; //how to read a dynamic URL params
+    const restaurant = (0, _useRestaurantJsDefault.default)(id);
+    const dispatch = (0, _reactRedux.useDispatch)();
+    // const handleAddItem = () => {
+    //     dispatch(addItem("Grapes")) //remeber that when I clcikc on add, it should dispatch an action, so that dispactching of action is done using dispatchEvent function, this "grapes" that I am passing here is actually the action's payload, which I have used in cartSlice.js file, behing the scenes an object called action would be getting created, something like action={payload:"Grapes"}
+    // }
+    const addFoodItem = (item)=>{
+        dispatch(addFoodItem(item));
+    };
+    return !restaurant ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerJsDefault.default), {}, void 0, false, {
+        fileName: "src/components/RestuarantDetail.js",
+        lineNumber: 23,
+        columnNumber: 28
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: [
+                            " Restaurant ID :",
+                            id,
+                            " "
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/RestuarantDetail.js",
+                        lineNumber: 26,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: [
+                            " ",
+                            restaurant?.name,
+                            " "
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/RestuarantDetail.js",
+                        lineNumber: 27,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        src: (0, _configJs.IMG_CDN_URL) + restaurant?.cloudinaryImageId
+                    }, void 0, false, {
+                        fileName: "src/components/RestuarantDetail.js",
+                        lineNumber: 28,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestuarantDetail.js",
+                lineNumber: 25,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "p-5",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: " Menu "
+                    }, void 0, false, {
+                        fileName: "src/components/RestuarantDetail.js",
+                        lineNumber: 38,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                        className: "ml-3 max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400",
+                        children: Object.values(restaurant?.menu?.items).map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: [
+                                    " ",
+                                    item?.name,
+                                    " - ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        className: "p-1 bg-green-50",
+                                        onClick: ()=>addFoodItem(item),
+                                        children: " Add item "
+                                    }, void 0, false, {
+                                        fileName: "src/components/RestuarantDetail.js",
+                                        lineNumber: 41,
+                                        columnNumber: 60
+                                    }, undefined)
+                                ]
+                            }, item?.id, true, {
+                                fileName: "src/components/RestuarantDetail.js",
+                                lineNumber: 41,
+                                columnNumber: 25
+                            }, undefined))
+                    }, void 0, false, {
+                        fileName: "src/components/RestuarantDetail.js",
+                        lineNumber: 39,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestuarantDetail.js",
+                lineNumber: 36,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/RestuarantDetail.js",
+        lineNumber: 24,
+        columnNumber: 9
+    }, undefined);
+};
+_s(RestaurantDetail, "0FG1isGBKMxfyxNsquq/uhxu9LE=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams),
+        (0, _useRestaurantJsDefault.default),
+        (0, _reactRedux.useDispatch)
+    ];
+});
+_c = RestaurantDetail;
+exports.default = RestaurantDetail;
+var _c;
+$RefreshReg$(_c, "RestaurantDetail");
+
+  $parcel$ReactRefreshHelpers$2202.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../config.js":"jtCLN","../utils/useRestaurant.js":"ewgpj","./Shimmer.js":"g6ZGj","../utils/cartSlice.js":"5RXlr","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ewgpj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5009 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5009.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _config = require("../config");
+var _s = $RefreshSig$();
+const useRestaurant = (resId)=>{
+    _s();
+    const [restaurant, setRestaurant] = (0, _react.useState)(null);
+    //get data from API
+    (0, _react.useEffect)(()=>{
+        getRestaurantsInfo();
+    }, []);
+    async function getRestaurantsInfo() {
+        const data = await fetch((0, _config.FETCH_MENU_URL) + resId);
+        const json = await data.json();
+        setRestaurant(json.data);
+    }
+    //return restauarant data
+    return restaurant;
+};
+_s(useRestaurant, "JyVTGF+bSzTRfNx+8BWJ2DczOus=");
+exports.default = useRestaurant;
+
+  $parcel$ReactRefreshHelpers$5009.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","../config":"jtCLN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5RXlr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addItem", ()=>addItem);
+parcelHelpers.export(exports, "removeItems", ()=>removeItems);
+parcelHelpers.export(exports, "clearCart", ()=>clearCart);
+var _toolkit = require("@reduxjs/toolkit");
+const cartSlice = (0, _toolkit.createSlice)({
+    name: "cart",
+    initialState: {
+        items: [
+            "Apples",
+            "Banana"
+        ] //initialising an empty cart 
+    },
+    reducers: {
+        addItem: (state, action)=>{
+            state.items.push(action.payload) //this function doesn't return anything, many people make this mistake
+            ;
+        },
+        clearCart: (state)=>{
+            state.items = [];
+        },
+        removeItems (state, action) {
+            state.items.pop();
+        }
+    }
+});
+const { addItem , removeItems , clearCart  } = cartSlice.actions; //named import, this is just the syntax, there's no explanation why Redux develeopers devised this syntax
+exports.default = cartSlice.reducer; //again, this is one of those weird syntaxes of Redux which makes it tough for programmers, this is reducer (not reducers), reducer is a single big  object in which all the reducers are wrapped
 
 },{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lL1Ef":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -39929,6 +39900,121 @@ var thunk = createThunkMiddleware(); // Attach the factory function so users can
 thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","7Zeie","2kQhy"], "2kQhy", "parcelRequire164e")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k2jPV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _toolkit = require("@reduxjs/toolkit"); //this file is related to the Redux store
+var _cartSlice = require("./cartSlice");
+var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
+const store = (0, _toolkit.configureStore)({
+    reducer: {
+        cart: (0, _cartSliceDefault.default)
+    }
+});
+exports.default = store;
+
+},{"@reduxjs/toolkit":"lL1Ef","./cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3IbrY":[function(require,module,exports) {
+module.exports = require("d830c83a6498429a")(require("c5953b6b1e149271").getBundleURL("aXMci") + "Instamart.0762395e.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("gB4Fs"));
+
+},{"d830c83a6498429a":"61B45","c5953b6b1e149271":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ad1dfcc82add4c35");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"ad1dfcc82add4c35":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}]},["1xC6H","7Zeie","2kQhy"], "2kQhy", "parcelRequire164e")
 
 //# sourceMappingURL=index.7271efb6.js.map

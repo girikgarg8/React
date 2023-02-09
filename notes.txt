@@ -750,9 +750,39 @@ So, in order to provide the store to the React App, I will import Provider from 
 
 Redux Tolkit is often shortened to RTK.
 
- 
+ Summary of what we did in Redux to set up the cart:
 
+ 1. Create store: using configureStore(): defined in RTK (Redux-toolkit)
 
+2. Provide the store to the app: using <Provider store={store} /> imported from "react-redux"
+
+3. Creating the slice: using createSlice provided by RTK
+
+createSlice({
+  name: "",
+  intialState: something,
+  reducers:{
+    addItem: ()=>{ logic },
+    removeItem: ()=> {logic}
+  }
+})
+
+exporting the action using export {addItem,removeItem}=cartSlice.actions;
+
+export default cartSlice.reducer
+
+4. Adding the slice to the store
+
+{
+  reducer:{
+    cart:cartSlice,
+    user:userSlice
+  }
+}
+
+To dispatch an action in Redux, I use the syntax: dispatch(addItem("Grapes")), this addItem was actually a named import of action in the cartSlice.js file, so wherever I use this action, I need to dispatch the action as well
+
+This dispatch will be provided by a hook known as useDispatch, so the syntax would be something like:  const dispatch=useDispatch(), and this hook useDispatch will be imported from "react-redux"
  
 
 
