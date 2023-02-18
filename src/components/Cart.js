@@ -10,7 +10,7 @@ const Cart = () => {
     const handleClearCart = () => {
         dispatch(clearCart());
     }
-    console.log(cartItems)
+    //console.log(cartItems)
     return (
         <div>
             <h1 className="font-bold text-3xl"> Cart Items - {cartItems.length} </h1>

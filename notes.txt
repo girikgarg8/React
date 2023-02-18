@@ -787,5 +787,34 @@ This dispatch will be provided by a hook known as useDispatch, so the syntax wou
 
 Very important point asked by Akshay sir in many interviews, how do I subscribe to store in Cart.js? I will use code like useSelector (store=>store.cart.items), I am subscribing to otems array in cart slice of store, there can be performance issues if I just subscribe to store, something like useSelector (store=>store), but this will lead to bad performance, reason being if I subscribe to the whole store, the Cart component will re-render everytime there is a change in the store, but this is not the desired behavior.
 
+===Testing the app===
 
+There are many different testing frameworks for React, like Enzyme (older, still used by many companies) and React testing library (the one which is latest and used by many companies)---> React testing libraries internally uses JEST
 
+Let's start from basics: why do we need testing in React App? To ensure that the code written by programmer doesn't break the code written by other programmers (in other words I can say testing ensures maintainability of code etc)
+
+Term: TDD: Test driven development: means we write the test case even before writing the actual code (We won't be using this method in this course )
+
+Most companies don't do TDD because it increases the development time too much, but in actual, using TDD gives lot of confidence to developer that the code he/she has written doesn't mess with other components in the app.
+
+Different types of testing: (Some of them, not all ) :
+
+1) Manual testing: A team or a group of people in a company try different test cases and try to break the code written by the developer
+2) Automation testing: Code testing some other code, we can write a workflow to check the entire code (like Selenium is one such tool used for automation testing)
+
+3) E2E testing (End to end testing ): Testing from beginning to end of app, just like a user would go to login->select restauarant->click on cart (every possible damn thing) (covers entire user journey)
+
+There's something known as headless browser, it is a type of browser, which is a browser without viewport, in a headless browser, the virtual DOM still exists but it is not painted on the actual DOM, so it is bit faster than the actual browser
+
+Unit testing and integration testing
+
+JEST=Javascript testing framework, it is used to test Javascript code, like React, Angular, Babel etc
+
+JEST is much more complex, but React-testing-library (which internally uses JEST), is less complex
+
+Steps to use React testing library in the app:
+
+1. Installed React Testing library.
+2. Installed JEST
+3. Configure JEST (using jest --config) The settings for configuration: described in this file: https://drive.google.com/file/d/1b5eK-0yjDI1oFIsAPmpWt0yn7otAjzxg/view?usp=share_link
+4. 
