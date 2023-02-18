@@ -817,4 +817,7 @@ Steps to use React testing library in the app:
 1. Installed React Testing library.
 2. Installed JEST
 3. Configure JEST (using jest --config) The settings for configuration: described in this file: https://drive.google.com/file/d/1b5eK-0yjDI1oFIsAPmpWt0yn7otAjzxg/view?usp=share_link
-4. 
+
+4. Try to use npm run test, and resolve the errors (installed jest-environment-jsdom)
+5. Create the test in __tests__ folder, because JEST by default looks for tests in the folder by the name "__tests__", this is what JEST has to say: testMatch: **/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)
+
