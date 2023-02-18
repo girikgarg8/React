@@ -18,7 +18,7 @@ const RestaurantDetail = () => {
     // }
 
     const addFoodItem=(item)=>{
-        dispatch(addFoodItem(item))
+        dispatch(addItem(item))
     }
     return (!restaurant) ? <Shimmer /> : (
         <div className="flex">

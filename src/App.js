@@ -31,6 +31,7 @@ import { createBrowserRouter,RouterProvider,Link,Outlet} from "react-router-dom"
 import RestaurantDetail from "./components/RestuarantDetail";
 import {Provider} from "react-redux";
 import store from "./utils/store";
+import Cart from "./components/Cart";
 
 // const [user,setUser]=useState({
 //   name: "Girik Garg",
@@ -94,6 +95,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact/>
+      },
+      {
+        path:"/cart",
+        element: <Cart/>
       },
       {
         path:"/restaurant/:id",
