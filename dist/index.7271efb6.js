@@ -40046,12 +40046,17 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
 var _reactRedux = require("react-redux");
+var _cartSlice = require("../utils/cartSlice");
 var _foodItem = require("./FoodItem");
 var _foodItemDefault = parcelHelpers.interopDefault(_foodItem);
 var _s = $RefreshSig$();
 const Cart = ()=>{
     _s();
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleClearCart = ()=>{
+        dispatch((0, _cartSlice.clearCart)());
+    };
     console.log(cartItems);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
@@ -40064,7 +40069,16 @@ const Cart = ()=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 10,
+                lineNumber: 16,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "bg-green-100 p-2 m-5",
+                onClick: ()=>handleClearCart(),
+                children: " Clear Cart "
+            }, void 0, false, {
+                fileName: "src/components/Cart.js",
+                lineNumber: 18,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -40073,24 +40087,25 @@ const Cart = ()=>{
                         ...item
                     }, item.id, false, {
                         fileName: "src/components/Cart.js",
-                        lineNumber: 15,
-                        columnNumber: 21
+                        lineNumber: 24,
+                        columnNumber: 25
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Cart.js",
-                lineNumber: 12,
+                lineNumber: 21,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Cart.js",
-        lineNumber: 9,
+        lineNumber: 15,
         columnNumber: 9
     }, undefined);
 };
-_s(Cart, "sOGYiwJY+kD+ABxufRt7JbvggIE=", false, function() {
+_s(Cart, "ClsVU7OzYQ50hVvtHIih2dVFL+s=", false, function() {
     return [
-        (0, _reactRedux.useSelector)
+        (0, _reactRedux.useSelector),
+        (0, _reactRedux.useDispatch)
     ];
 });
 _c = Cart;
@@ -40103,7 +40118,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","./FoodItem":"9xltm","react":"21dqq","react-router-dom":"9xmpe"}],"9xltm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","./FoodItem":"9xltm","react":"21dqq","react-router-dom":"9xmpe","../utils/cartSlice":"5RXlr"}],"9xltm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8f2a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
