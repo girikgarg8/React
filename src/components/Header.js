@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import Logo from "../assets/img/logo.png"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux" //useSelector is acting as bridge between the store and the UI layer, so it's imported from it's imported from "react-redux"
 import userContext from "../utils/UserContext";

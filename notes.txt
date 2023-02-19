@@ -823,13 +823,16 @@ Steps to use React testing library in the app:
 4. Try to use npm run test, and resolve the errors (installed jest-environment-jsdom)
 5. Create the test in __tests__ folder, because JEST by default looks for tests in the folder by the name "__tests__", this is what JEST has to say: testMatch: **/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)
 
-6. Now, normal JS file doesn't understand import statement, so it will give an error, saying "cannot import statement as module", so I need to take help of Babel, I need to configure Jest with Babel (See this page: https://jestjs.io/docs/getting-started#using-babel), so basically Babel will make JEST understand ES6, because by default Javascript doesn't understaand ES6
+6. Now, normal JS file doesn't understand import statement, so it will give an error, saying "cannot import statement as module", so I need to take help of Babel/preset-env, I need to configure Jest with Babel (See this page: https://jestjs.io/docs/getting-started#using-babel), so basically Babel will make JEST understand ES6, because by default Javascript doesn't understaand ES6
 
 
 6.1 There are two ways I can use babel configuration in my file, either to use .babelrc or babel.config.js file
 
-7. Wrote expect,sum,test
+7. Wrote expect,sum,test in the .test file
 8. gitignore coverage report
+9. Testing whether image loads on loading the header, I need to render just the Header component (not the entire app), so I have to use render from @testing-library/preset-react, but this gives an error saying:  E:\NAMASTE REACT\src\components\__tests__\Header.test.js: Support for the experimental syntax 'jsx' isn't currently enabled, so I need to install babel/preset-react so that JEST is able to understand JSX, to make JEST able to understand import statements, I have to use @testing-library/preset-env
+
+10. Testing will fail on the line import Logo from "../assets/img/logo.png" in Header.js file, because it will try to read the image as Javascript, but the image actually is not Javascript. So we will try to use mocks to simulate the image, the formal defintion of mocks is:  In the context of the JEST testing framework, a mock is a fake version of a module or component that is used in place of the real one during testing.
 
 presets: [['@babel/preset-env', {targets: {node: 'current'}}]], Using this inside .babelrc doesn't work, because .babelrc expects JSON, not Javascript
 
@@ -868,10 +871,3 @@ I am able to get detailed information about coverage of test cases because in JE
 The coverage folder in project is  created by JEST due t storing information about these coverage reports.
 
 First, I will design the test cases for Header component, and then for the body component.
-
-
-
-
-
-
-
