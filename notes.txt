@@ -806,7 +806,9 @@ Different types of testing: (Some of them, not all ) :
 
 There's something known as headless browser, it is a type of browser, which is a browser without viewport, in a headless browser, the virtual DOM still exists but it is not painted on the actual DOM, so it is bit faster than the actual browser
 
-Unit testing and integration testing
+Unit testing: testing small components individually
+
+integration testing
 
 JEST=Javascript testing framework, it is used to test Javascript code, like React, Angular, Babel etc
 
@@ -825,6 +827,9 @@ Steps to use React testing library in the app:
 
 
 6.1 There are two ways I can use babel configuration in my file, either to use .babelrc or babel.config.js file
+
+7. Wrote expect,sum,test
+8. gitignore coverage report
 
 presets: [['@babel/preset-env', {targets: {node: 'current'}}]], Using this inside .babelrc doesn't work, because .babelrc expects JSON, not Javascript
 
@@ -852,6 +857,21 @@ Dates: JSON does not have a built-in data type for representing dates, so they m
 Regular expressions: JSON does not have a built-in data type for representing regular expressions, so they must be converted to strings before being serialized to JSON.
 Infinity, -Infinity, and NaN: These values are not supported in JSON, so any value set to these values in a JavaScript object will be converted to null when serialized to JSON.
 It's important to keep these limitations in mind when working with JSON data, as attempting to serialize unsupported values can lead to errors or unexpected behavior.
+
+Question: When I am testing the app using npm run test, I am not running the app on browser , then how is testing happening? 
+
+The testing happens in JS environment, when I configured Jest, I specified test environment as "jsdom", "jsdom" is actually a NPM package.
+
+Does the testing environment have all functionalities of browser? No, only some of them, we can consider it to be a kind of mini-browser.
+
+I am able to get detailed information about coverage of test cases because in JEST configuration, I had marked true for coverage report.
+The coverage folder in project is  created by JEST due t storing information about these coverage reports.
+
+First, I will design the test cases for Header component, and then for the body component.
+
+
+
+
 
 
 
