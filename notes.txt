@@ -821,3 +821,37 @@ Steps to use React testing library in the app:
 4. Try to use npm run test, and resolve the errors (installed jest-environment-jsdom)
 5. Create the test in __tests__ folder, because JEST by default looks for tests in the folder by the name "__tests__", this is what JEST has to say: testMatch: **/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)
 
+6. Now, normal JS file doesn't understand import statement, so it will give an error, saying "cannot import statement as module", so I need to take help of Babel, I need to configure Jest with Babel (See this page: https://jestjs.io/docs/getting-started#using-babel), so basically Babel will make JEST understand ES6, because by default Javascript doesn't understaand ES6
+
+
+6.1 There are two ways I can use babel configuration in my file, either to use .babelrc or babel.config.js file
+
+presets: [['@babel/preset-env', {targets: {node: 'current'}}]], Using this inside .babelrc doesn't work, because .babelrc expects JSON, not Javascript
+
+It's a common interview question, what is the difference between JavaScript object and JSON? They look similar, but they are not same
+
+JavaScript objects and JSON (JavaScript Object Notation) share many similarities, but they are not the same thing.
+
+A JavaScript object is a data structure that represents a collection of properties, where each property has a key and a value. The keys are always strings, and the values can be any valid JavaScript value, including other objects. JavaScript objects are defined using curly braces {} and can be created dynamically at runtime.
+
+On the other hand, JSON is a lightweight data interchange format that is often used for transmitting data between a server and a web application. It is a text-based format that is similar to a JavaScript object in structure, but with some key differences. JSON is a string representation of a JavaScript object, where the keys must be enclosed in double quotes, and the values can only be strings, numbers, booleans, arrays, or other JSON objects. JSON is a data format that can be parsed and converted into a JavaScript object using the built-in JSON.parse() method.
+
+In JSON, only a limited set of data types are supported as values. The supported data types in JSON are:
+
+Strings
+Numbers
+Booleans (true/false)
+null
+Arrays
+Objects
+Values that cannot be used as values in JSON include:
+
+Functions: JSON does not support functions as values, so any function included as a value in a JavaScript object cannot be serialized to JSON.
+Undefined: JSON does not support the undefined value as a value, so any property set to undefined in a JavaScript object will not be included in the JSON string.
+Dates: JSON does not have a built-in data type for representing dates, so they must be converted to strings or numbers before being serialized to JSON.
+Regular expressions: JSON does not have a built-in data type for representing regular expressions, so they must be converted to strings before being serialized to JSON.
+Infinity, -Infinity, and NaN: These values are not supported in JSON, so any value set to these values in a JavaScript object will be converted to null when serialized to JSON.
+It's important to keep these limitations in mind when working with JSON data, as attempting to serialize unsupported values can lead to errors or unexpected behavior.
+
+
+
