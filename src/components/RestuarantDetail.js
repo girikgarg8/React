@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom"
 import { IMG_CDN_URL } from "../config.js";
 import useRestaurant from "../utils/useRestaurant.js";
 import Shimmer from "./Shimmer.js";
-import useRestaurant from "../utils/useRestaurant.js";
 import { addItem } from "../utils/cartSlice.js";
 import { useDispatch } from "react-redux"; //useDispatch is a hook in React that is used to dispatch actions to a Redux store. It is provided by the react-redux library.
 const RestaurantDetail = () => {

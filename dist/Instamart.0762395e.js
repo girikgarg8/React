@@ -559,96 +559,70 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$8238.prelude(module);
 
 try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _s = $RefreshSig$();
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _react = require("e54f5b3a31b89733");
+var _jsxRuntime = require("ba6e02221efb39be");
 const Section = ({ title , description , isVisible , setIsVisible  })=>{
     //const [isVisible, setIsVisible] = useState(false);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
         className: "border border-black p-2 m-2",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("h3", {
                 className: "font-bold text-xl",
                 children: [
                     " ",
                     title,
                     " "
                 ]
-            }, void 0, true, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 7,
-                columnNumber: 13
-            }, undefined),
-            isVisible ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+            }),
+            isVisible ? /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                 onClick: ()=>setIsVisible(false),
                 className: "cursor-pointer underline",
                 children: " Hide "
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 10,
-                columnNumber: 29
-            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+            }) : /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                 onClick: ()=>setIsVisible(true),
                 className: "cursor-pointer underline",
                 children: " Show "
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 10,
-                columnNumber: 128
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("p", {
                 children: [
                     " ",
                     isVisible && description,
                     " "
                 ]
-            }, void 0, true, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 12,
-                columnNumber: 13
-            }, undefined)
+            })
         ]
-    }, void 0, true, {
-        fileName: "src/components/Instamart.js",
-        lineNumber: 6,
-        columnNumber: 9
-    }, undefined);
+    });
 };
 _c = Section;
 const Instamart = ()=>{
-    _s();
     // const [sectionConfig,setSectionConfig]=useState({
     //     showAbout:false,
     //     showTeam:false,
     //     showCareers:false
     // }) //this code is very bad nin nature: it's neither readable nor testable
     const [visibleSection, setVisibleSection] = (0, _react.useState)("about"); //here I am keeping the state as the name of the key which I want to display
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
                 className: "text-3xl p-2 m-2 font-bold",
                 children: " Instamart "
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 26,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Section, {
                 title: "About Instamart",
                 description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
-                isVisible: visibleSection === "about",
+                isVisible: visibleSection === "about" //passing true if section to be shown is the about section
+                ,
                 setIsVisible: (display)=>{
                     if (display) setVisibleSection("about");
                     else setVisibleSection("");
                 }
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 27,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Section, {
                 title: "Team Instamart",
                 description: "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
                 isVisible: visibleSection === "team",
@@ -656,12 +630,8 @@ const Instamart = ()=>{
                     if (display) setVisibleSection("");
                     else setVisibleSection("");
                 }
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 31,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Section, {
                 title: "Careers Instamart",
                 description: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
                 isVisible: visibleSection === "careers",
@@ -669,21 +639,13 @@ const Instamart = ()=>{
                     if (display) setVisibleSection("careers");
                     else setVisibleSection("");
                 }
-            }, void 0, false, {
-                fileName: "src/components/Instamart.js",
-                lineNumber: 35,
-                columnNumber: 13
-            }, undefined)
+            })
         ]
-    }, void 0, true, {
-        fileName: "src/components/Instamart.js",
-        lineNumber: 25,
-        columnNumber: 9
-    }, undefined);
+    });
 };
-_s(Instamart, "EVSoBNkEttJ8TEJ8qgTOI3/0H9Q=");
 _c1 = Instamart;
-exports.default = Instamart;
+var _default = Instamart;
+exports.default = _default;
 var _c, _c1;
 $RefreshReg$(_c, "Section");
 $RefreshReg$(_c1, "Instamart");
@@ -693,6 +655,6 @@ $RefreshReg$(_c1, "Instamart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","05c99"], null, "parcelRequire164e")
+},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","e54f5b3a31b89733":"21dqq","ba6e02221efb39be":"6AEwr"}]},["1xC6H","05c99"], null, "parcelRequire164e")
 
 //# sourceMappingURL=Instamart.0762395e.js.map

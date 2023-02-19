@@ -42,7 +42,7 @@ const Body = ({user}) => { //destructuring on the fly
       <input type="text" className="search-input" placeholder="Search" value={searchText} onChange={(e)=>
         {setSearchInput(e.target.value)} 
        } ></input>
-        <button className="p-2 m-2 bg-purple-900 text-white rounded-md hover:bg-sky-700" onClick={()=>{
+        <button className="p-2 m-2 bg-purple-900 text-white rounded-md hover:bg-sky-700" data-testid="search-btn" onClick={()=>{
         //need to filter the data
         const data=filterData(searchText,allRestaurants);
         //update the state-restaurants
@@ -55,7 +55,7 @@ const Body = ({user}) => { //destructuring on the fly
           email: e.target.value+"@gmail.com"
         })
       }/> </div>
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap" data-testid="res-list">
       {
         /* Write logic for no restaurant found */
         filteredRestaurants?.map((restaurant) => {

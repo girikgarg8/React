@@ -39,11 +39,25 @@ We have a package manager which takes care of our transitive dependencies (trans
     "last 2 versions"]
   } ensures that my app is compatiable with last 2 versions of all browsers avaialble on broswerslist.dev
 
+
+When someone says "Babel is a transpiler," they are referring to Babel's primary function of transforming code written in one version of JavaScript into code that can run in a different version or environment.
+
+Specifically, Babel is a source-to-source compiler, which means that it takes the source code of one language (in this case, modern JavaScript) and translates it into the source code of another language (in this case, an older version of JavaScript that is compatible with a wider range of browsers and environments). This process is commonly referred to as transpiling, short for "translating" and "compiling."
+
+Babel is commonly used to convert modern JavaScript features and syntax, such as arrow functions, let and const declarations, and template literals, into code that can be run on older browsers or environments that don't yet support those features. Babel can also be used to convert code written in other languages that compile to JavaScript, such as TypeScript or JSX, into plain JavaScript.
   babel is used for creating polyfill
   polfyfill means replacing code with the code that browser understands
   eg. if older version of JS doesn't understand map() function, babel may write own custom implementation of map() so that code is able to execute
 
   tree shaking means that if I am importing a library,library may provide 10-20 functions, but I may be using only 1 or 2 of them. So parcel is smart enough and it removes the code of the unused libraries.
+
+Another very important thing: Parcel also does Hot Module Replacement (HMR)
+
+  Hot Module Replacement (HMR) is a feature in React (and other JavaScript frameworks) that allows developers to update the application code in real-time, without the need to refresh the entire page.
+
+In traditional web development, making changes to the code often requires reloading the entire page, which can be time-consuming and disrupts the development workflow. With HMR, developers can see the changes they make to the code reflected instantly on the page, without losing the current state of the application.
+
+HMR works by updating only the modules that have changed, instead of reloading the entire application. It detects which modules have been updated, and applies the changes to the running application, without losing the current state. This makes the development process faster and more efficient, and can significantly reduce the time it takes to see the effects of code changes.
 
   babel-plugin-transform-remove-console is used for removing the console.log statements from the production code.
 
@@ -176,6 +190,14 @@ After Rect-16, React introduced a new reconciliation engine called React Fiber
 Never use index as a key in react
 
 No key (not acceptable) <<<<<index key (okay way,use only if you don't have anything) <<unique key (best practice)
+
+In React, a key is a special attribute that you need to assign to each item in a list when you render it using the map() method. The key attribute helps React to keep track of the identity of each item in the list and to efficiently update the DOM when the list changes.
+
+When you use index as a key for list items in React, you are essentially telling React to use the position of the item in the array as its identity. This can cause problems in some situations, such as:
+
+Reordering: If you reorder the list items, the index will change, and React will treat the items as new elements, causing unnecessary re-renders and potentially breaking the functionality of your app.
+
+Deletion: If you delete an item from the list, the index of the remaining items will change, causing React to re-render all the items in the list, even though only one item was deleted.
 
 There are two ways to export in javascript: one of them is using export default
 export defualt is just used to export one function.
@@ -832,7 +854,24 @@ Steps to use React testing library in the app:
 8. gitignore coverage report
 9. Testing whether image loads on loading the header, I need to render just the Header component (not the entire app), so I have to use render from @testing-library/preset-react, but this gives an error saying:  E:\NAMASTE REACT\src\components\__tests__\Header.test.js: Support for the experimental syntax 'jsx' isn't currently enabled, so I need to install babel/preset-react so that JEST is able to understand JSX, to make JEST able to understand import statements, I have to use @testing-library/preset-env
 
-10. Testing will fail on the line import Logo from "../assets/img/logo.png" in Header.js file, because it will try to read the image as Javascript, but the image actually is not Javascript. So we will try to use mocks to simulate the image, the formal defintion of mocks is:  In the context of the JEST testing framework, a mock is a fake version of a module or component that is used in place of the real one during testing.
+10. Testing will fail on the line import Logo from "../assets/img/logo.png" in Header.js file, because it will try to read the image as Javascript, but the image actually is not Javascript. So we will try to use mocks to simulate the image, the formal defintion of mocks is:  In the context of the JEST testing framework, a mock is a fake version of a module or component that is used in place of the real one during testing. Now how do I tell JEST that take the images from the mocks? Ans: Go inside configuration file of JEST, and specify in moduleNameMapper, something like "\\.png":"../mocks/dummyLogo.js" (means match any .png file with dummyLogo component from mocks folder)
+
+11. The code above will fail again, because the code is being tested in jsdom, and jsdom doesn't have provider, so I need to provide it with a provider in the test file
+
+12. The above code will fail again, becuase it can't use Link from "react-router-dom", in the React App, I had used createBrowserRouter, but as I am testing this code in jsdom, I will have to use staticRouter from "react-router-dom/server"
+
+13. If I am testing a component which uses fetch, I won't be able to use fetch in JS-DOM, because fetch API is provided by browser. So I need to mock the fetch API call, I'll do that by using global.fetch in the test file.
+
+14. If I try to do integration testing of search button, then it will fail because of the Shimmer component, because JS-dom will not be able to find search button due to loading of shimmer component.
+
+
+
+
+
+
+After these steps, the test suites finally run.
+
+If I use create-react-app, it automatically installs all these packages, so using create-react-app is actually an abstraction.
 
 presets: [['@babel/preset-env', {targets: {node: 'current'}}]], Using this inside .babelrc doesn't work, because .babelrc expects JSON, not Javascript
 
@@ -871,3 +910,43 @@ I am able to get detailed information about coverage of test cases because in JE
 The coverage folder in project is  created by JEST due t storing information about these coverage reports.
 
 First, I will design the test cases for Header component, and then for the body component.
+
+---In order to use image from the component, I need to use an ID, so I use test-id to specify an ID, which I will refer during my testing environment function getAllByTestId()
+
+The code const logo=header.getAllByTestId("logo"); returns all the DOM elements whose data-test-id attribute is equal to "logo". Since there could be multiple such elements where attribute equals "logo", so getAllByTestId() will return me an array.
+
+While testing the search functionality, I will again encounter an error related to fetch, because fecth is a superpower given by the browser (Namaste Javascript folks would know :P, It's Episode 2 Season 2)
+
+The best way to remember or recall about promises is to remeber it an alternative to callbacks, since callbacks leads to inversion of control, I prefer using Promises.
+
+
+Keep in mind one thing, fetch doesn't return the data from the API, it always returns a promise object. (See the video I tagged above, sir has explained everything over there)
+
+An important note: fetch() return the data as a readable stream (not as JSON), this readable stream can then converted into JSON.
+
+Important doubt about await function in JS: When you use await fetch() in JavaScript, it means you are waiting for the fetch() function to complete its operation and return a promise. The fetch() function returns a promise that resolves to the Response object that represents the HTTP response.
+
+So, using await fetch() is equivalent to calling fetch() and then calling .then() on the resulting promise to handle the Response object. In other words, using await fetch() waits for the promise returned by fetch() to resolve, and then proceeds with the execution of the next line of code, just as using .then() on the promise would do.
+
+Therefore, in a way, using await fetch() is the same as saying the promise returned by fetch() has been resolved, but with the added benefit of making the code easier to read and write by avoiding the use of callbacks or chaining promises.
+
+In order to use HMR (Hot Module Replacement) for jest, I can use jest --watch
+
+In Jest, a test suite refers to a collection of related test cases that are grouped together. Test suites are typically created for testing a specific feature or functionality of a software application.
+
+A test suite in Jest is represented by a block of code that uses the describe function to define the suite and contains one or more test cases using the test or it functions. For example:
+
+scss
+Copy code
+describe('Calculator', () => {
+  test('adds two numbers', () => {
+    expect(1 + 2).toBe(3);
+  });
+  
+  test('subtracts two numbers', () => {
+    expect(3 - 2).toBe(1);
+  });
+});
+In this example, the describe function defines a test suite for a calculator and contains two test cases using the test function to test the addition and subtraction functionality. When running the Jest test runner, it will group and execute all test cases within this suite together.
+
+Test suites can be nested within other test suites, allowing for a hierarchical organization of test cases. Jest provides many features for configuring and running test suites, such as test reporters, code coverage reports, and test timeouts.
