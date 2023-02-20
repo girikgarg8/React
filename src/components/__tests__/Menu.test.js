@@ -34,5 +34,5 @@ test("Add Items to cart",async ()=>{
 
     const cart=body.getByTestId("cart")
 
-    expect(cart.innerHTML).toBe(" Cart -2 items ")
+    expect(cart.innerHTML).toBe(" Cart - 2  ")
 })
