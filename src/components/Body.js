@@ -39,7 +39,7 @@ const Body = ({user}) => { //destructuring on the fly
   return (allRestaurants?.length===0)? <Shimmer/>:(
     <>
     <div className="search-container p-5 bg-pink-50 my-5">
-      <input type="text" className="search-input" placeholder="Search" value={searchText} onChange={(e)=>
+      <input type="text" className="search-input" placeholder="Search" data-testid="search-input" value={searchText} onChange={(e)=>
         {setSearchInput(e.target.value)} 
        } ></input>
         <button className="p-2 m-2 bg-purple-900 text-white rounded-md hover:bg-sky-700" data-testid="search-btn" onClick={()=>{

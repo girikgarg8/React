@@ -864,9 +864,7 @@ Steps to use React testing library in the app:
 
 14. If I try to do integration testing of search button, then it will fail because of the Shimmer component, because JS-dom will not be able to find search button due to loading of shimmer component.
 
-
-
-
+15. In order to mock entering the data into the search button, I need to fire an event (using fireEvent), provided by React testing Library.
 
 
 After these steps, the test suites finally run.
@@ -899,6 +897,17 @@ Dates: JSON does not have a built-in data type for representing dates, so they m
 Regular expressions: JSON does not have a built-in data type for representing regular expressions, so they must be converted to strings before being serialized to JSON.
 Infinity, -Infinity, and NaN: These values are not supported in JSON, so any value set to these values in a JavaScript object will be converted to null when serialized to JSON.
 It's important to keep these limitations in mind when working with JSON data, as attempting to serialize unsupported values can lead to errors or unexpected behavior.
+
+Synthetic event: In JavaScript, a synthetic event is an event object that is created by a library or framework instead of being directly triggered by the browser. Synthetic events are typically used in frameworks like React or Vue to simplify event handling and provide a consistent interface for working with different browsers and devices.
+
+When an event is triggered in a web page, the browser creates an event object and dispatches it to any event listeners that have been registered for that event. However, different browsers may create slightly different event objects, and the properties and methods of these objects may not be consistent across different devices. This can make it difficult to write cross-browser compatible code for handling events.
+
+To address this problem, libraries like React create synthetic events that provide a consistent interface for working with events across different browsers and devices. When a synthetic event is triggered, the library creates an event object that has a standard set of properties and methods that can be used to handle the event. The synthetic event is then passed to any event listeners that have been registered for the event.
+
+For example, in React, when a user clicks on a button, a synthetic click event is created and passed to the event listener function. The event listener function can then use the standard set of properties and methods provided by the synthetic event to handle the click event in a consistent way across different devices.
+
+Overall, synthetic events provide a way to simplify event handling and provide a consistent interface for working with events across different browsers and devices. They are a useful tool for building robust and cross-browser compatible web applications.
+
 
 Question: When I am testing the app using npm run test, I am not running the app on browser , then how is testing happening? 
 
@@ -950,3 +959,7 @@ describe('Calculator', () => {
 In this example, the describe function defines a test suite for a calculator and contains two test cases using the test function to test the addition and subtraction functionality. When running the Jest test runner, it will group and execute all test cases within this suite together.
 
 Test suites can be nested within other test suites, allowing for a hierarchical organization of test cases. Jest provides many features for configuring and running test suites, such as test reporters, code coverage reports, and test timeouts.
+
+The two lines of code const resList=body.getByTestId("res-list"); and expect(resList.children.length).toBe(15); will be executed only after the waitFor function resolves, which occurs after the "search-btn" element is found in the body object.
+
+The waitFor function checks for the existence of the "search-btn" element before allowing the test to proceed to the next line, so the const resList=body.getByTestId("res-list"); line and the expect(resList.children.length).toBe(15); line will only execute after the "search-btn" element has been found.

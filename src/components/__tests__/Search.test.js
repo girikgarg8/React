@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import { StaticRouter } from "react-router-dom/server";
 import store from "../../utils/store.js"
 import Body from "../Body";
-import { render, waitFor } from "@testing-library/react";
+import { render, waitFor,fireEvent } from "@testing-library/react";
 import { RESTAURANT_DATA } from "../../mocks/APIData"
 import "@testing-library/jest-dom"; //for using toBeInTheDocument()
 
@@ -25,5 +25,30 @@ test("Shimmer Loading", async () => {
     await waitFor(()=>expect(body.getByTestId("search-btn")))
     const resList=body.getByTestId("res-list");
     expect(resList.children.length).toBe(15);
+    //console.log(shimmer)
+})
+
+test("Search for string(food) on homepage", async () => {
+    const body = render(
+        <StaticRouter>
+            <Provider store={store}>
+                <Body />
+            </Provider>
+        </StaticRouter>
+    )
+
+    await waitFor(() => expect(body.getByTestId("search-btn")))
+    const input = body.getByTestId("search-input");
+    fireEvent.change(input,{
+            target:{
+                value: "food" //this is mocking the synthetic event of React, basically the code will type "food" in the search container
+            }
+        }
+    )
+
+    const searchBtn=body.getByTestId("search-btn")
+    fireEvent.click(searchBtn);
+    
+
     //console.log(shimmer)
 })
