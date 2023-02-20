@@ -35,9 +35,9 @@ const RestaurantDetail = () => {
             <div className="p-5">
                 {/* console.log(restaurant?.menu?.items) */}
                 <h1> Menu </h1>
-                <ul className="ml-3 max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                <ul className="ml-3 max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400" data-testid="menu">
                     {Object.values(restaurant?.menu?.items).map((item) => (
-                        <li key={item?.id}> {item?.name} - <button className="p-1 bg-green-50" onClick={()=>addFoodItem(item)} > Add item </button></li>
+                        <li key={item?.id}> {item?.name} - <button className="p-1 bg-green-50" onClick={()=>addFoodItem(item)} data-testid="addBtn" > Add item </button></li>
                     ))}
                 </ul>
             </div>

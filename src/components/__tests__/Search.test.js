@@ -39,16 +39,20 @@ test("Search for string(food) on homepage", async () => {
 
     await waitFor(() => expect(body.getByTestId("search-btn")))
     const input = body.getByTestId("search-input");
-    fireEvent.change(input,{
+    fireEvent.change(input,{ //.change is like mimicking the onChange event o f search-input
             target:{
-                value: "food" //this is mocking the synthetic event of React, basically the code will type "food" in the search container
+                value: "burger" //this is mocking the synthetic event of React, basically the code will type "burger" in the search container
             }
         }
     )
 
+
     const searchBtn=body.getByTestId("search-btn")
     fireEvent.click(searchBtn);
-    
+      
+    const restList = body.getByTestId("res-list");
+    //console.log(restList.children)
+    expect(restList.children.length).toBe(1)
 
     //console.log(shimmer)
 })

@@ -26802,7 +26802,10 @@ $RefreshReg$(_c1, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"d29f3003a728844e":"21dqq","b8c76e08b08dd8a3":"9xmpe","fdd504882165e0cd":"bdVon","a3543086062412ad":"c5vgB","1514e0034dc12b7e":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","d9d020602147609b":"fp2ax"}],"9xmpe":[function(require,module,exports) {
+},{"d29f3003a728844e":"21dqq","d9d020602147609b":"fp2ax","b8c76e08b08dd8a3":"9xmpe","fdd504882165e0cd":"bdVon","a3543086062412ad":"c5vgB","1514e0034dc12b7e":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fp2ax":[function(require,module,exports) {
+module.exports = require("9b3fed3e133db5fb").getBundleURL("aXMci") + "logo.f9c4dbb7.png" + "?" + Date.now();
+
+},{"9b3fed3e133db5fb":"lgJ39"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.7.0
  *
@@ -34414,10 +34417,7 @@ module.exports = require("9e952d700319ed9b");
     exports.jsxs = jsxs;
 })();
 
-},{"416e5432959d32d2":"21dqq"}],"fp2ax":[function(require,module,exports) {
-module.exports = require("9b3fed3e133db5fb").getBundleURL("aXMci") + "logo.f9c4dbb7.png" + "?" + Date.now();
-
-},{"9b3fed3e133db5fb":"lgJ39"}],"8yaV8":[function(require,module,exports) {
+},{"416e5432959d32d2":"21dqq"}],"8yaV8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34477,6 +34477,7 @@ const Body = ({ user  })=>{
                         type: "text",
                         className: "search-input",
                         placeholder: "Search",
+                        "data-testid": "search-input",
                         value: searchText,
                         onChange: (e)=>{
                             setSearchInput(e.target.value);
@@ -34484,6 +34485,7 @@ const Body = ({ user  })=>{
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "p-2 m-2 bg-purple-900 text-white rounded-md hover:bg-sky-700",
+                        "data-testid": "search-btn",
                         onClick: ()=>{
                             //need to filter the data
                             const data = (0, _helper.filterData)(searchText, allRestaurants);
@@ -34510,6 +34512,7 @@ const Body = ({ user  })=>{
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                 className: "flex flex-wrap",
+                "data-testid": "res-list",
                 children: /* Write logic for no restaurant found */ filteredRestaurants?.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_reactRouterDom.Link, {
                         to: "/restaurant/" + restaurant.data.id,
@@ -35383,6 +35386,7 @@ var _jsxRuntime = require("fcd4c61e8a703eb9");
 const Shimmer = ()=>{
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
         className: "restaurant-list",
+        "data-testid": "shimmer",
         children: Array(10).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                 className: "shimmer-card",
                 children: " "
@@ -35825,6 +35829,7 @@ const RestaurantDetail = ()=>{
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("ul", {
                         className: "ml-3 max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400",
+                        "data-testid": "menu",
                         children: Object.values(restaurant?.menu?.items).map((item)=>/*#__PURE__*/ (0, _jsxRuntime.jsxs)("li", {
                                 children: [
                                     " ",
@@ -35833,6 +35838,7 @@ const RestaurantDetail = ()=>{
                                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                         className: "p-1 bg-green-50",
                                         onClick: ()=>addFoodItem(item),
+                                        "data-testid": "addBtn",
                                         children: " Add item "
                                     })
                                 ]
@@ -35975,8 +35981,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var global = arguments[3];
 var process = require("867fd42d82f66db");
+var global = arguments[3];
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({
