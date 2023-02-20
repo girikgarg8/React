@@ -962,4 +962,58 @@ Test suites can be nested within other test suites, allowing for a hierarchical 
 
 The two lines of code const resList=body.getByTestId("res-list"); and expect(resList.children.length).toBe(15); will be executed only after the waitFor function resolves, which occurs after the "search-btn" element is found in the body object.
 
+waitFor is a utility function that allows you to wait for a condition to be true before continuing with a test. It's often used in conjunction with asynchronous code, such as promises, timeouts, or events.
+
 The waitFor function checks for the existence of the "search-btn" element before allowing the test to proceed to the next line, so the const resList=body.getByTestId("res-list"); line and the expect(resList.children.length).toBe(15); line will only execute after the "search-btn" element has been found.
+
+===Ch-14 Machine Coding Interview===
+
+What is machine coding interview? Topics related to React which will be useful for clearing React interviews
+
+For a frontend React engineer role, machine coding interview is the first or second interview
+
+Some companies like Uber will take the machine coding interview purely in HTML, CSS and Vanilla Javascript
+
+Some companies take maching coding interview for the tech stack we're being hired for, like for React developer, they'll ask to build something in React during the machine coding interview, maybe on some platform like Hackerrank or Codesandbox
+
+From people's experiences, what was asked to be built in the machine coding interview:
+
+1. ToDo list
+2. Fetch from API
+3. Forms 
+4. Nested filters
+5. Carousels
+6. Hooks
+7. Searching, sorting
+8. Infinite scroll
+9. Higher order components: from Namaste JS, higher order functions are functions which either take another function as an input or return a function 
+10. E-commerce app
+11. Counter app
+12. Debouncing
+13. Tic tac toe
+14. Build e-commerce or swiggy type of website
+
+Toughest part of machine coding interview: Coding live in front of interview, in limited time (1-2 hours)
+The problem can be solved by constant practice.
+
+Practice before interview, and planning during interview (Planning is very crucial in interview)
+
+Question by interviewer: Build YouTube
+
+Step-1: Requirement Clarification: Disucss with interviewer what features we need to build during the interview (we can't build the entire Youtube app in 2 hours), so for example, I can say, I will build the homepage, search bar and a component which shows the videos on searching etc
+
+Secondly I need to clarify with the interviewer about what tech stack do I need to use (tech stack doesn't mean HTML,CSS and JS), tech stack means telling the interviewer that I will be using Tailwind with CSS, whethert going to use Typescript or Javascript, whether going to use Context API or Redux)
+
+So in our case for Youtube app, as it is a complex app, using redux makes much more sense because the data management is more complex, if I was building a simpler app like ToDo or Counter, using React Context API makes more sense
+
+For UI layer of the app, using Tailwind CSS is beneficial because it helps to style the app fast, it has reusable classes, etc.
+
+Basically there should be an explanation for everything, so that interviewer gets an impression that the candidate is thinking like a senior software engineer.
+
+If application consists of forms, I can use formik
+
+I will use react-router-dom for routing 
+
+Other things like using Parcel or Webpack for bundling, and jest, react-testing-library for testing.
+
+Spend around 5 minutes talking about the requirements specification and the tech stack discussion.
