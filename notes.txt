@@ -1022,3 +1022,4 @@ Most interviewers will allow to use Google during interviews, but with practise 
 
 Talk about low level design, how the data will flow, what components will be there in the app etc. The advantage of disucssing low level design with the interviewer is that, the candidate and the interviewer will be on the same page, because a big app like Youtube can be built in 100s of ways
 
+g
