@@ -1000,7 +1000,7 @@ Practice before interview, and planning during interview (Planning is very cruci
 
 Question by interviewer: Build YouTube
 
-Step-1: Requirement Clarification: Disucss with interviewer what features we need to build during the interview (we can't build the entire Youtube app in 2 hours), so for example, I can say, I will build the homepage, search bar and a component which shows the videos on searching etc
+Step-1: (This is more of high level design) Requirement Clarification: Disucss with interviewer what features we need to build during the interview (we can't build the entire Youtube app in 2 hours), so for example, I can say, I will build the homepage, search bar and a component which shows the videos on searching etc
 
 Secondly I need to clarify with the interviewer about what tech stack do I need to use (tech stack doesn't mean HTML,CSS and JS), tech stack means telling the interviewer that I will be using Tailwind with CSS, whethert going to use Typescript or Javascript, whether going to use Context API or Redux)
 
@@ -1017,3 +1017,8 @@ I will use react-router-dom for routing
 Other things like using Parcel or Webpack for bundling, and jest, react-testing-library for testing.
 
 Spend around 5 minutes talking about the requirements specification and the tech stack discussion.
+
+Most interviewers will allow to use Google during interviews, but with practise we don't need to Google search.
+
+Talk about low level design, how the data will flow, what components will be there in the app etc. The advantage of disucssing low level design with the interviewer is that, the candidate and the interviewer will be on the same page, because a big app like Youtube can be built in 100s of ways
+
