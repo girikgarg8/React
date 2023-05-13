@@ -1020,6 +1020,9 @@ Spend around 5 minutes talking about the requirements specification and the tech
 
 Most interviewers will allow to use Google during interviews, but with practise we don't need to Google search.
 
-Talk about low level design, how the data will flow, what components will be there in the app etc. The advantage of disucssing low level design with the interviewer is that, the candidate and the interviewer will be on the same page, because a big app like Youtube can be built in 100s of ways
+Talk about low level design, how the data will flow, what components will be there in the app etc. The advantage of disucssing low level design with the interviewer is that, the candidate and the interviewer will be on the same page, because a big app like Youtube can be built in 100s of ways (basically how the UI will look like in the app)
 
-ga
+You can find my hand-drawn UI of this app here: (Link)
+
+In a machine coding interview, it's not a good idea to install Babel, Parcel bundler from scratch because time is already less, so I can discuss with the interviewer that I am using create-react-app for now, I can use my own customisations when the size of the app becomes too large
+
