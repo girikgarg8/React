@@ -546,7 +546,7 @@ CODE SPLITTING IS BENEFICIAL FOR SYSTEM DESIGN INTERVIEWS
 
 Storing the images in CDN, caching the images: these are keywords that interviewer loks for in system design interviews
 
-In orderoyt do lazy loading, we use Lazy component from "React", as a named import.  
+In order to do lazy loading, we use Lazy component from "React", as a named import.  
 
 The lazy function takes a callback function, and this callback function lazily imports the required component. 
 
