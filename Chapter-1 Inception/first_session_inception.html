@@ -9,24 +9,26 @@
 </head>
 
 <body>
+    <div> Header </div>
     <div id="root">
-
     </div>
-    <script> //Creating an h1 tag with Javascript
+    <!-- <script> //Creating an h1 tag with Javascript
         const heading = document.createElement("h1");
         heading.innerHTML = "Namaste Everyone from JS";
         const root1 = document.getElementById("root");
         root1.appendChild(heading);
-    </script>
+    </script> -->
+    <div> Footer </div>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
     <script>
-        const heading1=React.createElement("h1",{},"Namaste Everyone from React!!");
+        const heading1=React.createElement("h1",{
+            id: "title", //this is for the tag attributes, just see in console on the browser
+        },"Namaste Everyone from React!!");
         console.log(heading1); //A React element is nothing but a javascript object, at the end of the day
         const root=ReactDOM.createRoot(document.getElementById("root"));
         root.render(heading1); //placing the heading1 inside the root
     </script>
 </body>
-
 </html>
