@@ -11,6 +11,13 @@
 <body>
     <div> Header </div>
     <div id="root">
+        <h1>Hello From H1 TAG </h1>
+        <h1>Hello From H1 TAG</h1>
+        <h1>Hello From H1 TAG</h1>
+        <h1>Hello From H1 TAG</h1>
+        <h1>Hello From H1 TAG</h1>
+        <h2> Not Rendered </h2>
+        <!-- Smart trick, if root is rendered correctly, then Not Rendered Message will not be displayed, but if due to some reason the root is not rendered correctly, it will show 'Not Rendered' message -->
     </div>
     <!-- <script> //Creating an h1 tag with Javascript
         const heading = document.createElement("h1");
@@ -21,14 +28,15 @@
     <div> Footer </div>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
     <script>
-        const heading1=React.createElement("h1",{
-            id: "title", //this is for the tag attributes, just see in console on the browser
-        },"Namaste Everyone from React!!");
+        const heading1 = React.createElement("h1", {
+            id: "title", //in terms of HTML, it is a tag attribute,in terms of React it is called props, just see in console on the browser
+        }, "Namaste Everyone from React!!");
         console.log(heading1); //A React element is nothing but a javascript object, at the end of the day
-        const root=ReactDOM.createRoot(document.getElementById("root"));
+        const root = ReactDOM.createRoot(document.getElementById("root")); //Try changing it to document.getElementById("root1"), see the 
         root.render(heading1); //placing the heading1 inside the root
+        //React will override any other tags place inside the root
     </script>
 </body>
+
 </html>
