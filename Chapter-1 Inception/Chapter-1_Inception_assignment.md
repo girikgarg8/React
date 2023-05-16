@@ -48,7 +48,7 @@ A: `Async` - The async attribute is a `boolean attribute`. The script is downloa
 
 `Defer` - The defer attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the page, and `executed after the page` has finished parsing(when browser finished DOM construction). The `defer attribute` tells the browser `not to wait for the script`. Instead, the browser will continue to process the HTML, build DOM.
 
-![Image Explaining the difference](NORMAL_ASYNC_DEFER.png?raw=true "Title")
+![Image Explaining the difference](Normal_Async_Defer.png?raw=true "Title")
 
 ### *Syntax*
 
