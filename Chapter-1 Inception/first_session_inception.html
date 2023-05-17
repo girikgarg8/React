@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namaste React</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -25,18 +26,21 @@
         const root1 = document.getElementById("root");
         root1.appendChild(heading);
     </script> -->
+
+
+    <!-- <div>
+        <h1> Hello, first heading </h1>
+        <h1> Hello, second heading </h1>
+    </div> Let's try to create this type of structure with React in line 37 of this file -->
+
+    
     <div> Footer </div>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script>
-        const heading1 = React.createElement("h1", {
-            id: "title", //in terms of HTML, it is a tag attribute,in terms of React it is called props, just see in console on the browser
-        }, "Namaste Everyone from React!!");
-        console.log(heading1); //A React element is nothing but a javascript object, at the end of the day
-        const root = ReactDOM.createRoot(document.getElementById("root")); //Try changing it to document.getElementById("root1"), see the 
-        root.render(heading1); //placing the heading1 inside the root
-        //React will override any other tags place inside the root
+    <script src="App.js"> //moving all the React code into App.js file, so that the index.html file doesn't become lengthy
+    
     </script>
+
 </body>
 
 </html>
