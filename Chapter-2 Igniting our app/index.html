@@ -1,0 +1,44 @@
+<!DOCTYPE html> <!-- The code for first session,inception-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div> Header </div>
+    <div id="root">
+        <h1>Hello From H1 TAG </h1>
+        <h1>Hello From H1 TAG</h1>
+        <h1>Hello From H1 TAG</h1>
+        <h1>Hello From H1 TAG</h1>
+        <h1>Hello From H1 TAG</h1>
+        <h2> Not Rendered </h2>
+        <!-- Smart trick, if root is rendered correctly, then Not Rendered Message will not be displayed, but if due to some reason the root is not rendered correctly, it will show 'Not Rendered' message -->
+    </div>
+    <!-- <script> //Creating an h1 tag with Javascript
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Namaste Everyone from JS";
+        const root1 = document.getElementById("root");
+        root1.appendChild(heading);
+    </script> -->
+
+
+    <!-- <div>
+        <h1> Hello, first heading </h1>
+        <h1> Hello, second heading </h1>
+    </div> Let's try to create this type of structure with React in line 37 of this file -->
+
+    
+    <div> Footer </div>
+    <script type="module" src="App.js"> //moving all the React code into App.js file, so that the index.html file doesn't become lengthy
+    
+    </script>
+
+</body>
+
+</html>

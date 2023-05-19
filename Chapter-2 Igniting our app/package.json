@@ -2,7 +2,6 @@
   "name": "chapter-2-igniting-our-app",
   "version": "1.0.0",
   "description": "This is the second chapter of Namaste React",
-  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
@@ -10,5 +9,9 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
