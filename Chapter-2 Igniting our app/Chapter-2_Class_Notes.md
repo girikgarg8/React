@@ -95,6 +95,10 @@ Note on react-dom and react-dom/client: If we see the console, we get a warning,
 
 IMPORTANT: What all tasks does Parcel do in our React app?
 
+All these points can be accessed from:
+
+[Parcel Documentation](http://www.parceljs.org/features/development)
+
 `Hot Module Replacement (HMR): Hot Module Replacement is a feature that enables you to see code changes in the browser without having to refresh it, allowing you to preserve the state of your front-end application. HMR is possible because of a file watcher algorithm (the implementation of this algorithm is written in C++ because C++ is very fast), which is used by Parcel`
 
 `Bundling: means combining all the code (JS,CSS,HTML) into a single JS,CSS or HTML file respectively in the dist folder`
@@ -137,4 +141,12 @@ Interview question: `What makes React fast?`
 
 Answer: `It's not just the Virtual DOM which makes React fast, it is also the bundler which makes the React app fast`
 
-TODO: Transitive dependencies
+Transitive dependencies: `These types of questions are very often asked in interviews, so always remember these jargons`: `Transitive dependencies means when one package has some dependencies, and these dependencies in turn have further dependencies : eg. parcel bundler has dependencies, which in turn have their own dependencies ` 
+
+We can tell the interviewer, that we have a package manager which takes care of and handles the transitive depenedencies.
+
+`Difference between a junior developer and senior developer: The junior developer knows bundling and minification happens, the senior developer knows what algorithm is used for these tasks, which library is responsible for these tasks, etc`
+
+We can use browserslist package to maintain compatability of React app with older versions of browsers, add the browserslist in package.json file and explore [Browserslist.dev](http://www.browserslist.dev) for the properties.
+
+One thing to keep in mind, is that writing last 10 chrome versions doesn't mean that the React app will only run on last 10 Chrome versions, it will run on other browsers like Firefox as well, it just means that the app is guaranteed to run on the last 10 Chrome versions.
