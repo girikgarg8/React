@@ -127,6 +127,8 @@ All these points can be accessed from:
 
 `Zero build: Compared to other bundlers like vite or webpack, parcel requires minimal configuration. `
 
+`Parcel also does something known as tree shaking: Code shaking means removing unncessary code. Consider an example, I am importing a library and the library has lots of functions, but I may not require all these functions in the code, so Parcel removes the unwanted code. `
+
 Building production build using Parcel: 
 
 Using the command `npx parcel build index.html`.

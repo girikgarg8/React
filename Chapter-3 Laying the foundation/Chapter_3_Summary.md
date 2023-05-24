@@ -1,0 +1,3 @@
+Chapter-03 started with revising the previous sessions and doubts raised in the previous sessions were addressed. Babel/Polyfills and their usage were explained. Scripts were written for starting and building the app. Steps to install a npm package were walked through. JSX vs React.createElement() vs Components were discussed in depth. It was a truely knowledge heavy session with lot of new concepts and keywords.
+
+One line about this chapter : JSX is NOT html inside js but syntactic sugar for the React object
