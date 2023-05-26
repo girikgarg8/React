@@ -34,12 +34,7 @@ So, the flow is `React.createElement gets converted to -> Javascript object gets
 
 Let's say, I have a complex structure, which I need to code in React, maybe something like:
 
-<div>
-<ul>
-<li> Apple </li>
-<li> Orange </li>
-</ul>
-</div>
+`<div><ul><li> Apple </li><li> Orange </li></ul></div>`
 
 If I code this only using React.createElement, it will be a huge nested code, which is very difficult to write. So, this is the reason why JSX was created. JSX is a syntatic sugar over React.createElement.
 
@@ -48,7 +43,7 @@ JSX's full form is Javascript XML. (Javascript Extensible Markup Language)
 The core philosophy behind React was to modify the HTML using Javascript in an efficient manner. (Earlier, before React, we used to update HTML using JS using document.getElementById and document.innerHTML etc, but React makes our code even more simpler and elegant.)
 
 
-Surprising thing: In my App.js file, if I add a line of code like const newHeading= <h1> Hi, hello! </h1>, App.js gives no error!! Whereas if I try to write the same line of code someehere else, outside of this React app, like in browser or any other JS file, it gives a syntax error!!
+Surprising thing: In my App.js file, if I add a line of code like `const newHeading= <h1> Hi, hello! </h1>`, App.js gives no error!! Whereas if I try to write the same line of code someehere else, outside of this React app, like in browser or any other JS file, it gives a syntax error!!
 
 `What exactly is happening?` 
 
