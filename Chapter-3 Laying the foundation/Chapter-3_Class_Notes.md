@@ -105,11 +105,11 @@ Also, some React developers, omit the return keyword from the React functional c
 
 For example, the following functional component is valid in React:
 
-const HeaderComponent=()=>{
+`const HeaderComponent=()=>{
   ( 
     <div> <h1> Namaste React </h1> </div>
   )
-} is perfectly valid React syntax.
+}` is perfectly valid React syntax.
 
 When I need to render a React element, I use the syntax like `root.render(heading)`, but when I need to render a functional component inside the root, I use the syntax like `root.render(<Heading/>)` (Basically,I write the functional component in the form of a self-closing tag)
 
@@ -122,7 +122,7 @@ Let's answer these questions:
 Answer to Q1: To do this, I need to use the component as a tag. For example, in order to use the Title component inside the HeaderComponent, I can use the syntax like:
 
 
-const HeaderComponent=()=>{
+`const HeaderComponent=()=>{
     return (
         <div>
         <Title>
@@ -130,10 +130,20 @@ const HeaderComponent=()=>{
         </Title>
         </div>
     )
-}
+}`
 
 
-Answer to Q2: If I want to use a React element inside a component, I can do it with the help of using curly braces,for example, if I want to use the Title 
+Answer to Q2: If I want to use a React element inside a component, I can do it with the help of using curly braces,for example, if I want to use the Title React element inside the header component, I can use it with the help of the syntax as below: 
+
+`
+  const HeaderComponent=()=>{
+    (
+      <Title>
+      <h1> Hello, from Header component!!! </h1>
+      <Title/>
+    )
+  }
+`
 
 
 
