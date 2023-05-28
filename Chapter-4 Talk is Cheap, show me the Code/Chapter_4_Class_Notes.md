@@ -16,5 +16,5 @@ A2: The answer to this question, is also NO. React is a library, which doesn't f
 
 Before writing code, it is always necessary to do planning, so that we are not confused on what to code.
 
-Low level design of Food Villa App: [LLD_OF_FOODVILLA_APP.jpg]
+Low level design of Food Villa App: ![Low_level_of_FoodVilla_App](LLD_OF_FOODVILLA_APP.jpg)
 
