@@ -35981,8 +35981,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var process = require("867fd42d82f66db");
 var global = arguments[3];
+var process = require("867fd42d82f66db");
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({

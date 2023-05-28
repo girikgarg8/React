@@ -26,14 +26,24 @@ const root = ReactDOM.createRoot(document.getElementById("root")); //Try changin
 //root.render(heading1); //placing the heading1 inside the root
 //React will override any other tags place inside the root
 
+const Title=()=>{
+    return <h1> Namaste React Title page </h1>
+}
+
+const footer=React.createElement("h1",{},"Hello, from footer");
 
 const HeaderComponent=()=>{
     return (
         <div>
+            <Title />
             <h2> Namaste React functional component </h2>
             <h1> This is a h1 tag </h1>
+            {footer}
+            {console.log("Yess, you are in the browser's console ")}
         </div>
     )
 }
 
+
 root.render(<HeaderComponent/>)
+//root.render(HeaderComponent())==> This too works

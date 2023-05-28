@@ -133,17 +133,46 @@ Answer to Q1: To do this, I need to use the component as a tag. For example, in 
 }`
 
 
-Answer to Q2: If I want to use a React element inside a component, I can do it with the help of using curly braces,for example, if I want to use the Title React element inside the header component, I can use it with the help of the syntax as below: 
+Answer to Q2: If I want to use a React element inside a component, I can do it with the help of using curly braces,for example, if I want to use the Title React element inside the header component, I can use it with the help of the syntax as below:
 
 `
   const HeaderComponent=()=>{
     (
       <Title>
       <h1> Hello, from Header component!!! </h1>
-      <Title/>
+      {Title}
     )
   }
 `
+So, in order to use the React component, I can use curly braces {}, in fact I can use any JS expresssion inside these curly braces. Like we can do string interpolation,console.log (eveything that JS can do) inside the {} braces.
 
 
+`
+  const HeaderComponent=()=>{
+    (
+      <Title>
+      <h1> Hello, from Header component!!! </h1>
+      {Footer()}
+    )
+  }
+` 
+
+In this code, assuming Footer is a functional component, it is a perfectly valid JS syntax! Because, the Footer functional component, would return JSX, and this JSX would be converted into browser compatiable Javascript by Babel, this Javascript code can then be executed inside the curly braces.
+
+`const data=...some malicious code`
+
+If I have an API that has some malicious code inside it, for example, let's call it data, and if it is executed inside the React component like {data}, then malicious code gets executed, which could cause a lot of havoc like the hacker can get access to the cookies, IP, location etc, this is known as cross site scripting. But JSX does something called sanitisation, it makes sure that the code it is going to execute is secure.
+
+`Another important jargon which is important for interviews: component composition: means using a React component inside another React component, just like I used a Title component inside the Header component. It's just a fancy name, for something very common.`
+
+The following is an example of component composition, where I am using the Title component inside the Header component:
+
+`const HeaderComponent=()=>{
+  return (
+    <div>
+    <Title>
+    <h1> Hello, I am the header component!! </h1>
+    </div>
+  )
+}`
 

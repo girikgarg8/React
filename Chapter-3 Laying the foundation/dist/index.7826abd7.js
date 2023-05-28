@@ -2961,38 +2961,58 @@ const newHeading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root")); //Try changing it to document.getElementById("root1"), see the 
 //root.render(heading1); //placing the heading1 inside the root
 //React will override any other tags place inside the root
+const Title = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: " Namaste React Title page "
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 30,
+        columnNumber: 12
+    }, undefined);
+};
+_c = Title;
+const footer = /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {}, "Hello, from footer");
 const HeaderComponent = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 38,
+                columnNumber: 13
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: " Namaste React functional component "
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 33,
+                lineNumber: 39,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: " This is a h1 tag "
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 34,
+                lineNumber: 40,
                 columnNumber: 13
-            }, undefined)
+            }, undefined),
+            footer,
+            console.log("Yess, you are in the browser's console ")
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 32,
+        lineNumber: 37,
         columnNumber: 9
     }, undefined);
 };
-_c = HeaderComponent;
+_c1 = HeaderComponent;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 39,
+    lineNumber: 48,
     columnNumber: 13
-}, undefined));
-var _c;
-$RefreshReg$(_c, "HeaderComponent");
+}, undefined)) //root.render(HeaderComponent())==> This too works
+;
+var _c, _c1;
+$RefreshReg$(_c, "Title");
+$RefreshReg$(_c1, "HeaderComponent");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
