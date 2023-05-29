@@ -3,12 +3,12 @@ This file, defines the basic structure of the app, and this structure will be ha
 The app layout is:
 
 Header Component
-    - Logo
-    - Nav Items (Right side)
-    - Cart
+* Logo
+* Nav Items (Right side)
+* Cart
 
-Body Comnponent
-    - Search Bar
+Body Component
+- Search Bar
     - Restaurant List
         - Restaturant Card
             - Image
@@ -17,5 +17,5 @@ Body Comnponent
             - Cuisines
 
 Footer Component
-    - Links
-    - Copyright
+- Links
+- Copyright
