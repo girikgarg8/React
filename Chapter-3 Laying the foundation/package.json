@@ -1,7 +1,7 @@
 {
-  "name": "chapter-2-igniting-our-app",
+  "name": "chapter-3-laying-the-foundation",
   "version": "1.0.0",
-  "description": "This is the second chapter of Namaste React",
+  "description": "This is the third chapter of Namaste React",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",

@@ -27367,6 +27367,6 @@ module.exports = require("fc24c3bc847e126");
     exports.jsxDEV = jsxDEV$1;
 })();
 
-},{"e0dce6ea0de0d1bf":"21dqq"}]},["1xC6H","lyZ4E","2Ew96"], "2Ew96", "parcelRequire6d85")
+},{"e0dce6ea0de0d1bf":"21dqq"}]},["1xC6H","lyZ4E","2Ew96"], "2Ew96", "parcelRequire1510")
 
 //# sourceMappingURL=index.7826abd7.js.map

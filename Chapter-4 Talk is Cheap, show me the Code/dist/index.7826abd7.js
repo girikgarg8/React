@@ -2931,10 +2931,11 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 const Title = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        id: "title",
-        children: "Food Villa"
-    }, "h2", false, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+        className: "logo",
+        alt: "logo",
+        src: "https://scontent-bom1-2.xx.fbcdn.net/v/t39.30808-6/302275887_487537640050648_5998956273504369200_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=zEongH8XhvMAX-Lsjo-&_nc_ht=scontent-bom1-2.xx&oh=00_AfB4Tm_foVThFwRKSZllZiPKINkWie0hGcyJdywE5cRjEQ&oe=6478A4AE"
+    }, void 0, false, {
         fileName: "App.js",
         lineNumber: 6,
         columnNumber: 9
@@ -2943,30 +2944,60 @@ const Title = ()=>{
 _c = Title;
 const HeaderComponent = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 15,
+                lineNumber: 13,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: " Namaste React functional component "
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: " Home "
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 16,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: " About "
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 17,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: " Contact "
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 18,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: " Cart "
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 19,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "App.js",
+                    lineNumber: 15,
+                    columnNumber: 17
+                }, undefined)
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 16,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: " This is a h1 tag "
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 17,
+                lineNumber: 14,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 14,
+        lineNumber: 12,
         columnNumber: 9
     }, undefined);
 };
@@ -2974,7 +3005,7 @@ _c1 = HeaderComponent;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 23,
+    lineNumber: 28,
     columnNumber: 13
 }, undefined));
 var _c, _c1;
