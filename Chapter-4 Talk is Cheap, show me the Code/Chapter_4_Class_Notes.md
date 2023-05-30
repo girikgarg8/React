@@ -18,3 +18,9 @@ Before writing code, it is always necessary to do planning, so that we are not c
 
 Low level design of Food Villa App: ![Low_level_of_FoodVilla_App](LLD_OF_FOODVILLA_APP.jpg)
 
+Important point: Any piece of JSX can only have one parent tag, so either we can wrap the diblings in a single div or I can instead use React fragment.
+
+Disadvantage of using div to wrap the siblings is that I have an extra div in the DOM tree, (go see it now!), which I don't want.
+
+So, we can use React fragments instead of using a separate div.
+
