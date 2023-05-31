@@ -22,5 +22,5 @@ Important point: Any piece of JSX can only have one parent tag, so either we can
 
 Disadvantage of using div to wrap the siblings is that I have an extra div in the DOM tree, (go see it now!), which I don't want.
 
-So, we can use React fragments instead of using a separate div.
+So, we can use React fragments instead of using a separate div. The syntax for using React fragment is <React.fragment> {Intermediate code} </React.fragment>
 
