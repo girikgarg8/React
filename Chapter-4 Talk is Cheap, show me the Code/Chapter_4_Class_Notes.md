@@ -18,9 +18,50 @@ Before writing code, it is always necessary to do planning, so that we are not c
 
 Low level design of Food Villa App: ![Low_level_of_FoodVilla_App](LLD_OF_FOODVILLA_APP.jpg)
 
-Important point: Any piece of JSX can only have one parent tag, so either we can wrap the diblings in a single div or I can instead use React fragment.
+Important point: Any piece of JSX can only have one parent tag, so either we can wrap the siblings in a single div or I can instead use React fragment.
 
 Disadvantage of using div to wrap the siblings is that I have an extra div in the DOM tree, (go see it now!), which I don't want.
 
 So, we can use React fragments instead of using a separate div. The syntax for using React fragment is <React.fragment> {Intermediate code} </React.fragment>
 
+There's also another syntax for React.Fragment, which is the empty tag <>, it alspo signifies the React.Fragment element behind the scenes. (**This is very very important**)
+
+Advantage and disadvantage of using React.fragment over a div:
+
+1) Advantage: Using React.fragment makes the DOM less cluttered, and also gives performance improvement to the React App.
+
+2) Disadvantage: As we use the empty tag <> or React.fragment, we cannot give it styling or pass props to it. If we wish to use styling, using div is a better choice. 
+
+Inline styling in HTML vs Inline styling in React 
+
+In HTML, I can do the inline styling with code like: `<h1 style="color:blue;">A Blue Heading</h1>`. See this link: [W3 playground for inline CSS](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline)
+
+ However, I cannot write the same syntax in React, to do styling in React, I need to specify the style with the help of a Javascript object (Javascript object is nothing but a key-value pair in Javascript) (because React is a javascript library). 
+
+Syntax to do inline styling in React is:
+
+```
+const styleObj= {
+    border: "1px solid red"
+}
+```
+
+and then use it like 
+
+``` 
+const Heading=()=>{
+    return (
+        <div style={styleObj} > <h1> First Heading </h1> <h1> Second Heading </h1> </div> 
+    )
+} 
+```
+
+Sometimes, people also write the style object directly, so no need to get scared of the code:
+
+```
+const Heading=()=>{
+    return (
+        <div style={styleObj} > <h1> First Heading </h1> <h1> Second Heading </h1> </div> 
+    )
+} 
+```

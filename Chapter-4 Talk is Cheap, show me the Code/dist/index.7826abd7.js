@@ -2934,7 +2934,7 @@ const Title = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
         className: "logo",
         alt: "logo",
-        src: "https://scontent-bom1-2.xx.fbcdn.net/v/t39.30808-6/302275887_487537640050648_5998956273504369200_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=zEongH8XhvMAX-Lsjo-&_nc_ht=scontent-bom1-2.xx&oh=00_AfB4Tm_foVThFwRKSZllZiPKINkWie0hGcyJdywE5cRjEQ&oe=6478A4AE"
+        src: "https://lh3.googleusercontent.com/p/AF1QipO_6cTc3QdC9L2vAOyCkUPG-G-9YeFxo3YiDu3R=w1080-h608-p-no-v0"
     }, void 0, false, {
         fileName: "App.js",
         lineNumber: 6,
@@ -3002,15 +3002,64 @@ const HeaderComponent = ()=>{
     }, undefined);
 };
 _c1 = HeaderComponent;
+const Body = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+        children: " Body "
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 28,
+        columnNumber: 9
+    }, undefined);
+};
+_c2 = Body;
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+        children: " Footer "
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 33,
+        columnNumber: 12
+    }, undefined);
+};
+_c3 = Footer;
+const AppLayout = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 39,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 40,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 41,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 38,
+        columnNumber: 9
+    }, undefined);
+};
+_c4 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 28,
+    lineNumber: 47,
     columnNumber: 13
 }, undefined));
-var _c, _c1;
+var _c, _c1, _c2, _c3, _c4;
 $RefreshReg$(_c, "Title");
 $RefreshReg$(_c1, "HeaderComponent");
+$RefreshReg$(_c2, "Body");
+$RefreshReg$(_c3, "Footer");
+$RefreshReg$(_c4, "AppLayout");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
