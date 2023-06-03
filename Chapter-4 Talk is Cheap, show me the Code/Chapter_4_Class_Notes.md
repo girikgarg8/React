@@ -65,3 +65,10 @@ const Heading=()=>{
     )
 } 
 ```
+
+We can also use libraries like Chakra UI, Material UI, Tailwind CSS too instead of using inline CSS. We'll be using Tailwind CSS in later chapters.
+
+Beginning with the coding: Desiging the restaurant Card
+
+The first step, should be, to create a restaurant code with hardcoded data, once we are able to succeed with that, we can then go for the data fetched from API.
+See the `dummyRestaurantCard` functional component

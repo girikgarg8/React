@@ -33,13 +33,24 @@ const Footer = () => {
     return <h4> Footer </h4>
 }
 
+const dummyRestauarantCard = () => {
+    return (
+        <div className="card">
+            <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/e33e1d3ba7d6b2bb0d45e1001b731fcf"></img>
+            <h2> Burger King </h2>
+            <h3> Burgers,American </h3>
+            <h4> 4.2 stars </h4>
+        </div>
+    )
+}
 const AppLayout = () => {
     return (
-        <div>
+        <>
             <HeaderComponent />
             <Body />
+            <dummyRestauarantCard />
             <Footer />
-        </div>
+        </>
     )
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
