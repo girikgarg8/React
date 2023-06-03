@@ -3022,7 +3022,7 @@ const Footer = ()=>{
     }, undefined);
 };
 _c3 = Footer;
-const dummyRestauarantCard = ()=>{
+const DummyRestauarantCard = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "card",
         children: [
@@ -3061,9 +3061,9 @@ const dummyRestauarantCard = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_c4 = dummyRestauarantCard;
+_c4 = DummyRestauarantCard;
 const AppLayout = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
                 fileName: "App.js",
@@ -3075,7 +3075,7 @@ const AppLayout = ()=>{
                 lineNumber: 50,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("dummyRestauarantCard", {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCard, {}, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 51,
                 columnNumber: 13
@@ -3086,7 +3086,11 @@ const AppLayout = ()=>{
                 columnNumber: 13
             }, undefined)
         ]
-    }, void 0, true);
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 48,
+        columnNumber: 9
+    }, undefined);
 };
 _c5 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
@@ -3100,7 +3104,7 @@ $RefreshReg$(_c, "Title");
 $RefreshReg$(_c1, "HeaderComponent");
 $RefreshReg$(_c2, "Body");
 $RefreshReg$(_c3, "Footer");
-$RefreshReg$(_c4, "dummyRestauarantCard");
+$RefreshReg$(_c4, "DummyRestauarantCard");
 $RefreshReg$(_c5, "AppLayout");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
