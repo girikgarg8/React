@@ -3062,50 +3062,107 @@ const DummyRestauarantCard = ()=>{
     }, undefined);
 };
 _c4 = DummyRestauarantCard;
+const burgerKing = {
+    name: "Burger King",
+    image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+    rating: "4.2",
+    cuisines: [
+        "Burgers",
+        "American"
+    ]
+};
+const DummyRestauarantCardFromObj = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: burgerKing.image
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 56,
+                columnNumber: 14
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: [
+                    " ",
+                    burgerKing.name,
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 57,
+                columnNumber: 14
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    " ",
+                    burgerKing.cuisines.join(","),
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 58,
+                columnNumber: 14
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    " ",
+                    burgerKing.rating,
+                    " stars "
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 59,
+                columnNumber: 14
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 55,
+        columnNumber: 9
+    }, undefined);
+};
+_c5 = DummyRestauarantCardFromObj;
 const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 49,
+                lineNumber: 66,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCardFromObj, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 50,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCard, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 51,
+                lineNumber: 67,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 52,
+                lineNumber: 68,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 48,
+        lineNumber: 65,
         columnNumber: 9
     }, undefined);
 };
-_c5 = AppLayout;
+_c6 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 58,
+    lineNumber: 74,
     columnNumber: 13
 }, undefined));
-var _c, _c1, _c2, _c3, _c4, _c5;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6;
 $RefreshReg$(_c, "Title");
 $RefreshReg$(_c1, "HeaderComponent");
 $RefreshReg$(_c2, "Body");
 $RefreshReg$(_c3, "Footer");
 $RefreshReg$(_c4, "DummyRestauarantCard");
-$RefreshReg$(_c5, "AppLayout");
+$RefreshReg$(_c5, "DummyRestauarantCardFromObj");
+$RefreshReg$(_c6, "AppLayout");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {

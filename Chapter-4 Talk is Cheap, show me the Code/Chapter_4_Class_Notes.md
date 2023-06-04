@@ -71,4 +71,22 @@ We can also use libraries like Chakra UI, Material UI, Tailwind CSS too instead 
 Beginning with the coding: Desiging the restaurant Card
 
 The first step, should be, to create a restaurant code with hardcoded data, once we are able to succeed with that, we can then go for the data fetched from API.
-See the `dummyRestaurantCard` functional component
+
+See the `DummyRestaurantCard` functional component, I have created a restautrat card with static data there.
+
+Now, let's try to create a restaurant card with JSON data (we are slowly moving onto fetching the data from API and then displaying it on UI, these small baby steps are useful rather than directly jumping to fetching data from UI)
+
+See the `burgerKing` object and the `DummyRestaurantCardFomObject` components to see how this is done. 
+
+In order to access the property from Javascript object, I will use braces, in order to execute Javascript.
+
+I'll be using the `join` function of Javascript, it's role is to convert an array into a string.
+
+For example, 
+
+```
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let text = fruits.join(" and ");
+```
+
+will return me the name of all the fruits separated by the keyword "and". See the documentation: [join function in Javascript](https://www.w3schools.com/jsref/jsref_join.asp)
