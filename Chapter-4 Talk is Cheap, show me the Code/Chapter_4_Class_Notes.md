@@ -96,5 +96,125 @@ Now, I could have multiple restaurant cards, so try adding multiple dummyRestaur
 
 Now, in order to style the multiple restaurant cards, I require some basic styling, **Knowledge of some basic styling is necessary for machine coding interviews,see the basic knowledge of CSS file (I have included the properties that I have used in index.css) file**
 
+Now, let's try to make the cards in a dynamic fashion, in real world, the data is not in the form of an object like 
+
+```
+const burgerKing={
+    name: "Burger King",
+    image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+    rating: "4.2",
+    cuisines: ["Burgers","American"]
+}
+```
+In fact, the response that any API would be sending is an `array of objects`, so the response from an API would be something like (at a high level):
+
+```
+    const res=[
+        {obj1,
+        obj2,
+        obj3
+        }
+    ]
+```
+
+So, going into the low level details, the response from any API would look like:
+
+```
+const burgerKing=[
+    {
+        name: "Burger King",
+        image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        rating: "4.2",
+        cuisines: ["Burgers","American"]
+    },
+    {
+        name: "Subway",
+        image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/e33e1d3ba7d6b2bb0d45e1001b731fcf",
+        rating: "4.1",
+        cuisines: ["Pizza","fries"]
+    }
+]
+```
+
+Go to swiggy.com, get the link of any API through the browser's console, and explore what data the API sends by opening it in the browser.
+
+One such API is: (Swiggy API)[https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9304278&lng=77.678404&page_type=DESKTOP_WEB_LISTING]
+
+**Important Concept and Term: Config Driven UI**
+
+`Introduction`
+
+Just see the Swiggy API above, you'll see that the API is returning me two types of data, one for `cardType=carousel` and another one for `cardType=seeAllRestaurants`
+
+Now, why are there two types of cardType data that the API is sending?
+
+It's because the backend API is sending two types of data, one is the carousel information, which contains information about the different offers available in that region (like 20% off on Axis bank), whereas the cardType=restauarant is sending the information about the restaturants, their cuisines, location etc.
+
+Now here's the thing: the offers can be different in different regions, so the offers can be different in Delhi and Mumbai. I want that the UI should display the offers according to the data that is being sent from the backend UI, in some places there might not be any offers, so no offers should be shown on the UI, at other places, the offers can vary.
+
+This practice of showing the data on the UI on the basis of the data received from the API is known as `config driven UI`. If you go and tell about config driven UI in system design interviews, it is a huge plus point!!
+
+Let's try to step-by-step create a sample response sent by the backend API, like the one sent by Swiggy. (In real world applications, the data sent by the API is also complex like this). See the `sampleAPIResponse.js` file
+
+**What is optional chaining in Javascript?**
+
+If a property of an object is nullish (null or undefined), using optional chaining will help me to get an undefined, instead of throwing an error on the UI.
+
+The syntax is `obj?.val`. Read the documentation: [MDN documentation on optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+
+Next, we tried to create some mock data for learning, from further sessions, we'll be using API to fetch the data.
+
+We need to pass prop (property) to the DummyRestauarantCardFromObj functional component, so that we can tell the component which card we want to render.
+
+Passing the props means passing some data or a value to a component.
+
+One was of using props is to access the props like props.name, props.age etc. (The variable props is passed as argument to the functional component)
+
+Another way of using props is to destructure the object on the fly, which is similar to destructing an object in Javascript. 
+
+Syntax to destructure an object in Javascript:
+
+```
+const obj={ //creating an object literal
+    name: 'Girik',
+    age: 19,
+}
+
+const {name,age}=obj;
+
+console.log(name,age)
+```
+
+Syntax to destructure on the fly in React:
+
+```
+    const RestauarantCardComponent=({name,age})=>{
+        return (
+            <div>
+                <h1> {name} </h1>
+                <h2> {age} </h2>
+            </div>
+        )
+    }
+```
+
+**Difference between arguments and parameters in a function (It was covered in Namaste JS)**
+
+Just remember one sentence, we pass in arguments to a function but we receive parameters. How to remember this? 'P' for passing, and 'A' (not 'P') for arguments.
+
+```
+function fun(param1,param2,param3){
+
+
+}
+
+fun(arg1,arg2)
+```
+
+Important point: `React functional component is nothing but a Javascript function at the end of the day. Using props in functional component is like passing in arguments to a Javascript function.` 
+
+What I mean is, when I write syntax in React like `<RestaurantCard resta`
+
+
 
 
