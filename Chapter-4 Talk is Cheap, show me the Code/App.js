@@ -23,11 +23,6 @@ const HeaderComponent = () => {
     )
 }
 
-const Body = () => {
-    return (
-        <h4> Body </h4>
-    )
-}
 
 const Footer = () => {
     return <h4> Footer </h4>
@@ -60,11 +55,31 @@ const DummyRestauarantCardFromObj=()=>{
         </div>
     )
 }
+
+const Body=()=>{
+    return (
+        <div className="restaurant-list">
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+            <DummyRestauarantCardFromObj />
+        </div>
+    )
+}
 const AppLayout = () => {
     return (
         <div>
             <HeaderComponent />
-            <DummyRestauarantCardFromObj/>
+            <Body/>
             <Footer />
         </div>
     )

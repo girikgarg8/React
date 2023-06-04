@@ -90,3 +90,11 @@ let text = fruits.join(" and ");
 ```
 
 will return me the name of all the fruits separated by the keyword "and". See the documentation: [join function in Javascript](https://www.w3schools.com/jsref/jsref_join.asp)
+
+
+Now, I could have multiple restaurant cards, so try adding multiple dummyRestaurantCardFromObj to the AppLayout.
+
+Now, in order to style the multiple restaurant cards, I require some basic styling, **Knowledge of some basic styling is necessary for machine coding interviews,see the basic knowledge of CSS file (I have included the properties that I have used in index.css) file**
+
+
+

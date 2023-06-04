@@ -1,3 +1,5 @@
+Explore all the properties below, if there's any property that's not clear, explore it!!
+
 #container{
     background-color: yellow;
 }
@@ -27,9 +29,4 @@
 }
 .card>img{
     width:100%;
-}
-.restaurant-list{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
 }
