@@ -3815,32 +3815,22 @@ const burgerKing = {
         "American"
     ]
 };
-const DummyRestauarantCardFromObj = ({ restaurant  })=>{
+const DummyRestauarantCardFromObj = (props)=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "card",
         children: [
+            console.log(props),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/" + restaurant.data.cloudinaryImageId
+                src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/" + cloudinaryImageId
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 783,
+                lineNumber: 784,
                 columnNumber: 14
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: [
                     " ",
-                    restaurant.data.name,
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "App.js",
-                lineNumber: 784,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    " ",
-                    restaurant.data.cuisines.join(","),
+                    name,
                     " "
                 ]
             }, void 0, true, {
@@ -3851,7 +3841,7 @@ const DummyRestauarantCardFromObj = ({ restaurant  })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: [
                     " ",
-                    restaurant.data.rating,
+                    rating,
                     " stars "
                 ]
             }, void 0, true, {
@@ -3872,47 +3862,48 @@ const Body = ()=>{
         className: "restaurant-list",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCardFromObj, {
-                restaurant: restaurantList[0]
+                restaurant: restaurantList[0].data
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 794,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCardFromObj, {
-                restaurant: restaurantList[1]
+                restaurant: restaurantList[1].data
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 795,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCardFromObj, {
-                restaurant: restaurantList[2]
+                restaurant: restaurantList[2].data
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 796,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCardFromObj, {
-                restaurant: restaurantList[3]
+                restaurant: restaurantList[3].data
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 797,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCardFromObj, {
-                restaurant: restaurantList[4]
+                restaurant: restaurantList[4].data
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 798,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCardFromObj, {
-                restaurant: restaurantList[5]
+                restaurant: restaurantList[5].data
             }, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 799,
                 columnNumber: 13
-            }, undefined)
+            }, undefined),
+            "name, cusisines"
         ]
     }, void 0, true, {
         fileName: "App.js",
@@ -3926,23 +3917,23 @@ const AppLayout = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 806,
+                lineNumber: 807,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 807,
+                lineNumber: 808,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 808,
+                lineNumber: 809,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 805,
+        lineNumber: 806,
         columnNumber: 9
     }, undefined);
 };
@@ -3950,7 +3941,7 @@ _c6 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 814,
+    lineNumber: 815,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2, _c3, _c4, _c5, _c6;

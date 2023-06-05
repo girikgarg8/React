@@ -777,13 +777,13 @@ const burgerKing={
     rating: "4.2",
     cuisines: ["Burgers","American"]
 }
-const DummyRestauarantCardFromObj=({restaurant})=>{
+const DummyRestauarantCardFromObj = (props)=>{
     return (
         <div className="card">
-             <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/"+restaurant.data.cloudinaryImageId}></img>
-            <h2> {restaurant.data.name} </h2>
-            <h3> {restaurant.data.cuisines.join( ",")} </h3>
-            <h4> {restaurant.data.rating} stars </h4>
+            {console.log(props)}
+             <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/"+cloudinaryImageId}></img>
+            <h2> {name} </h2>
+            <h4> {rating} stars </h4>
         </div>
     )
 }
@@ -791,12 +791,13 @@ const DummyRestauarantCardFromObj=({restaurant})=>{
 const Body=()=>{
     return (
         <div className="restaurant-list">
-            <DummyRestauarantCardFromObj restaurant={restaurantList[0]}/>
-            <DummyRestauarantCardFromObj restaurant={restaurantList[1]} />
-            <DummyRestauarantCardFromObj restaurant={restaurantList[2]} />
-            <DummyRestauarantCardFromObj restaurant={restaurantList[3]} />
-            <DummyRestauarantCardFromObj restaurant={restaurantList[4]} />
-            <DummyRestauarantCardFromObj restaurant={restaurantList[5]} />
+            <DummyRestauarantCardFromObj restaurant={restaurantList[0].data}/>
+            <DummyRestauarantCardFromObj restaurant={restaurantList[1].data} />
+            <DummyRestauarantCardFromObj restaurant={restaurantList[2].data} />
+            <DummyRestauarantCardFromObj restaurant={restaurantList[3].data} />
+            <DummyRestauarantCardFromObj restaurant={restaurantList[4].data} />
+            <DummyRestauarantCardFromObj restaurant={restaurantList[5].data} />
+            name, cusisines
         </div>
     )
 }

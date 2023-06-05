@@ -168,6 +168,8 @@ We need to pass prop (property) to the DummyRestauarantCardFromObj functional co
 
 Passing the props means passing some data or a value to a component.
 
+**Important point:If I pass in the properties to a component like <Card name="girik" age=46 city="Delhi", React will combine or bundle them into a single object called props, which is received inside the React functional component, something like const Card=(props)=>{console.log(props)}**
+
 One was of using props is to access the props like props.name, props.age etc. (The variable props is passed as argument to the functional component)
 
 Another way of using props is to destructure the object on the fly, which is similar to destructing an object in Javascript. 
@@ -213,8 +215,5 @@ fun(arg1,arg2)
 
 Important point: `React functional component is nothing but a Javascript function at the end of the day. Using props in functional component is like passing in arguments to a Javascript function.` 
 
-What I mean is, when I write syntax in React like `<RestaurantCard resta`
-
-
-
+What I mean is, when I write syntax in React like `<RestaurantCard restaurant=restuarantList[0]>`, it is equivalent to calling the function RestauarantCard with the argument restaurantList[0], something like RestaurantCard(restaurantList[0])
 
