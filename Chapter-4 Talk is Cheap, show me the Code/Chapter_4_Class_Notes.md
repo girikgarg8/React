@@ -223,8 +223,39 @@ Now, we have multiple Restaurant cards, so we can either use for loops or higher
 
 Akshay says, **The best way to achieve functional programming in React/Javascript is to use map HOF rather than using for loops. Of course, for loops can be used, but the best way is to use map HOF. Using forEach loop is also not the best choice compared to using map, using map is the best choice.**
 
-**Virtual DOM (Important)**
+**Virtual DOM (Important concept)**
 
-Virtual DOM is not just a React concept, it is a software engneering concept in general. So, React also uses Virtual DOM.
+First of all, what is DOM? DOM stand for Document Object Model, it is a tree based representation of the HTML document.
+
+Virtual DOM is not just a React concept, it is a software engneering concept in general. So, React also uses Virtual DOM. 
+
+`We keep a representation of actual DOM, which is called as virtual DOM.`  
+
+**Why do we need virtual DOM in React?**
 
 
+We need the virtual DOM for something known as reconciliation algorithm, in simple terms understand that whenever there is a change in the functional component, either through change of props or state,that change is reflected in the virtual DOM. Then React needs to find out what changes have been made.So,react uses an algorithm called as the reconciliation which is used to diff the virtual DOM (the stored representation of DOM in React) with the actual DOM, and by this comparison React just re-renders the specific part of the actual DOM, rather than re-rendering the complete DOM.
+
+**Important** In flowchart terms, State/prop Change-> Updation Made in Virtual DOM (because it takes less time, even Wikipedia says this) -> Reconicilation algorithm determines the diff between the virtual DOM and the actual DOM -> React makes change only in the specific diff part in the actual DOM
+
+**Important points** 
+
+Note: 
+
+1) I used to be confused about the reconicilation, it's between virtual DOM and actual DOM, not between virtual DOM and virtual DOM.
+
+2) Reconciliation is a process, whereas diff is an algorihm. Just like graph traversal is a process, DFS is an algorithm.
+
+Refer this wiki: [Virtual DOM](https://en.wikipedia.org/wiki/Virtual_DOM)
+
+**Why do we need keys in React for siblings of same tag?** 
+
+Let's take an example, let's say a ul has three li items, now if a change made is to any of the li items, or some li is deleted or a new li is added, then React reconciliation algorithm would not perform well to determine the diff between the virtual DOM and the actual DOM. So, all the li's will be re-rendered. But, had we been using keys, the individual li's could be easily identified, which will lead to better performance of the diff algorithm. Only the specific li will be re-rendered.
+
+React Fiber is the new diff algorithm, being used since React 16.
+
+Important point: keys are not mandatory if there are different types of tags, like an img and div tag. But using keys is mandatory if there are siblings of same tag.
+
+If I try to use duplicate keys, then React will give me an error in the console saying 'Encountered two children with the same key, `abc`. Keys should be unique so that components maintain their identity across updates.'
+
+Also, it is not advisable to use index in an array as a key, this is because the array indices are 

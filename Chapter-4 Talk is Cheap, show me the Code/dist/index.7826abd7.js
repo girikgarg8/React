@@ -3815,7 +3815,7 @@ const burgerKing = {
         "American"
     ]
 };
-const DummyRestauarantCardFromObj = ({ name , rating , cloudinaryImageId  })=>{
+const DummyRestauarantCardFromObj = ({ name , avgRating , cloudinaryImageId  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "card",
         children: [
@@ -3840,7 +3840,7 @@ const DummyRestauarantCardFromObj = ({ name , rating , cloudinaryImageId  })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: [
                     " ",
-                    rating,
+                    avgRating,
                     " stars "
                 ]
             }, void 0, true, {
@@ -3860,13 +3860,16 @@ const Body = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "restaurant-list",
         children: restaurantList.map((restaurant, ind)=>{
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(DummyRestauarantCardFromObj, {
-                ...restaurant.data
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 802,
-                columnNumber: 28
-            }, undefined) //return statement is needed so that the output array of map function returns restaurant cards, this is a Javascript thing, not a React thing!
+            return /*#__PURE__*/ (0, _react.createElement)(DummyRestauarantCardFromObj, {
+                ...restaurant.data,
+                key: restaurant.data.id,
+                __source: {
+                    fileName: "App.js",
+                    lineNumber: 802,
+                    columnNumber: 28
+                },
+                __self: undefined
+            }) //return statement is needed so that the output array of map function returns restaurant cards, this is a Javascript thing, not a React thing!
             ;
         })
     }, void 0, false, {

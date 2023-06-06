@@ -777,12 +777,12 @@ const burgerKing={
     rating: "4.2",
     cuisines: ["Burgers","American"]
 }
-const DummyRestauarantCardFromObj = ({name,rating,cloudinaryImageId})=>{
+const DummyRestauarantCardFromObj = ({name,avgRating,cloudinaryImageId})=>{
     return (
         <div className="card">
              <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/"+cloudinaryImageId}></img>
             <h2> {name} </h2>
-            <h4> {rating} stars </h4>
+            <h4> {avgRating} stars </h4>
         </div>
     )
 }
@@ -799,7 +799,7 @@ const Body=()=>{
 
             {
                 restaurantList.map((restaurant,ind)=>{
-                    return <DummyRestauarantCardFromObj {...restaurant.data} /> //return statement is needed so that the output array of map function returns restaurant cards, this is a Javascript thing, not a React thing!
+                    return <DummyRestauarantCardFromObj {...restaurant.data} key={restaurant.data.id} /> //return statement is needed so that the output array of map function returns restaurant cards, this is a Javascript thing, not a React thing!
                 })
             }
         </div>
