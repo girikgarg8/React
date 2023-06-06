@@ -777,10 +777,9 @@ const burgerKing={
     rating: "4.2",
     cuisines: ["Burgers","American"]
 }
-const DummyRestauarantCardFromObj = (props)=>{
+const DummyRestauarantCardFromObj = ({name,rating,cloudinaryImageId})=>{
     return (
         <div className="card">
-            {console.log(props)}
              <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/"+cloudinaryImageId}></img>
             <h2> {name} </h2>
             <h4> {rating} stars </h4>
@@ -791,13 +790,18 @@ const DummyRestauarantCardFromObj = (props)=>{
 const Body=()=>{
     return (
         <div className="restaurant-list">
-            <DummyRestauarantCardFromObj restaurant={restaurantList[0].data}/>
-            <DummyRestauarantCardFromObj restaurant={restaurantList[1].data} />
-            <DummyRestauarantCardFromObj restaurant={restaurantList[2].data} />
-            <DummyRestauarantCardFromObj restaurant={restaurantList[3].data} />
-            <DummyRestauarantCardFromObj restaurant={restaurantList[4].data} />
-            <DummyRestauarantCardFromObj restaurant={restaurantList[5].data} />
-            name, cusisines
+            {/* <DummyRestauarantCardFromObj {...restaurantList[0].data}/>
+            <DummyRestauarantCardFromObj {...restaurantList[1].data} />
+            <DummyRestauarantCardFromObj {...restaurantList[2].data} />
+            <DummyRestauarantCardFromObj {...restaurantList[3].data} />
+            <DummyRestauarantCardFromObj {...restaurantList[4].data} />
+            <DummyRestauarantCardFromObj {...restaurantList[5].data} /> */}
+
+            {
+                restaurantList.map((restaurant,ind)=>{
+                    return <DummyRestauarantCardFromObj {...restaurant.data} /> //return statement is needed so that the output array of map function returns restaurant cards, this is a Javascript thing, not a React thing!
+                })
+            }
         </div>
     )
 }

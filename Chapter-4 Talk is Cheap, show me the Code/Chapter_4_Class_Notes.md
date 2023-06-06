@@ -217,3 +217,14 @@ Important point: `React functional component is nothing but a Javascript functio
 
 What I mean is, when I write syntax in React like `<RestaurantCard restaurant=restuarantList[0]>`, it is equivalent to calling the function RestauarantCard with the argument restaurantList[0], something like RestaurantCard(restaurantList[0])
 
+`<DummyRestauarantCardFromObj {...restaurantList[0].data}/>` Don't panic, if you see this type of code in any company's legacy code, it just means that I am spreading all the properties of restaurantList[0].data into the React functional component.
+
+Now, we have multiple Restaurant cards, so we can either use for loops or higher order functions like map.
+
+Akshay says, **The best way to achieve functional programming in React/Javascript is to use map HOF rather than using for loops. Of course, for loops can be used, but the best way is to use map HOF. Using forEach loop is also not the best choice compared to using map, using map is the best choice.**
+
+**Virtual DOM (Important)**
+
+Virtual DOM is not just a React concept, it is a software engneering concept in general. So, React also uses Virtual DOM.
+
+
