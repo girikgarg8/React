@@ -1,0 +1,23 @@
+{
+  "name": "chapter-4-talk-is-cheap-show-me-the-code",
+  "version": "1.0.0",
+  "description": "This is the fourth chapter of Namaste React",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Girik Garg",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
+}
