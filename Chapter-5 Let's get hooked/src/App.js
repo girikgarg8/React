@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import HeaderComponent from "./components/Header";
+import * as Obj from "./components/Header"
+const {Title}=Obj;
+import { Title } from "./components/Header";
 
 //Config Driven UI - Mock Data from API...created this just for demonstration purposes, in the next sesssions, we'll directly fetch data from the API and remove this mock data
 const restaurantList = [
@@ -733,28 +737,6 @@ const restaurantList = [
         subtype: "basic",
     },
 ];
-const Title = () => {
-    return (
-        <img className="logo" alt="logo" src="https://lh3.googleusercontent.com/p/AF1QipO_6cTc3QdC9L2vAOyCkUPG-G-9YeFxo3YiDu3R=w1080-h608-p-no-v0"></img>
-    )
-};
-
-const HeaderComponent = () => {
-    return (
-        <div className="header">
-            <Title />
-            <div className="nav-items">
-                <ul>
-                    <li> Home </li>
-                    <li> About </li>
-                    <li> Contact </li>
-                    <li> Cart </li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
 
 const Footer = () => {
     return <h4> Footer </h4>
