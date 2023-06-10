@@ -3692,7 +3692,7 @@ const Footer = ()=>{
         children: " Footer "
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 742,
+        lineNumber: 741,
         columnNumber: 12
     }, undefined);
 };
@@ -3705,34 +3705,34 @@ const DummyRestauarantCard = ()=>{
                 src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/e33e1d3ba7d6b2bb0d45e1001b731fcf"
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 748,
+                lineNumber: 747,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: " Burger King "
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 749,
+                lineNumber: 748,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: " Burgers,American "
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 750,
+                lineNumber: 749,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: " 4.2 stars "
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 751,
+                lineNumber: 750,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 747,
+        lineNumber: 746,
         columnNumber: 9
     }, undefined);
 };
@@ -3754,7 +3754,7 @@ const DummyRestauarantCardFromObj = ({ name , avgRating , cloudinaryImageId  })=
                 src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/" + cloudinaryImageId
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 765,
+                lineNumber: 764,
                 columnNumber: 14
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -3765,7 +3765,7 @@ const DummyRestauarantCardFromObj = ({ name , avgRating , cloudinaryImageId  })=
                 ]
             }, void 0, true, {
                 fileName: "src/App.js",
-                lineNumber: 766,
+                lineNumber: 765,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
@@ -3776,13 +3776,13 @@ const DummyRestauarantCardFromObj = ({ name , avgRating , cloudinaryImageId  })=
                 ]
             }, void 0, true, {
                 fileName: "src/App.js",
-                lineNumber: 767,
+                lineNumber: 766,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 764,
+        lineNumber: 763,
         columnNumber: 9
     }, undefined);
 };
@@ -3796,7 +3796,7 @@ const Body = ()=>{
                 key: restaurant.data.id,
                 __source: {
                     fileName: "src/App.js",
-                    lineNumber: 784,
+                    lineNumber: 783,
                     columnNumber: 28
                 },
                 __self: undefined
@@ -3805,7 +3805,7 @@ const Body = ()=>{
         })
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 774,
+        lineNumber: 773,
         columnNumber: 9
     }, undefined);
 };
@@ -3815,23 +3815,23 @@ const AppLayout = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 793,
+                lineNumber: 792,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 794,
+                lineNumber: 793,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 795,
+                lineNumber: 794,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 792,
+        lineNumber: 791,
         columnNumber: 9
     }, undefined);
 };
@@ -3839,7 +3839,7 @@ _c4 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 801,
+    lineNumber: 800,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2, _c3, _c4;

@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HeaderComponent from "./components/Header";
+import HeaderComponent,{Title} from "./components/Header";
 import * as Obj from "./components/Header"
 const {Title}=Obj;
-import { Title } from "./components/Header";
 
 //Config Driven UI - Mock Data from API...created this just for demonstration purposes, in the next sesssions, we'll directly fetch data from the API and remove this mock data
 const restaurantList = [

@@ -45,3 +45,5 @@ However, there is an alternative syntax, if we want to import eveeything from a 
 ```
 
 Important point: The above is a syntax to only get the named imports, we can't get default exports by following this syntax of global Object.
+
+There's a debate in the React community, some people prefer to use .jsx extension for the components, so for example, instead of using the Header.js file, I can use the Header.jsx filename too. Using .jsx extension may break the code for some external libraries, but for most pruposes it will work. In this course, we'll go for .js convention, but .jsx can also be used.
