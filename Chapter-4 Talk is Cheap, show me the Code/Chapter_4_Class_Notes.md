@@ -258,4 +258,9 @@ Important point: keys are not mandatory if there are different types of tags, li
 
 If I try to use duplicate keys, then React will give me an error in the console saying 'Encountered two children with the same key, `abc`. Keys should be unique so that components maintain their identity across updates.'
 
-Also, it is not advisable to use index in an array as a key, this is because the array indices are 
+Also, it is not advisable to use index in an array as a key, this is because the array indices are prone to change if the array elements are removed, added or altered.
+
+Explore this documentation: [Why not to use index as key in React](https://legacy.reactjs.org/docs/lists-and-keys.html)
+
+So, summarising: No key (not acceptable) <<<<< index key (okay way, use only if you don't have anything) << unique key (best practice)
+
