@@ -32,15 +32,19 @@ How can I say that the import {Title} from 'Header.js' is not destructuring an o
 
 Try the code below in App.js file :
 
-```import Obj from Header
-Obj.Title or const {Title}=Obj```
+```
+import Obj from Header
+Obj.Title or const {Title}=Obj
+```
 
 , these lines of code won't work, thus we prove that a named import is not object destructuring, though the syntax looks like it.
 
 However, there is an alternative syntax, if we want to import eveeything from a component (however this is rarely used in practice, still should know): I can write syntax like
 
-```import * as Obj from Header.js
-   const {Title}=Obj;```
+```
+import * as Obj from Header.js
+   const {Title}=Obj;
+```
 
 Important point: The above is a syntax to only get the named imports, we can't get default exports by following this syntax of global Object.
 
@@ -57,14 +61,16 @@ I had some queries, so I asked it to ChatGPT. Let's see the transript of my chat
 
 Me:
 
-``` const Body = () => {
+``` 
+const Body = () => {
     return (
         <>
         <input type="text" placeholder="Search" value=""></input>
         <button> Submit</button>
         </>
     )
-}```
+}
+```
 
 The input tag doesn't allow me to enter any text in the search bar if I use the value attribute, but I can enter text if I don't use the value attribute. Why so? Also, can I skip using the value attribute altogether
 
@@ -76,7 +82,8 @@ In your code snippet, you have set the value attribute to an empty string: value
 
 If you want to make the input field editable, you need to use state to manage its value using the useState hook.
 
-```import React, { useState } from 'react';
+```
+import React, { useState } from 'react';
 
 const Body = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -96,7 +103,8 @@ const Body = () => {
   );
 };
 
-export default Body;```
+export default Body;
+```
 
 In this example, we are using the useState hook to create a state variable called searchValue and a corresponding setter function setSearchValue. We bind the value attribute of the input field to searchValue and the onChange event to the handleInputChange function, which updates the state value whenever the user types into the input field.
 
