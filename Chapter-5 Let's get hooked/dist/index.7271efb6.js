@@ -27431,22 +27431,29 @@ var _react = require("react");
 var _constants = require("../constants");
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _s = $RefreshSig$();
 const Body = ()=>{
+    _s();
+    const [searchText, setSearch] = (0, _react.useState)("");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                 type: "text",
-                placeholder: "Search"
+                placeholder: "Search",
+                value: searchText,
+                className: "search-input",
+                onChange: (e)=>setSearch(e.target.value)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 7,
+                lineNumber: 9,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                children: " Submit"
+                className: "search-btn",
+                children: " Submit "
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 8,
+                lineNumber: 15,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27457,7 +27464,7 @@ const Body = ()=>{
                         key: restaurant.data.id,
                         __source: {
                             fileName: "src/components/Body.js",
-                            lineNumber: 12,
+                            lineNumber: 19,
                             columnNumber: 28
                         },
                         __self: undefined
@@ -27466,12 +27473,13 @@ const Body = ()=>{
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 9,
+                lineNumber: 16,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true);
 };
+_s(Body, "haYNfC+X6liqb1Kl0xH1iqhkj5Q=");
 _c = Body;
 exports.default = Body;
 var _c;

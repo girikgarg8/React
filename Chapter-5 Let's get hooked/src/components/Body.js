@@ -1,11 +1,18 @@
 import {restaurantList} from "../constants"
 import DummyRestauarantCardFromObj from "./RestaurantCard"
-
+import {useState} from "react"
 const Body = () => {
+
+    const [searchText,setSearch]=useState("");
     return (
         <>
-        <input type="text" placeholder="Search"></input>
-        <button> Submit</button>
+        <input type="text" 
+            placeholder="Search"
+            value={searchText} 
+            className="search-input"
+            onChange={(e)=>setSearch(e.target.value)
+        }/>
+        <button className="search-btn"> Submit </button>
         <div className="restaurant-list">
             {
                 restaurantList.map((restaurant, ind) => {

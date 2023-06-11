@@ -126,7 +126,7 @@ Some key points from these documentations:
 
 `React State`: React components has a built-in state object. The state object is where we store the key-value pairs that belong to the component. So, if you seee in the bigger picture, there are two objects associated with a component, that is the `props` and `state` object.
 
-`Controlled Component:` The name itself suggests, it is being "controlled" by somone. Controlled Components are those components which are controlled by React State, and cannot be manipulated by the DOM (Document Object Model)
+`Controlled Component:` The name itself suggests, it is being "controlled" by someone. Controlled Components are those components which are controlled by React State, and cannot be manipulated by the DOM (Document Object Model)
 
 `Uncontrolled Component`: Uncontrolled components are the components which are not controlled by the React State, but are instead controlled by the DOM (Document Object Model). 
 
@@ -141,3 +141,31 @@ For example, in React, when a user clicks on a button, a synthetic click event i
 Overall, synthetic events provide a way to simplify event handling and provide a consistent interface for working with events across different browsers and devices. They are a useful tool for building robust and cross-browser compatible web applications. (TLDR: Due to synthetic events, we can develop React App which works on different browsers, a consistent event object is dispatched to the event listener, irrespective of the different browsers in which we may be running our React App on! )
 
 **Coming to a single liner definition of synethetic, The synthetic event is a wrapper of the browser's native event, which is supported cross-browser.**
+
+**Important** :React uses one way data binding, while Angular uses two way data binding.  This means that, the data can only flow from Parent component to Child component, it also means that teh data flow can only be one way, either from code to the UI or vice versa.
+
+Code example of one way data binding in React: **Important for enhancing the understanding of one way and two way data binding**
+
+
+
+
+
+
+
+**Important** Whenever there is an HTML tag which cannot have any children tag like an input tag, we should always use self closing tags, otherwise React will throw an error.
+
+Using a var/let/const variable for the searchText variable will not suffice, because it is not a state variable, so it's value is not being tracked by the React state.
+
+**One query that I always had from the very beginning, where does e.target.value come from?**
+
+The e.target.value refers to the value property of the target element that triggered an event. This concept is provided by the JavaScript event system, not specifically by React or HTML.
+
+**Important: Concept of state variables: What are they, why do we need them**
+
+State variables are those variables whose state (value) is tracked by React. We need state variables because normal Javascript variables cannot be tracked by React.
+
+**What are hooks in React?** : Hooks are nothing but normal Javascript functions, people have overhyped it actually. Just like a functional component is nothing but a normal Javascript function that returns JSX or React.createElement. These hooks are written by Facebook developers and every hook has some special function or task to perform.
+
+**What is useState in React?** 
+
+useState is a hook in React, which is used to define a state variable in React. The useState hook returns an array as output, the first array element is the state variable, and the second one is a function to update the state variable. The parameter passed inside useState is used to set the initisl value of state variable.
