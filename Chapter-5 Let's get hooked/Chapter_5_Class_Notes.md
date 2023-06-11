@@ -32,17 +32,15 @@ How can I say that the import {Title} from 'Header.js' is not destructuring an o
 
 Try the code below in App.js file :
 
-```
-import Obj from Header
-Obj.Title or const {Title}=Obj
-```
+```import Obj from Header
+Obj.Title or const {Title}=Obj```
+
 , these lines of code won't work, thus we prove that a named import is not object destructuring, though the syntax looks like it.
 
 However, there is an alternative syntax, if we want to import eveeything from a component (however this is rarely used in practice, still should know): I can write syntax like
 
 ```import * as Obj from Header.js
-   const {Title}=Obj;
-```
+   const {Title}=Obj;```
 
 Important point: The above is a syntax to only get the named imports, we can't get default exports by following this syntax of global Object.
 
@@ -59,7 +57,7 @@ I had some queries, so I asked it to ChatGPT. Let's see the transript of my chat
 
 Me:
 
-```const Body = () => {
+``` const Body = () => {
     return (
         <>
         <input type="text" placeholder="Search" value=""></input>
