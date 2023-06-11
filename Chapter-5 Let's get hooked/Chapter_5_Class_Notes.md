@@ -47,3 +47,96 @@ However, there is an alternative syntax, if we want to import eveeything from a 
 Important point: The above is a syntax to only get the named imports, we can't get default exports by following this syntax of global Object.
 
 There's a debate in the React community, some people prefer to use .jsx extension for the components, so for example, instead of using the Header.js file, I can use the Header.jsx filename too. Using .jsx extension may break the code for some external libraries, but for most pruposes it will work. In this course, we'll go for .js convention, but .jsx can also be used.
+
+ Config File: Good convention to use, we can keep all the hardcoded data like CDN links, API keys, App secrets etc. It can also be called constants.js
+
+ Why should we use config.js file? 1) In order to avoid duplication of code 2) In order to make the code maintainable, suppose that the constants are updated, I need to make the changes only at one place
+
+
+**Building the search bar functionality- Many important concepts will be discussed here**
+
+I had some queries, so I asked it to ChatGPT. Let's see the transript of my chat with ChatGPT:
+
+Me:
+
+```
+const Body = () => {
+    return (
+        <>
+        <input type="text" placeholder="Search" value=""></input>
+        <button> Submit</button>
+        </>
+    )
+}
+``` The input tag doesn't allow me to enter any text in the search bar if I use the value attribute, but I can enter text if I don't use the value attribute. Why so? Also, can I skip using the value attribute altogether
+
+ChatGPT:
+
+The value attribute in the <input> tag is used to set the initial value of the input field. When you provide a value to the value attribute, it becomes a controlled component in React. A controlled component means that the value of the input is controlled by React's state, and you need to update the state to update the value of the input.
+
+In your code snippet, you have set the value attribute to an empty string: value="". This means that the input field will always have an empty value, and any text you type into it will be overwritten by the empty value.
+
+If you want to make the input field editable, you need to use state to manage its value using the useState hook.
+
+```
+import React, { useState } from 'react';
+
+const Body = () => {
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleInputChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+  return (
+    <>
+      <input type="text" placeholder="Search"
+        value={searchValue}
+        onChange={handleInputChange}
+      />
+      <button>Submit</button>
+    </>
+  );
+};
+
+export default Body;
+```
+In this example, we are using the useState hook to create a state variable called searchValue and a corresponding setter function setSearchValue. We bind the value attribute of the input field to searchValue and the onChange event to the handleInputChange function, which updates the state value whenever the user types into the input field.
+
+Regarding skipping the value attribute altogether, you can certainly do that if you don't need to control the input's value or access it from your component's logic. In that case, you can remove the value attribute from the <input> tag, and it will behave as a regular HTML input field.
+
+**Phew! That was a really good question, and I learnt many new things like React State,Controlled component and Synthetic evenets etc, let's explore about them**
+
+Go through these documentations to learn more! :
+
+[React State] (https://www.w3schools.com/react/react_state.asp)
+
+[Controlled and uncontrolled components in React](https://blog.logrocket.com/controlled-vs-uncontrolled-components-in-react/)
+
+Some key points from these documentations: 
+
+`What are events?`: Events are "things" that happen to HTML elements. When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+
+`Event listeners`: Event Listener in JavaScript is a procedure or method executed when any event occurs like a click event.
+
+`React State`: React components has a built-in state object. The state object is where we store the key-value pairs that belong to the component. So, if you seee in the bigger picture, there are two objects associated with a component, that is the `props` and `state` object.
+
+`Controlled Component:` The name itself suggests, it is being "controlled" by somone. Controlled Components are those components which are controlled by React State, and cannot be manipulated by the DOM (Document Object Model)
+
+`Uncontrolled Component`: Uncontrolled components are the components which are not controlled by the React State, but are instead controlled by the DOM (Document Object Model). 
+
+`Synthetic Events`: The name itself suggests, it is "synthetic" (which means it is artificial or not natural). So, what exactly is a synthetic event? Before that, let's understand how an event is handled in native browser?
+
+**Important** When an event is triggered in a web page, **the browser creates an event object and dispatches it to any event listeners that have been registered for that event**. However, different browsers may create slightly different event objects, and the properties and methods of these objects may not be consistent across different devices. This can make it difficult to write cross-browser compatible code for handling events (TLDR: Different browsers can have different event objects, so this is the problem).
+
+Solution to this problem: To address this problem, libraries like React create synthetic events that provide a consistent interface for working with events across different browsers and devices. When a synthetic event is triggered, the library creates an event object that has a standard set of properties and methods that can be used to handle the event. The synthetic event is then passed to any event listeners that have been registered for the event.
+
+For example, in React, when a user clicks on a button, a synthetic click event is created and passed to the event listener function. The event listener function can then use the standard set of properties and methods provided by the synthetic event to handle the click event in a consistent way.
+
+Overall, synthetic events provide a way to simplify event handling and provide a consistent interface for working with events across different browsers and devices. They are a useful tool for building robust and cross-browser compatible web applications. (TLDR: Due to synthetic events, we can develop React App which works on different browsers, a consistent event object is dispatched to the event listener, irrespective of the different browsers in which we may be running our React App on! )
+
+Coming to a single liner definition of synethetic, The synthetic event is a wrapper of the browser's native event, which is supported cross-browser.
+
+
+
+
