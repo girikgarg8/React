@@ -59,16 +59,16 @@ I had some queries, so I asked it to ChatGPT. Let's see the transript of my chat
 
 Me:
 
-```
-const Body = () => {
+```const Body = () => {
     return (
         <>
         <input type="text" placeholder="Search" value=""></input>
         <button> Submit</button>
         </>
     )
-}
-``` The input tag doesn't allow me to enter any text in the search bar if I use the value attribute, but I can enter text if I don't use the value attribute. Why so? Also, can I skip using the value attribute altogether
+}```
+
+The input tag doesn't allow me to enter any text in the search bar if I use the value attribute, but I can enter text if I don't use the value attribute. Why so? Also, can I skip using the value attribute altogether
 
 ChatGPT:
 
@@ -134,8 +134,4 @@ For example, in React, when a user clicks on a button, a synthetic click event i
 
 Overall, synthetic events provide a way to simplify event handling and provide a consistent interface for working with events across different browsers and devices. They are a useful tool for building robust and cross-browser compatible web applications. (TLDR: Due to synthetic events, we can develop React App which works on different browsers, a consistent event object is dispatched to the event listener, irrespective of the different browsers in which we may be running our React App on! )
 
-Coming to a single liner definition of synethetic, The synthetic event is a wrapper of the browser's native event, which is supported cross-browser.
-
-
-
-
+**Coming to a single liner definition of synethetic, The synthetic event is a wrapper of the browser's native event, which is supported cross-browser.**
