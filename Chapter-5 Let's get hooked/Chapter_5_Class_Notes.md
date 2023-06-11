@@ -78,8 +78,7 @@ In your code snippet, you have set the value attribute to an empty string: value
 
 If you want to make the input field editable, you need to use state to manage its value using the useState hook.
 
-```
-import React, { useState } from 'react';
+```import React, { useState } from 'react';
 
 const Body = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -99,8 +98,8 @@ const Body = () => {
   );
 };
 
-export default Body;
-```
+export default Body;```
+
 In this example, we are using the useState hook to create a state variable called searchValue and a corresponding setter function setSearchValue. We bind the value attribute of the input field to searchValue and the onChange event to the handleInputChange function, which updates the state value whenever the user types into the input field.
 
 Regarding skipping the value attribute altogether, you can certainly do that if you don't need to control the input's value or access it from your component's logic. In that case, you can remove the value attribute from the <input> tag, and it will behave as a regular HTML input field.
