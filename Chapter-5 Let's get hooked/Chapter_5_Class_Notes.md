@@ -146,11 +146,14 @@ Overall, synthetic events provide a way to simplify event handling and provide a
 
 Code example of one way data binding in React: **Important for enhancing the understanding of one way and two way data binding**
 
+If I have the following code in React
 
+```
+const searchText="McDonalds"
 
-
-
-
+<input type="text" value={searchText}/>
+```
+and if I update the searchText from the UI, then the variable searchText in the React Code won't get updated. However, in Angular (which supports two way data binding), the value of variable searchText gets updated in the code, if it is changed from the UI.
 
 **Important** Whenever there is an HTML tag which cannot have any children tag like an input tag, we should always use self closing tags, otherwise React will throw an error.
 
